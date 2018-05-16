@@ -1,0 +1,45 @@
+PODS:
+  - Action (3.5.0):
+    - RxCocoa (~> 4.0)
+    - RxSwift (~> 4.0)
+  - Alamofire (4.7.2)
+  - RxCocoa (4.0.0):
+    - RxSwift (~> 4.0)
+  - RxOptional (3.4.0):
+    - RxCocoa (~> 4.0)
+    - RxSwift (~> 4.0)
+  - RxSwift (4.0.0)
+  - Unbox (3.0.0)
+  - Wrap (3.0.0)
+
+DEPENDENCIES:
+  - Action
+  - Alamofire
+  - RxCocoa (~> 4.0.0)
+  - RxOptional
+  - RxSwift (~> 4.0.0)
+  - Unbox
+  - Wrap
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Action
+    - Alamofire
+    - RxCocoa
+    - RxOptional
+    - RxSwift
+    - Unbox
+    - Wrap
+
+SPEC CHECKSUMS:
+  Action: d60087ebce41b969d1afdad01e2fa1372a82f26e
+  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  RxCocoa: d62846ca96495d862fa4c59ea7d87e5031d7340e
+  RxOptional: fabc37fc8e3cf4c336ebaeb5c92b576c64b2e6c5
+  RxSwift: fd680d75283beb5e2559486f3c0ff852f0d35334
+  Unbox: 9ed33b2a31f7a8a049f54b94d40c4a52a28c4d9d
+  Wrap: 918fdb5157e4f701f9503b2633752d6f94616f84
+
+PODFILE CHECKSUM: 7e7039318c3ed3ad1f77b2e9b3acaefbe3c4fb3e
+
+COCOAPODS: 1.5.2
