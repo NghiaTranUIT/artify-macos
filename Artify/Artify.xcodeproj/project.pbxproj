@@ -1,0 +1,534 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		696ECA90EFCB09BE3F635915 /* Pods_Artify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BEC2ECE6ECF0CDAA2F5BD6A /* Pods_Artify.framework */; };
+		BA7930AA20AC0F39002A7CE4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7930A920AC0F39002A7CE4 /* AppDelegate.swift */; };
+		BA7930AC20AC0F39002A7CE4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7930AB20AC0F39002A7CE4 /* ViewController.swift */; };
+		BA7930AE20AC0F3A002A7CE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA7930AD20AC0F3A002A7CE4 /* Assets.xcassets */; };
+		BA7930B120AC0F3A002A7CE4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA7930AF20AC0F3A002A7CE4 /* Main.storyboard */; };
+		BA7930BD20AC0F3A002A7CE4 /* ArtifyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7930BC20AC0F3A002A7CE4 /* ArtifyTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BA7930B920AC0F3A002A7CE4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BA79309E20AC0F39002A7CE4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BA7930A520AC0F39002A7CE4;
+			remoteInfo = Artify;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6BEC2ECE6ECF0CDAA2F5BD6A /* Pods_Artify.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Artify.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA7930A620AC0F39002A7CE4 /* Artify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Artify.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA7930A920AC0F39002A7CE4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BA7930AB20AC0F39002A7CE4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BA7930AD20AC0F3A002A7CE4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BA7930B020AC0F3A002A7CE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BA7930B220AC0F3A002A7CE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA7930B320AC0F3A002A7CE4 /* Artify.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Artify.entitlements; sourceTree = "<group>"; };
+		BA7930B820AC0F3A002A7CE4 /* ArtifyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArtifyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA7930BC20AC0F3A002A7CE4 /* ArtifyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtifyTests.swift; sourceTree = "<group>"; };
+		BA7930BE20AC0F3A002A7CE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE76D14A9E4B3E7FDBF1E63D /* Pods-Artify.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Artify.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-Artify/Pods-Artify.debug.xcconfig"; sourceTree = "<group>"; };
+		DB1D3B10AA160A53725BAC00 /* Pods-Artify.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Artify.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Artify/Pods-Artify.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BA7930A320AC0F39002A7CE4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				696ECA90EFCB09BE3F635915 /* Pods_Artify.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA7930B520AC0F3A002A7CE4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2F2F0B363DE381BAF5609E83 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6BEC2ECE6ECF0CDAA2F5BD6A /* Pods_Artify.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BA79309D20AC0F39002A7CE4 = {
+			isa = PBXGroup;
+			children = (
+				BA7930A820AC0F39002A7CE4 /* Artify */,
+				BA7930BB20AC0F3A002A7CE4 /* ArtifyTests */,
+				BA7930A720AC0F39002A7CE4 /* Products */,
+				E0695F5F3D16ADF2B92DCE20 /* Pods */,
+				2F2F0B363DE381BAF5609E83 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		BA7930A720AC0F39002A7CE4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BA7930A620AC0F39002A7CE4 /* Artify.app */,
+				BA7930B820AC0F3A002A7CE4 /* ArtifyTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BA7930A820AC0F39002A7CE4 /* Artify */ = {
+			isa = PBXGroup;
+			children = (
+				BA7930A920AC0F39002A7CE4 /* AppDelegate.swift */,
+				BA7930AB20AC0F39002A7CE4 /* ViewController.swift */,
+				BA7930AD20AC0F3A002A7CE4 /* Assets.xcassets */,
+				BA7930AF20AC0F3A002A7CE4 /* Main.storyboard */,
+				BA7930B220AC0F3A002A7CE4 /* Info.plist */,
+				BA7930B320AC0F3A002A7CE4 /* Artify.entitlements */,
+			);
+			path = Artify;
+			sourceTree = "<group>";
+		};
+		BA7930BB20AC0F3A002A7CE4 /* ArtifyTests */ = {
+			isa = PBXGroup;
+			children = (
+				BA7930BC20AC0F3A002A7CE4 /* ArtifyTests.swift */,
+				BA7930BE20AC0F3A002A7CE4 /* Info.plist */,
+			);
+			path = ArtifyTests;
+			sourceTree = "<group>";
+		};
+		E0695F5F3D16ADF2B92DCE20 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CE76D14A9E4B3E7FDBF1E63D /* Pods-Artify.debug.xcconfig */,
+				DB1D3B10AA160A53725BAC00 /* Pods-Artify.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BA7930A520AC0F39002A7CE4 /* Artify */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BA7930C120AC0F3A002A7CE4 /* Build configuration list for PBXNativeTarget "Artify" */;
+			buildPhases = (
+				6C18E1E218A29961D3A45FB4 /* [CP] Check Pods Manifest.lock */,
+				BA7930A220AC0F39002A7CE4 /* Sources */,
+				BA7930A320AC0F39002A7CE4 /* Frameworks */,
+				BA7930A420AC0F39002A7CE4 /* Resources */,
+				77E1B90956460F03CC766164 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Artify;
+			productName = Artify;
+			productReference = BA7930A620AC0F39002A7CE4 /* Artify.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BA7930B720AC0F3A002A7CE4 /* ArtifyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BA7930C420AC0F3A002A7CE4 /* Build configuration list for PBXNativeTarget "ArtifyTests" */;
+			buildPhases = (
+				BA7930B420AC0F3A002A7CE4 /* Sources */,
+				BA7930B520AC0F3A002A7CE4 /* Frameworks */,
+				BA7930B620AC0F3A002A7CE4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BA7930BA20AC0F3A002A7CE4 /* PBXTargetDependency */,
+			);
+			name = ArtifyTests;
+			productName = ArtifyTests;
+			productReference = BA7930B820AC0F3A002A7CE4 /* ArtifyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BA79309E20AC0F39002A7CE4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = com.art.artify.app;
+				TargetAttributes = {
+					BA7930A520AC0F39002A7CE4 = {
+						CreatedOnToolsVersion = 9.3;
+					};
+					BA7930B720AC0F3A002A7CE4 = {
+						CreatedOnToolsVersion = 9.3;
+						TestTargetID = BA7930A520AC0F39002A7CE4;
+					};
+				};
+			};
+			buildConfigurationList = BA7930A120AC0F39002A7CE4 /* Build configuration list for PBXProject "Artify" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BA79309D20AC0F39002A7CE4;
+			productRefGroup = BA7930A720AC0F39002A7CE4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BA7930A520AC0F39002A7CE4 /* Artify */,
+				BA7930B720AC0F3A002A7CE4 /* ArtifyTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BA7930A420AC0F39002A7CE4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA7930AE20AC0F3A002A7CE4 /* Assets.xcassets in Resources */,
+				BA7930B120AC0F3A002A7CE4 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA7930B620AC0F3A002A7CE4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6C18E1E218A29961D3A45FB4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Artify-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		77E1B90956460F03CC766164 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/../Pods/Target Support Files/Pods-Artify/Pods-Artify-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Action/Action.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxOptional/RxOptional.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Unbox/Unbox.framework",
+				"${BUILT_PRODUCTS_DIR}/Wrap/Wrap.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Action.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxOptional.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Unbox.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Wrap.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-Artify/Pods-Artify-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BA7930A220AC0F39002A7CE4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA7930AC20AC0F39002A7CE4 /* ViewController.swift in Sources */,
+				BA7930AA20AC0F39002A7CE4 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA7930B420AC0F3A002A7CE4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA7930BD20AC0F3A002A7CE4 /* ArtifyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BA7930BA20AC0F3A002A7CE4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BA7930A520AC0F39002A7CE4 /* Artify */;
+			targetProxy = BA7930B920AC0F3A002A7CE4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BA7930AF20AC0F3A002A7CE4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BA7930B020AC0F3A002A7CE4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BA7930BF20AC0F3A002A7CE4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BA7930C020AC0F3A002A7CE4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		BA7930C220AC0F3A002A7CE4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE76D14A9E4B3E7FDBF1E63D /* Pods-Artify.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Artify/Artify.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Artify/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.art.Artify;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		BA7930C320AC0F3A002A7CE4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB1D3B10AA160A53725BAC00 /* Pods-Artify.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Artify/Artify.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Artify/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.art.Artify;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		BA7930C520AC0F3A002A7CE4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = ArtifyTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.art.ArtifyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Artify.app/Contents/MacOS/Artify";
+			};
+			name = Debug;
+		};
+		BA7930C620AC0F3A002A7CE4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = ArtifyTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.art.ArtifyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Artify.app/Contents/MacOS/Artify";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BA7930A120AC0F39002A7CE4 /* Build configuration list for PBXProject "Artify" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA7930BF20AC0F3A002A7CE4 /* Debug */,
+				BA7930C020AC0F3A002A7CE4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BA7930C120AC0F3A002A7CE4 /* Build configuration list for PBXNativeTarget "Artify" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA7930C220AC0F3A002A7CE4 /* Debug */,
+				BA7930C320AC0F3A002A7CE4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BA7930C420AC0F3A002A7CE4 /* Build configuration list for PBXNativeTarget "ArtifyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA7930C520AC0F3A002A7CE4 /* Debug */,
+				BA7930C620AC0F3A002A7CE4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BA79309E20AC0F39002A7CE4 /* Project object */;
+}

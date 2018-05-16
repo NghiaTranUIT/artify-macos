@@ -1,9 +1,9 @@
 //
 //  AppDelegate.swift
-//  artify
+//  Artify
 //
-//  Created by Nghia Tran on 5/11/18.
-//  Copyright © 2018 com.art. All rights reserved.
+//  Created by Nghia Tran on 5/16/18.
+//  Copyright © 2018 com.art.artify.app. All rights reserved.
 //
 
 import Cocoa
