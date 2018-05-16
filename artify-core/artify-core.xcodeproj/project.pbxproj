@@ -11,6 +11,7 @@
 		BA79308120AC0756002A7CE4 /* artify_core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA79307720AC0756002A7CE4 /* artify_core.framework */; };
 		BA79308620AC0756002A7CE4 /* artify_coreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA79308520AC0756002A7CE4 /* artify_coreTests.swift */; };
 		BA79308820AC0756002A7CE4 /* artify_core.h in Headers */ = {isa = PBXBuildFile; fileRef = BA79307A20AC0756002A7CE4 /* artify_core.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BAA2560A20AC5B6300BBA837 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA2560920AC5B6300BBA837 /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +34,7 @@
 		BA79308020AC0756002A7CE4 /* artify-coreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "artify-coreTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA79308520AC0756002A7CE4 /* artify_coreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = artify_coreTests.swift; sourceTree = "<group>"; };
 		BA79308720AC0756002A7CE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BAA2560920AC5B6300BBA837 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,8 @@
 		BA79307920AC0756002A7CE4 /* artify-core */ = {
 			isa = PBXGroup;
 			children = (
+				BAA255FE20AC5AC400BBA837 /* Services */,
+				BAA255FD20AC5AB300BBA837 /* ViewModels */,
 				BA79307A20AC0756002A7CE4 /* artify_core.h */,
 				BA79307B20AC0756002A7CE4 /* Info.plist */,
 			);
@@ -108,6 +112,21 @@
 				BA79308720AC0756002A7CE4 /* Info.plist */,
 			);
 			path = "artify-coreTests";
+			sourceTree = "<group>";
+		};
+		BAA255FD20AC5AB300BBA837 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				BAA2560920AC5B6300BBA837 /* HomeViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		BAA255FE20AC5AC400BBA837 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,6 +192,7 @@
 				TargetAttributes = {
 					BA79307620AC0756002A7CE4 = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 0930;
 					};
 					BA79307F20AC0756002A7CE4 = {
 						CreatedOnToolsVersion = 9.3;
@@ -240,6 +260,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAA2560A20AC5B6300BBA837 /* HomeViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,6 +406,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3FB3468F5B8AC035B1211CF5 /* Pods-artify-core.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -404,6 +426,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.art.artify-core";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -412,6 +435,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7C4B613A9F337A747661A5A4 /* Pods-artify-core.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -438,6 +462,7 @@
 		BA79308F20AC0756002A7CE4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "artify-coreTests/Info.plist";
@@ -455,6 +480,7 @@
 		BA79309020AC0756002A7CE4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "artify-coreTests/Info.plist";
