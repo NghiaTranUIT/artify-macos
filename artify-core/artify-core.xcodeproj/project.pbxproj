@@ -14,6 +14,8 @@
 		BA4CDA5C20B14AA000D19C3D /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4CDA5B20B14AA000D19C3D /* NetworkService.swift */; };
 		BA4CDA5E20B14AD600D19C3D /* ArtifyCoreApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4CDA5D20B14AD600D19C3D /* ArtifyCoreApi.swift */; };
 		BA4CDA6120B14B9600D19C3D /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4CDA6020B14B9600D19C3D /* Environment.swift */; };
+		BA4CDA6320B1563400D19C3D /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4CDA6220B1563400D19C3D /* Photo.swift */; };
+		BA4CDA6520B1564300D19C3D /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4CDA6420B1564300D19C3D /* Author.swift */; };
 		BA79308120AC0756002A7CE4 /* artify_core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA79307720AC0756002A7CE4 /* artify_core.framework */; };
 		BA79308620AC0756002A7CE4 /* artify_coreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA79308520AC0756002A7CE4 /* artify_coreTests.swift */; };
 		BA79308820AC0756002A7CE4 /* artify_core.h in Headers */ = {isa = PBXBuildFile; fileRef = BA79307A20AC0756002A7CE4 /* artify_core.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -40,6 +42,8 @@
 		BA4CDA5B20B14AA000D19C3D /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		BA4CDA5D20B14AD600D19C3D /* ArtifyCoreApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtifyCoreApi.swift; sourceTree = "<group>"; };
 		BA4CDA6020B14B9600D19C3D /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		BA4CDA6220B1563400D19C3D /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		BA4CDA6420B1564300D19C3D /* Author.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
 		BA79307720AC0756002A7CE4 /* artify_core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = artify_core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA79307A20AC0756002A7CE4 /* artify_core.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = artify_core.h; sourceTree = "<group>"; };
 		BA79307B20AC0756002A7CE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -90,6 +94,8 @@
 			isa = PBXGroup;
 			children = (
 				BA4CDA5520B13E9200D19C3D /* Menu.swift */,
+				BA4CDA6220B1563400D19C3D /* Photo.swift */,
+				BA4CDA6420B1564300D19C3D /* Author.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -294,8 +300,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA4CDA6320B1563400D19C3D /* Photo.swift in Sources */,
 				BA4CDA5C20B14AA000D19C3D /* NetworkService.swift in Sources */,
 				BA4CDA5820B13FA700D19C3D /* Coordinator.swift in Sources */,
+				BA4CDA6520B1564300D19C3D /* Author.swift in Sources */,
 				BA4CDA5E20B14AD600D19C3D /* ArtifyCoreApi.swift in Sources */,
 				BA4CDA6120B14B9600D19C3D /* Environment.swift in Sources */,
 				BA4CDA5620B13E9200D19C3D /* Menu.swift in Sources */,
