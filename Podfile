@@ -17,6 +17,7 @@ def pod_required
     pod 'Wrap'
     pod 'Action'
     pod 'RxOptional'
+    pod 'Moya/RxSwift', '~> 11.0'
 end
 
 
