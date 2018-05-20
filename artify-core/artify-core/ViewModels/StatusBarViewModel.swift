@@ -8,6 +8,8 @@
 
 import Foundation
 import RxSwift
+import RxCocoa
+import Cocoa
 
 public protocol StatusBarViewModelType {
 
@@ -21,7 +23,8 @@ public protocol StatusBarViewModelInput {
 
 public protocol StatusBarViewModelOutput {
 
-    var menus: Variable<[Menu]> { get }
+    var menuItems: Driver<[NSMenuItem]>! { get }
+    var terminalApp: PublishSubject<Void> { get }
 }
 
 public final class StatusBarViewModel: StatusBarViewModelType, StatusBarViewModelInput, StatusBarViewModelOutput {
@@ -29,12 +32,38 @@ public final class StatusBarViewModel: StatusBarViewModelType, StatusBarViewMode
     public var input: StatusBarViewModelInput { return self }
     public var output: StatusBarViewModelOutput { return self }
 
+    // MARK: - Variable
+
     // MARK: - Output
-    public var menus = Variable<[Menu]>([])
+    public var menuItems: Driver<[NSMenuItem]>!
+    public var menus = Variable<[Menu]>([Menu(kind: .getFeature, selector: #selector(StatusBarViewModel.getFeatureOnTap), keyEquivalent: "F"),
+                                         Menu(kind: .separator, selector: nil, keyEquivalent: ""),
+                                         Menu(kind: .quit, selector: #selector(StatusBarViewModel.quitOnTap), keyEquivalent: "Q")])
+    public var terminalApp = PublishSubject<Void>()
 
     // MARK: - Init
     public init() {
-        
+        menuItems = menus.asObservable()
+            .map {[unowned self] in
+                $0.map({ (menu) -> NSMenuItem in
+                    if menu.kind == Menu.Kind.separator {
+                        return NSMenuItem.separator()
+                    }
+                    let item = NSMenuItem(title: menu.title,
+                                          action: menu.selector,
+                                          keyEquivalent: menu.keyEquivalent)
+                    item.target = self // Override the target
+                    return item
+                })
+        }
+        .asDriver(onErrorJustReturn: [])
     }
 
+    @objc private func getFeatureOnTap() {
+        print("Get Feature ...")
+    }
+
+    @objc private func quitOnTap() {
+        terminalApp.onNext(())
+    }
 }

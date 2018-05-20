@@ -16,7 +16,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     // MARK: - Variable
     fileprivate let bag = DisposeBag()
     fileprivate let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
-    fileprivate let viewModel: StatusBarViewModelType = StatusBarViewModel()
+    fileprivate let viewModel = StatusBarViewModel()
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
 
@@ -27,6 +27,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationWillTerminate(_ aNotification: Notification) {
 
     }
+
+    @objc func printQuote(_ sender: Any?) {
+        let quoteText = "Never put off until tomorrow what you can do the day after tomorrow."
+        let quoteAuthor = "Mark Twain"
+
+        print("\(quoteText) — \(quoteAuthor)")
+    }
 }
 
 // MARK: - Private
@@ -35,6 +42,7 @@ extension AppDelegate {
     fileprivate func initStatusBarApp() {
         if let button = statusItem.button {
             button.image = NSImage(named:NSImage.Name("StatusBarButtonImage"))
+            button.action = #selector(printQuote(_:))
         }
     }
 
@@ -43,20 +51,22 @@ extension AppDelegate {
         let output = viewModel.output
 
         // Menu
-        output.menus.asObservable()
-            .map { (menus) -> [NSMenuItem] in
-                return menus.map({ (menu) -> NSMenuItem in
-                    return NSMenuItem(title: menu.title, action: menu.selector, keyEquivalent: menu.keyEquivalent)
-                })
-            }
-            .map({ (menuItems) -> NSMenu in
+        output.menuItems.asObservable()
+            .map { (menuItems) -> NSMenu in
                 let menu = NSMenu()
                 menuItems.forEach { menu.addItem($0) }
                 return menu
+            }
+            .subscribe(onNext: {[weak self] (menu) in
+                guard let strongSelf = self else { return }
+                strongSelf.statusItem.menu = menu
             })
-            .subscribe(onNext: { (menu) in
-                self.statusItem.menu = menu
-            })
+            .disposed(by: bag)
+
+        // Terminal app
+        output.terminalApp.subscribe(onNext: { _ in
+            NSApplication.shared.terminate(nil)
+        })
         .disposed(by: bag)
     }
 }
