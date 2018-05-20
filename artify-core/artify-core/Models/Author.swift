@@ -12,7 +12,7 @@ import Unbox
 public struct Author: Unboxable {
 
     struct Keys {
-        static let ID = "id"
+        static let ID = "ID"
         static let Name = "name"
         static let Born = "born"
         static let Died = "died"

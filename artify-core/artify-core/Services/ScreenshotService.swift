@@ -36,5 +36,13 @@ class ScreenshotService {
             .elements
             .bind(to: currentScreenshot)
             .disposed(by: bag)
+
+        // Log
+        currentScreenshot.asObservable()
+            .skip(1)
+            .subscribe(onNext: { (photo) in
+                print("==== Photo = ")
+            })
+        .disposed(by: bag)
     }
 }
