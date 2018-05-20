@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		696ECA90EFCB09BE3F635915 /* Pods_Artify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BEC2ECE6ECF0CDAA2F5BD6A /* Pods_Artify.framework */; };
+		BA4CDA5A20B1402D00D19C3D /* artify_core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA4CDA5920B1402D00D19C3D /* artify_core.framework */; };
 		BA7930AA20AC0F39002A7CE4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7930A920AC0F39002A7CE4 /* AppDelegate.swift */; };
 		BA7930AC20AC0F39002A7CE4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7930AB20AC0F39002A7CE4 /* ViewController.swift */; };
 		BA7930AE20AC0F3A002A7CE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA7930AD20AC0F3A002A7CE4 /* Assets.xcassets */; };
 		BA7930B120AC0F3A002A7CE4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA7930AF20AC0F3A002A7CE4 /* Main.storyboard */; };
 		BA7930BD20AC0F3A002A7CE4 /* ArtifyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7930BC20AC0F3A002A7CE4 /* ArtifyTests.swift */; };
-		BAA2560320AC5B2900BBA837 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA2560220AC5B2900BBA837 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		6BEC2ECE6ECF0CDAA2F5BD6A /* Pods_Artify.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Artify.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA4CDA5920B1402D00D19C3D /* artify_core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = artify_core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA7930A620AC0F39002A7CE4 /* Artify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Artify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA7930A920AC0F39002A7CE4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA7930AB20AC0F39002A7CE4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -38,7 +39,6 @@
 		BA7930B820AC0F3A002A7CE4 /* ArtifyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArtifyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA7930BC20AC0F3A002A7CE4 /* ArtifyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtifyTests.swift; sourceTree = "<group>"; };
 		BA7930BE20AC0F3A002A7CE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BAA2560220AC5B2900BBA837 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		CE76D14A9E4B3E7FDBF1E63D /* Pods-Artify.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Artify.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-Artify/Pods-Artify.debug.xcconfig"; sourceTree = "<group>"; };
 		DB1D3B10AA160A53725BAC00 /* Pods-Artify.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Artify.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Artify/Pods-Artify.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -48,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA4CDA5A20B1402D00D19C3D /* artify_core.framework in Frameworks */,
 				696ECA90EFCB09BE3F635915 /* Pods_Artify.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -65,6 +66,7 @@
 		2F2F0B363DE381BAF5609E83 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BA4CDA5920B1402D00D19C3D /* artify_core.framework */,
 				6BEC2ECE6ECF0CDAA2F5BD6A /* Pods_Artify.framework */,
 			);
 			name = Frameworks;
@@ -122,6 +124,8 @@
 		BAA2560020AC5AD300BBA837 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				BAA2560C20AC5E8F00BBA837 /* Dashboard */,
+				BAA2560B20AC5E0300BBA837 /* New Group */,
 				BAA2560120AC5B1500BBA837 /* Home */,
 			);
 			path = Scenes;
@@ -131,7 +135,6 @@
 			isa = PBXGroup;
 			children = (
 				BA7930AB20AC0F39002A7CE4 /* ViewController.swift */,
-				BAA2560220AC5B2900BBA837 /* HomeViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -175,6 +178,20 @@
 				BA7930B220AC0F3A002A7CE4 /* Info.plist */,
 			);
 			path = Info;
+			sourceTree = "<group>";
+		};
+		BAA2560B20AC5E0300BBA837 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		BAA2560C20AC5E8F00BBA837 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Dashboard;
 			sourceTree = "<group>";
 		};
 		E0695F5F3D16ADF2B92DCE20 /* Pods */ = {
@@ -346,7 +363,6 @@
 			files = (
 				BA7930AC20AC0F39002A7CE4 /* ViewController.swift in Sources */,
 				BA7930AA20AC0F39002A7CE4 /* AppDelegate.swift in Sources */,
-				BAA2560320AC5B2900BBA837 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
