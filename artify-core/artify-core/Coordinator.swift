@@ -14,13 +14,15 @@ public class Coordinator {
     public static var `default`: Coordinator!
 
     // MARK: - Variable
-    private let networkingService: NetworkingServiceType
+    let screenshotService: ScreenshotService
+    let networkingService: NetworkingServiceType
     let environment: Environment
 
     // MARK: - Init
     public init(kind: Environment.Kind) {
         self.environment = Environment(kind: kind)
         self.networkingService = NetworkingService(environment: environment)
+        self.screenshotService = ScreenshotService()
     }
 
     // MARK: - Public

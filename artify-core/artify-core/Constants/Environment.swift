@@ -20,7 +20,7 @@ public struct Environment {
     var baseURL: String {
         switch kind {
         case .sandbox:
-            return "localhost:7300"
+            return "http://0.0.0.0:7300"
         case .production:
             return "www.artify.com"
         }

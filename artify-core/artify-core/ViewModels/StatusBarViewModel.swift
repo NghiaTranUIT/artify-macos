@@ -10,6 +10,8 @@ import Foundation
 import RxSwift
 import RxCocoa
 import Cocoa
+import Moya
+import Action
 
 public protocol StatusBarViewModelType {
 
@@ -33,7 +35,7 @@ public final class StatusBarViewModel: StatusBarViewModelType, StatusBarViewMode
     public var output: StatusBarViewModelOutput { return self }
 
     // MARK: - Variable
-
+    
     // MARK: - Output
     public var menuItems: Driver<[NSMenuItem]>!
     public var menus = Variable<[Menu]>([Menu(kind: .getFeature, selector: #selector(StatusBarViewModel.getFeatureOnTap), keyEquivalent: "F"),
@@ -43,6 +45,7 @@ public final class StatusBarViewModel: StatusBarViewModelType, StatusBarViewMode
 
     // MARK: - Init
     public init() {
+
         menuItems = menus.asObservable()
             .map {[unowned self] in
                 $0.map({ (menu) -> NSMenuItem in
@@ -60,7 +63,7 @@ public final class StatusBarViewModel: StatusBarViewModelType, StatusBarViewMode
     }
 
     @objc private func getFeatureOnTap() {
-        print("Get Feature ...")
+        Coordinator.default.screenshotService.getFeaturePhotoAction.execute(())
     }
 
     @objc private func quitOnTap() {
