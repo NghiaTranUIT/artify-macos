@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		6DC208D45B2655A8413D123E /* Pods_artify_core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0486739449050E8BACA43C7E /* Pods_artify_core.framework */; };
+		BA4CDA5320B13E3C00D19C3D /* StatusBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4CDA5220B13E3C00D19C3D /* StatusBarViewModel.swift */; };
+		BA4CDA5620B13E9200D19C3D /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4CDA5520B13E9200D19C3D /* Menu.swift */; };
+		BA4CDA5820B13FA700D19C3D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4CDA5720B13FA700D19C3D /* Coordinator.swift */; };
 		BA79308120AC0756002A7CE4 /* artify_core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA79307720AC0756002A7CE4 /* artify_core.framework */; };
 		BA79308620AC0756002A7CE4 /* artify_coreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA79308520AC0756002A7CE4 /* artify_coreTests.swift */; };
 		BA79308820AC0756002A7CE4 /* artify_core.h in Headers */ = {isa = PBXBuildFile; fileRef = BA79307A20AC0756002A7CE4 /* artify_core.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -28,6 +31,9 @@
 		0486739449050E8BACA43C7E /* Pods_artify_core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_artify_core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FB3468F5B8AC035B1211CF5 /* Pods-artify-core.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-artify-core.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-artify-core/Pods-artify-core.debug.xcconfig"; sourceTree = "<group>"; };
 		7C4B613A9F337A747661A5A4 /* Pods-artify-core.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-artify-core.release.xcconfig"; path = "../Pods/Target Support Files/Pods-artify-core/Pods-artify-core.release.xcconfig"; sourceTree = "<group>"; };
+		BA4CDA5220B13E3C00D19C3D /* StatusBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarViewModel.swift; sourceTree = "<group>"; };
+		BA4CDA5520B13E9200D19C3D /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		BA4CDA5720B13FA700D19C3D /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		BA79307720AC0756002A7CE4 /* artify_core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = artify_core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA79307A20AC0756002A7CE4 /* artify_core.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = artify_core.h; sourceTree = "<group>"; };
 		BA79307B20AC0756002A7CE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -74,6 +80,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		BA4CDA5420B13E8200D19C3D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BA4CDA5520B13E9200D19C3D /* Menu.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		BA79306D20AC0756002A7CE4 = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +111,7 @@
 		BA79307920AC0756002A7CE4 /* artify-core */ = {
 			isa = PBXGroup;
 			children = (
+				BA4CDA5420B13E8200D19C3D /* Models */,
 				BAA255FE20AC5AC400BBA837 /* Services */,
 				BAA255FD20AC5AB300BBA837 /* ViewModels */,
 				BA79307A20AC0756002A7CE4 /* artify_core.h */,
@@ -118,6 +133,8 @@
 			isa = PBXGroup;
 			children = (
 				BAA2560920AC5B6300BBA837 /* HomeViewModel.swift */,
+				BA4CDA5220B13E3C00D19C3D /* StatusBarViewModel.swift */,
+				BA4CDA5720B13FA700D19C3D /* Coordinator.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -260,6 +277,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA4CDA5820B13FA700D19C3D /* Coordinator.swift in Sources */,
+				BA4CDA5620B13E9200D19C3D /* Menu.swift in Sources */,
+				BA4CDA5320B13E3C00D19C3D /* StatusBarViewModel.swift in Sources */,
 				BAA2560A20AC5B6300BBA837 /* HomeViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
