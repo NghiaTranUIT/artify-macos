@@ -15,6 +15,7 @@ env:
 
 before_install:
   - bundle install
+  - bundle exec pod install
 
 script:
   - set -o pipefail
