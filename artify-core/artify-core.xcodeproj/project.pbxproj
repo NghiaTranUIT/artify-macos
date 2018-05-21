@@ -19,6 +19,7 @@
 		BA4CDA6720B15CF400D19C3D /* ScreenshotService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4CDA6620B15CF400D19C3D /* ScreenshotService.swift */; };
 		BA4CDA6A20B15F2200D19C3D /* Models+RxSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4CDA6920B15F2200D19C3D /* Models+RxSwift.swift */; };
 		BA4CDA6C20B1648D00D19C3D /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4CDA6B20B1648D00D19C3D /* APIResponse.swift */; };
+		BA4CDA6E20B2710C00D19C3D /* ArtifyError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4CDA6D20B2710C00D19C3D /* ArtifyError.swift */; };
 		BA79308120AC0756002A7CE4 /* artify_core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA79307720AC0756002A7CE4 /* artify_core.framework */; };
 		BA79308620AC0756002A7CE4 /* artify_coreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA79308520AC0756002A7CE4 /* artify_coreTests.swift */; };
 		BA79308820AC0756002A7CE4 /* artify_core.h in Headers */ = {isa = PBXBuildFile; fileRef = BA79307A20AC0756002A7CE4 /* artify_core.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -50,6 +51,7 @@
 		BA4CDA6620B15CF400D19C3D /* ScreenshotService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotService.swift; sourceTree = "<group>"; };
 		BA4CDA6920B15F2200D19C3D /* Models+RxSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Models+RxSwift.swift"; sourceTree = "<group>"; };
 		BA4CDA6B20B1648D00D19C3D /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
+		BA4CDA6D20B2710C00D19C3D /* ArtifyError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtifyError.swift; sourceTree = "<group>"; };
 		BA79307720AC0756002A7CE4 /* artify_core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = artify_core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA79307A20AC0756002A7CE4 /* artify_core.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = artify_core.h; sourceTree = "<group>"; };
 		BA79307B20AC0756002A7CE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				BA4CDA6020B14B9600D19C3D /* Environment.swift */,
+				BA4CDA6D20B2710C00D19C3D /* ArtifyError.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 			files = (
 				BA4CDA6A20B15F2200D19C3D /* Models+RxSwift.swift in Sources */,
 				BA4CDA6320B1563400D19C3D /* Photo.swift in Sources */,
+				BA4CDA6E20B2710C00D19C3D /* ArtifyError.swift in Sources */,
 				BA4CDA5C20B14AA000D19C3D /* NetworkService.swift in Sources */,
 				BA4CDA5820B13FA700D19C3D /* Coordinator.swift in Sources */,
 				BA4CDA6720B15CF400D19C3D /* ScreenshotService.swift in Sources */,

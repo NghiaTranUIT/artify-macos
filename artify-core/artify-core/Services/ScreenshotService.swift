@@ -12,6 +12,7 @@ import RxSwift
 import Cocoa
 import Action
 import Unbox
+import RxOptional
 
 class ScreenshotService {
 
@@ -39,9 +40,9 @@ class ScreenshotService {
 
         // Log
         currentScreenshot.asObservable()
-            .skip(1)
+            .filterNil()
             .subscribe(onNext: { (photo) in
-                print("==== Photo = ")
+                print("==== Photo = \(photo)")
             })
         .disposed(by: bag)
     }

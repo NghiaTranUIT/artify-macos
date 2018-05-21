@@ -19,10 +19,13 @@ extension PrimitiveSequence where Trait == SingleTrait, Element == Response {
             .mapJSON()
             .flatMap({ (data) -> Single<T> in
                 guard let data = data as? [String: Any] else {
-                    throw NSError(domain: "", code: 1, userInfo: nil)
+                    throw ArtfiyError.serializeError(type)
                 }
                 let apiResponse: APIResponse<T> = try unbox(dictionary: data)
                 return .just(apiResponse.data)
+            })
+            .do(onError: { (error) in
+                print("[ERROR] mapToModel = \(error)")
             })
     }
 }

@@ -15,7 +15,7 @@ public struct Photo: Unboxable {
         static let ID = "ID"
         static let Name = "name"
         static let ImageURL = "image_url"
-        static let AuthorID = "author_id"
+        static let Author = "author"
         static let Width = "width"
         static let Height = "height"
     }
@@ -32,7 +32,7 @@ public struct Photo: Unboxable {
         self.id = try unboxer.unbox(key: Keys.ID)
         self.name = try unboxer.unbox(key: Keys.ID)
         self.imageURL = try unboxer.unbox(key: Keys.ID)
-        self.author = try unboxer.unbox(key: Keys.AuthorID)
+        self.author = try unboxer.unbox(key: Keys.Author)
         let width: Int = try unboxer.unbox(key: Keys.Width)
         let height: Int = try unboxer.unbox(key: Keys.Height)
         self.size = NSSize(width: width, height: height)
