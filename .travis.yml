@@ -15,6 +15,7 @@ env:
 
 before_install:
   - bundle install
+  - bundle exec pod repo update
   - bundle exec pod install
 
 script:
