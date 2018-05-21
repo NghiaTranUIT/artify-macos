@@ -14,12 +14,20 @@ import RxSwift
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     // MARK: - Variable
+    fileprivate lazy var coordinator: Coordinator = {
+        #if DEBUG
+        return Coordinator(kind: .sandbox)
+        #else
+        return Coordinator(kind: .production)
+        #endif
+    }()
     fileprivate let bag = DisposeBag()
     fileprivate let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
     fileprivate let viewModel = StatusBarViewModel()
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
 
+        initApp()
         initStatusBarApp()
         binding()
     }
@@ -27,22 +35,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationWillTerminate(_ aNotification: Notification) {
 
     }
-
-    @objc func printQuote(_ sender: Any?) {
-        let quoteText = "Never put off until tomorrow what you can do the day after tomorrow."
-        let quoteAuthor = "Mark Twain"
-
-        print("\(quoteText) — \(quoteAuthor)")
-    }
 }
 
 // MARK: - Private
 extension AppDelegate {
 
+    fileprivate func initApp() {
+        coordinator.makeDefaut()
+    }
+    
     fileprivate func initStatusBarApp() {
         if let button = statusItem.button {
             button.image = NSImage(named:NSImage.Name("StatusBarButtonImage"))
-            button.action = #selector(printQuote(_:))
         }
     }
 

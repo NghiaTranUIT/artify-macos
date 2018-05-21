@@ -12,11 +12,13 @@ workspace 'ArtifyWorkspace.xcworkspace'
 def pod_required
     pod 'RxSwift' , '~> 4.0.0'
     pod 'RxCocoa' , '~> 4.0.0'
+    pod 'RxOptional'
     pod 'Alamofire'
     pod 'Unbox'
     pod 'Wrap'
     pod 'Action'
     pod 'RxOptional'
+    pod 'Moya/RxSwift', '~> 11.0'
 end
 
 
