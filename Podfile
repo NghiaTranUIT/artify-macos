@@ -19,6 +19,7 @@ def pod_required
     pod 'Action'
     pod 'RxOptional'
     pod 'Moya/RxSwift', '~> 11.0'
+    pod 'RxNuke'
 end
 
 

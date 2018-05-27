@@ -13,37 +13,61 @@ import Cocoa
 import Action
 import Unbox
 import RxOptional
+import Nuke
+import RxNuke
 
-class ScreenshotService {
+final class ScreenshotService {
 
     // MARK: - Variable
+    private let network: NetworkingServiceType
     private let bag = DisposeBag()
-    let currentScreenshot = Variable<Photo?>(nil)
+    private let currentPhoto = Variable<Photo?>(nil)
+    private let currentScreenshot = Variable<NSImage?>(nil)
 
     // MARK: - Public
     lazy var getFeaturePhotoAction: Action<Void, Photo> = {
         return Action<Void, Photo> {
-            return Coordinator.default.networkingService.provider
+            return self.network.provider
                 .rx
                 .request(.getFeature)
                 .mapToModel(type: Photo.self)
         }
     }()
 
-    init() {
+    // MARK: - Init
+    init(network: NetworkingServiceType = Coordinator.default.networkingService) {
+        self.network = network
 
         // Bind to current screenshot
         getFeaturePhotoAction
             .elements
-            .bind(to: currentScreenshot)
+            .bind(to: currentPhoto)
             .disposed(by: bag)
 
         // Log
-        currentScreenshot.asObservable()
+        currentPhoto.asObservable()
             .filterNil()
             .subscribe(onNext: { (photo) in
                 print("==== Photo = \(photo)")
             })
-        .disposed(by: bag)
+            .disposed(by: bag)
+
+        // Download
+        currentPhoto.asObservable()
+            .filterNil()
+            .map { ImageRequest(url: URL(string: $0.imageURL)!)}
+            .flatMapLatest { (request) -> Single<ImageResponse> in
+                return ImagePipeline.shared.loadImage(with: request)
+            }
+            .map { $0.image }
+            .bind(to: currentScreenshot)
+            .disposed(by: bag)
+
+        // Map to current workspace
+        currentScreenshot.asObservable()
+            .filterNil()
+            .subscribe(onNext: { (image) in
+
+            })
     }
 }

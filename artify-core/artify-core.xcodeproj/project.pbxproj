@@ -24,6 +24,7 @@
 		BA79308620AC0756002A7CE4 /* artify_coreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA79308520AC0756002A7CE4 /* artify_coreTests.swift */; };
 		BA79308820AC0756002A7CE4 /* artify_core.h in Headers */ = {isa = PBXBuildFile; fileRef = BA79307A20AC0756002A7CE4 /* artify_core.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BAA2560A20AC5B6300BBA837 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA2560920AC5B6300BBA837 /* HomeViewModel.swift */; };
+		BAC0BC3B20BA9A690092A541 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0BC3A20BA9A690092A541 /* FileManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		BA79308520AC0756002A7CE4 /* artify_coreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = artify_coreTests.swift; sourceTree = "<group>"; };
 		BA79308720AC0756002A7CE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BAA2560920AC5B6300BBA837 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		BAC0BC3A20BA9A690092A541 /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +187,7 @@
 				BA4CDA5B20B14AA000D19C3D /* NetworkService.swift */,
 				BA4CDA5D20B14AD600D19C3D /* ArtifyCoreAPI.swift */,
 				BA4CDA6620B15CF400D19C3D /* ScreenshotService.swift */,
+				BAC0BC3A20BA9A690092A541 /* FileManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 				BA4CDA6A20B15F2200D19C3D /* Models+RxSwift.swift in Sources */,
 				BA4CDA6320B1563400D19C3D /* Photo.swift in Sources */,
 				BA4CDA6E20B2710C00D19C3D /* ArtifyError.swift in Sources */,
+				BAC0BC3B20BA9A690092A541 /* FileManager.swift in Sources */,
 				BA4CDA5C20B14AA000D19C3D /* NetworkService.swift in Sources */,
 				BA4CDA5820B13FA700D19C3D /* Coordinator.swift in Sources */,
 				BA4CDA6720B15CF400D19C3D /* ScreenshotService.swift in Sources */,
