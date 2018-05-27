@@ -11,6 +11,7 @@ import Foundation
 enum ArtfiyError: Error {
 
     case serializeError(Any)
+    case saveImageError(String)
 }
 
 extension ArtfiyError: LocalizedError {
@@ -19,6 +20,8 @@ extension ArtfiyError: LocalizedError {
         switch self {
         case .serializeError(let obj):
             return "Can't serialize \(obj.self)"
+        case .saveImageError(let path):
+            return "Can't Save image \(path)"
         }
     }
 }

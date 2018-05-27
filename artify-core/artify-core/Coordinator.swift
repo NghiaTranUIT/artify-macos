@@ -15,14 +15,16 @@ public class Coordinator {
 
     // MARK: - Variable
     let screenshotService: ScreenshotService
-    let networkingService: NetworkingServiceType
+    private let fileHandler: FileHandler
+    private let networkingService: NetworkingServiceType
     let environment: Environment
 
     // MARK: - Init
     public init(kind: Environment.Kind) {
         self.environment = Environment(kind: kind)
         self.networkingService = NetworkingService(environment: environment)
-        self.screenshotService = ScreenshotService()
+        self.fileHandler = FileStorage()
+        self.screenshotService = ScreenshotService(network: networkingService, fileHandler: fileHandler)
     }
 
     // MARK: - Public

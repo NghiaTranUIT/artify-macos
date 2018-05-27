@@ -20,9 +20,11 @@ final class ScreenshotService {
 
     // MARK: - Variable
     private let network: NetworkingServiceType
+    private let fileHandler: FileHandler
     private let bag = DisposeBag()
     private let currentPhoto = Variable<Photo?>(nil)
     private let currentScreenshot = Variable<NSImage?>(nil)
+    private let setWallpaperPublisher = PublishSubject<URL>()
 
     // MARK: - Public
     lazy var getFeaturePhotoAction: Action<Void, Photo> = {
@@ -35,8 +37,9 @@ final class ScreenshotService {
     }()
 
     // MARK: - Init
-    init(network: NetworkingServiceType = Coordinator.default.networkingService) {
+    init(network: NetworkingServiceType, fileHandler: FileHandler) {
         self.network = network
+        self.fileHandler = fileHandler
 
         // Bind to current screenshot
         getFeaturePhotoAction
@@ -66,8 +69,24 @@ final class ScreenshotService {
         // Map to current workspace
         currentScreenshot.asObservable()
             .filterNil()
-            .subscribe(onNext: { (image) in
-
+            .observeOn(ConcurrentDispatchQueueScheduler(qos: DispatchQoS.background))
+            .flatMapLatest { (image) -> Observable<URL> in
+                return self.fileHandler.rx_saveImageIfNeed(image, name: "1")
+            }
+            .subscribe(onNext: { (path) in
+                self.setWallpaperPublisher.onNext(path)
             })
+            .disposed(by: bag)
+
+        // Set wallpaper in current workspace
+        setWallpaperPublisher.asObserver()
+            .subscribe(onNext: { (path) in
+                NSScreen.screens.forEach {
+                    try? NSWorkspace.shared.setDesktopImageURL(path, for: $0, options: [:])
+                }
+            })
+            .disposed(by: bag)
+
+
     }
 }
