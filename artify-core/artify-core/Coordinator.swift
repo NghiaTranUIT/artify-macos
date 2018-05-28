@@ -14,9 +14,10 @@ public class Coordinator {
     public static var `default`: Coordinator!
 
     // MARK: - Variable
-    let screenshotService: ScreenshotService
     private let fileHandler: FileHandler
     private let networkingService: NetworkingServiceType
+    let wallpaperService: WallpaperServiceType
+    let downloadService: DownloadService
     let environment: Environment
 
     // MARK: - Init
@@ -24,7 +25,9 @@ public class Coordinator {
         self.environment = Environment(kind: kind)
         self.networkingService = NetworkingService(environment: environment)
         self.fileHandler = FileStorage()
-        self.screenshotService = ScreenshotService(network: networkingService, fileHandler: fileHandler)
+        self.downloadService = DownloadService(network: networkingService,
+                                               fileHandler: fileHandler)
+        self.wallpaperService = WallpaperService(downloadService: downloadService)
     }
 
     // MARK: - Public
