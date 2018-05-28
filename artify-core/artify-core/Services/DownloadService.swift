@@ -22,12 +22,18 @@ final class DownloadService: DownloadServiceType {
     // MARK: - Variable
     private let network: NetworkingServiceType
     private let fileHandler: FileHandler
+    private let imagePipline: ImagePipeline
     private let bag = DisposeBag()
 
     // MARK: - Init
     init(network: NetworkingServiceType, fileHandler: FileHandler) {
         self.network = network
         self.fileHandler = fileHandler
+
+        // Nuke Config
+        var config = ImagePipeline.Configuration()
+        config.enableExperimentalAggressiveDiskCaching { $0.toBase64() }
+        self.imagePipline = ImagePipeline(configuration: config)
     }
 
     // MARK: - Public
@@ -36,11 +42,11 @@ final class DownloadService: DownloadServiceType {
             .network
             .fetchFeaturePhoto()
             .map { ImageRequest(url: URL(string: $0.imageURL)!)}
-            .flatMapLatest { (request) -> Single<ImageResponse> in
-                return ImagePipeline.shared.loadImage(with: request)
+            .flatMapLatest {[unowned self] (request) -> Single<ImageResponse> in
+                return self.imagePipline.loadImage(with: request)
             }
             .map { $0.image }
-            .flatMapLatest {(image) -> Observable<URL> in
+            .flatMapLatest {[unowned self] (image) -> Observable<URL> in
                 return self.fileHandler.rx_saveImageIfNeed(image, name: "1")
             }
     }

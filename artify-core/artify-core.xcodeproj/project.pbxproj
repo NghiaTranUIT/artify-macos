@@ -24,6 +24,7 @@
 		BA79308620AC0756002A7CE4 /* artify_coreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA79308520AC0756002A7CE4 /* artify_coreTests.swift */; };
 		BA79308820AC0756002A7CE4 /* artify_core.h in Headers */ = {isa = PBXBuildFile; fileRef = BA79307A20AC0756002A7CE4 /* artify_core.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BA947A1420BBBE5B00DBD94D /* WallpaperService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA947A1320BBBE5B00DBD94D /* WallpaperService.swift */; };
+		BA947A1620BBCBAC00DBD94D /* String+Encoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA947A1520BBCBAC00DBD94D /* String+Encoding.swift */; };
 		BAA2560A20AC5B6300BBA837 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA2560920AC5B6300BBA837 /* HomeViewModel.swift */; };
 		BAC0BC3B20BA9A690092A541 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0BC3A20BA9A690092A541 /* FileManager.swift */; };
 /* End PBXBuildFile section */
@@ -61,6 +62,7 @@
 		BA79308520AC0756002A7CE4 /* artify_coreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = artify_coreTests.swift; sourceTree = "<group>"; };
 		BA79308720AC0756002A7CE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA947A1320BBBE5B00DBD94D /* WallpaperService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperService.swift; sourceTree = "<group>"; };
+		BA947A1520BBCBAC00DBD94D /* String+Encoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Encoding.swift"; sourceTree = "<group>"; };
 		BAA2560920AC5B6300BBA837 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		BAC0BC3A20BA9A690092A541 /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -126,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				BA4CDA6920B15F2200D19C3D /* Models+RxSwift.swift */,
+				BA947A1520BBCBAC00DBD94D /* String+Encoding.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 				BA4CDA5820B13FA700D19C3D /* Coordinator.swift in Sources */,
 				BA4CDA6720B15CF400D19C3D /* DownloadService.swift in Sources */,
 				BA4CDA6C20B1648D00D19C3D /* APIResponse.swift in Sources */,
+				BA947A1620BBCBAC00DBD94D /* String+Encoding.swift in Sources */,
 				BA4CDA6520B1564300D19C3D /* Author.swift in Sources */,
 				BA4CDA5E20B14AD600D19C3D /* ArtifyCoreAPI.swift in Sources */,
 				BA4CDA6120B14B9600D19C3D /* Environment.swift in Sources */,
