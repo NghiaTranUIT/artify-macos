@@ -13,7 +13,7 @@ import RxSwift
 protocol FileHandler {
 
     func isPhotoFileExist(_ name: String) -> Bool
-    func saveImageIfNeed(_ image: NSImage, name: String) -> URL?
+    func saveImageIfNeed(_ image: NSImage, name: String) -> URL
 }
 
 final class FileStorage: FileHandler {
@@ -28,30 +28,36 @@ final class FileStorage: FileHandler {
 
     // MARK: - Init
     init() {
-        appFolder = handler.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent(Constant.AppFolderName)
+        appFolder = handler.urls(for: .cachesDirectory, in: .userDomainMask).first!.appendingPathComponent(Constant.AppFolderName)
         createFolderApp()
     }
 
     private func createFolderApp() {
-        guard handler.fileExists(atPath: appFolder.absoluteString) else {
+        guard !handler.fileExists(atPath: appFolder.path) else {
             print("[INFO] App folder exists \(appFolder)")
             return
         }
-        try? handler.createDirectory(at: appFolder, withIntermediateDirectories: false, attributes: nil)
+        do {
+            try handler.createDirectory(at: appFolder, withIntermediateDirectories: false, attributes: nil)
+            print("[INFO] Created new folder at \(appFolder)")
+        } catch (let error) {
+            print("[ERROR] Can't Create folder = \(appFolder), error = \(error)")
+        }
+
     }
 
-    func saveImageIfNeed(_ image: NSImage, name: String) -> URL? {
+    func saveImageIfNeed(_ image: NSImage, name: String) -> URL {
+        let path = appFolder.appendingPathComponent("\(name).jpg")
         guard !isPhotoFileExist(name) else {
-            return nil
+            return path
         }
-        let path = appFolder.appendingPathComponent(name)
-        try? NSBitmapImageRep(data: image.tiffRepresentation!)?.representation(using: NSBitmapImageRep.FileType.png, properties: [:])?.write(to: path, options: Data.WritingOptions.atomic)
+        try? NSBitmapImageRep(data: image.tiffRepresentation!)?.representation(using: NSBitmapImageRep.FileType.jpeg, properties: [:])?.write(to: path, options: Data.WritingOptions.atomic)
         return path
     }
 
     func isPhotoFileExist(_ name: String) -> Bool {
-        let imagePath = appFolder.appendingPathComponent(name)
-        return handler.fileExists(atPath: imagePath.absoluteString)
+        let imagePath = appFolder.appendingPathComponent("\(name).jpg")
+        return handler.fileExists(atPath: imagePath.path)
     }
 }
 
@@ -59,10 +65,9 @@ extension FileHandler {
 
     func rx_saveImageIfNeed(_ image: NSImage, name: String) -> Observable<URL> {
         return Observable.create({ (observer) -> Disposable in
-            guard let path = self.saveImageIfNeed(image, name: name) else {
-                observer.onError(ArtfiyError.saveImageError(name))
-                return Disposables.create()
-            }
+
+            // Save
+            let path = self.saveImageIfNeed(image, name: name)
 
             // Success
             observer.onNext(path)
