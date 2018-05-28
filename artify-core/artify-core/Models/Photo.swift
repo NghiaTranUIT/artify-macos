@@ -22,7 +22,7 @@ public struct Photo: Unboxable {
 
     // MARK: - Variable
     public let id: String
-    public let name: String
+    public let name: String?
     public let imageURL: String
     public let author: Author
     public let size: NSSize
@@ -30,8 +30,8 @@ public struct Photo: Unboxable {
     // MARK: - Init
     public init(unboxer: Unboxer) throws {
         self.id = try unboxer.unbox(key: Keys.ID)
-        self.name = try unboxer.unbox(key: Keys.ID)
-        self.imageURL = try unboxer.unbox(key: Keys.ID)
+        self.name = try? unboxer.unbox(key: Keys.Name)
+        self.imageURL = try unboxer.unbox(key: Keys.ImageURL)
         self.author = try unboxer.unbox(key: Keys.Author)
         let width: Int = try unboxer.unbox(key: Keys.Width)
         let height: Int = try unboxer.unbox(key: Keys.Height)

@@ -8,11 +8,13 @@
 
 import Foundation
 import Moya
+import RxSwift
 
 protocol NetworkingServiceType {
 
-    var provider: MoyaProvider<ArtifyCoreAPI> { get }
+    func fetchFeaturePhoto() -> Observable<Photo>
 }
+
 
 final class NetworkingService: NetworkingServiceType {
 
@@ -20,12 +22,20 @@ final class NetworkingService: NetworkingServiceType {
     private let environment: Environment
     private let plugins: [PluginType] = [NetworkLoggerPlugin(verbose: true,
                                                              responseDataFormatter: NetworkingService.JSONResponseDataFormatter)]
-    let provider: MoyaProvider<ArtifyCoreAPI>
+    private let provider: MoyaProvider<ArtifyCoreAPI>
 
     // MARK: - Init
     init(environment: Environment) {
         self.environment = environment
         self.provider = MoyaProvider<ArtifyCoreAPI>(plugins: plugins)
+    }
+
+    func fetchFeaturePhoto() -> Observable<Photo> {
+        return provider
+            .rx
+            .request(.getFeature)
+            .mapToModel(type: Photo.self)
+            .asObservable()
     }
 }
 

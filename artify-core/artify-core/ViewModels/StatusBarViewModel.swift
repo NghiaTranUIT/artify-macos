@@ -63,7 +63,7 @@ public final class StatusBarViewModel: StatusBarViewModelType, StatusBarViewMode
     }
 
     @objc private func getFeatureOnTap() {
-        Coordinator.default.screenshotService.getFeaturePhotoAction.execute(())
+        Coordinator.default.wallpaperService.setFeaturePhotoAction.execute(())
     }
 
     @objc private func quitOnTap() {
