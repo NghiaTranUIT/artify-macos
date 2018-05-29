@@ -24,6 +24,8 @@
 		BA6DF60D20BD316C006DBF9F /* GaussianEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = BA6DF60B20BD316C006DBF9F /* GaussianEffect.h */; };
 		BA6DF61020BD31CB006DBF9F /* NSImage+CGImage.h in Headers */ = {isa = PBXBuildFile; fileRef = BA6DF60E20BD31CB006DBF9F /* NSImage+CGImage.h */; };
 		BA6DF61120BD31CB006DBF9F /* NSImage+CGImage.m in Sources */ = {isa = PBXBuildFile; fileRef = BA6DF60F20BD31CB006DBF9F /* NSImage+CGImage.m */; };
+		BA6DF61420BD32B6006DBF9F /* NSImage+Scale.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6DF61320BD32B6006DBF9F /* NSImage+Scale.swift */; };
+		BA6DF61620BD32D6006DBF9F /* NSImage+Extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6DF61520BD32D6006DBF9F /* NSImage+Extenstion.swift */; };
 		BA79308120AC0756002A7CE4 /* artify_core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA79307720AC0756002A7CE4 /* artify_core.framework */; };
 		BA79308620AC0756002A7CE4 /* artify_coreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA79308520AC0756002A7CE4 /* artify_coreTests.swift */; };
 		BA79308820AC0756002A7CE4 /* artify_core.h in Headers */ = {isa = PBXBuildFile; fileRef = BA79307A20AC0756002A7CE4 /* artify_core.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -65,6 +67,8 @@
 		BA6DF60B20BD316C006DBF9F /* GaussianEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GaussianEffect.h; sourceTree = "<group>"; };
 		BA6DF60E20BD31CB006DBF9F /* NSImage+CGImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSImage+CGImage.h"; sourceTree = "<group>"; };
 		BA6DF60F20BD31CB006DBF9F /* NSImage+CGImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSImage+CGImage.m"; sourceTree = "<group>"; };
+		BA6DF61320BD32B6006DBF9F /* NSImage+Scale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSImage+Scale.swift"; sourceTree = "<group>"; };
+		BA6DF61520BD32D6006DBF9F /* NSImage+Extenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSImage+Extenstion.swift"; sourceTree = "<group>"; };
 		BA79307720AC0756002A7CE4 /* artify_core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = artify_core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA79307A20AC0756002A7CE4 /* artify_core.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = artify_core.h; sourceTree = "<group>"; };
 		BA79307B20AC0756002A7CE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -148,6 +152,7 @@
 		BA6DF60820BD3140006DBF9F /* Gaussian */ = {
 			isa = PBXGroup;
 			children = (
+				BA6DF61220BD32AB006DBF9F /* Scale */,
 				BA6DF60920BD314A006DBF9F /* Extensions */,
 				BA947A1A20BBE18400DBD94D /* GaussianAlgorithm.swift */,
 			);
@@ -163,6 +168,15 @@
 				BA6DF60F20BD31CB006DBF9F /* NSImage+CGImage.m */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		BA6DF61220BD32AB006DBF9F /* Scale */ = {
+			isa = PBXGroup;
+			children = (
+				BA6DF61320BD32B6006DBF9F /* NSImage+Scale.swift */,
+				BA6DF61520BD32D6006DBF9F /* NSImage+Extenstion.swift */,
+			);
+			path = Scale;
 			sourceTree = "<group>";
 		};
 		BA79306D20AC0756002A7CE4 = {
@@ -377,12 +391,14 @@
 				BA4CDA6320B1563400D19C3D /* Photo.swift in Sources */,
 				BA4CDA6E20B2710C00D19C3D /* ArtifyError.swift in Sources */,
 				BAC0BC3B20BA9A690092A541 /* FileManager.swift in Sources */,
+				BA6DF61420BD32B6006DBF9F /* NSImage+Scale.swift in Sources */,
 				BA6DF61120BD31CB006DBF9F /* NSImage+CGImage.m in Sources */,
 				BA947A1420BBBE5B00DBD94D /* WallpaperService.swift in Sources */,
 				BA4CDA5C20B14AA000D19C3D /* NetworkService.swift in Sources */,
 				BA4CDA5820B13FA700D19C3D /* Coordinator.swift in Sources */,
 				BA4CDA6720B15CF400D19C3D /* DownloadService.swift in Sources */,
 				BA947A1920BBDFFB00DBD94D /* GenerationAlgorithm.swift in Sources */,
+				BA6DF61620BD32D6006DBF9F /* NSImage+Extenstion.swift in Sources */,
 				BA6DF60C20BD316C006DBF9F /* GaussianEffect.m in Sources */,
 				BA4CDA6C20B1648D00D19C3D /* APIResponse.swift in Sources */,
 				BA947A1620BBCBAC00DBD94D /* String+Encoding.swift in Sources */,
