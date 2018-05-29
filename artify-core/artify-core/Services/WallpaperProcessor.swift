@@ -41,12 +41,9 @@ extension ProcessorType {
     }
 
     func rx_apply(url: URL, screenSize: CGSize, with effect: Effect) -> Observable<NSImage> {
-        return Observable.create({ (observer) -> Disposable in
-            let image = NSImage(contentsOfFile: url.path)!
-            let finalImage = self.apply(image: image, screenSize: screenSize, with: effect)
-            observer.onNext(finalImage)
-            observer.onCompleted()
-            return Disposables.create()
-        })
+        guard let image = NSImage(contentsOfFile: url.path) else {
+            return .error(ArtfiyError.invalidFileURL(url))
+        }
+        return rx_apply(image: image, screenSize: screenSize, with: effect)
     }
 }

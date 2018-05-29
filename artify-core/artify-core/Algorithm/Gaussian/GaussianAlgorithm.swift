@@ -1,4 +1,4 @@
-g//
+//
 //  GaussianAlgorithm.swift
 //  artify-core
 //
