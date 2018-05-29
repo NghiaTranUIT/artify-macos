@@ -12,6 +12,7 @@ enum ArtfiyError: Error {
 
     case serializeError(Any)
     case saveImageError(String)
+    case invalidFileURL(URL)
 }
 
 extension ArtfiyError: LocalizedError {
@@ -22,6 +23,8 @@ extension ArtfiyError: LocalizedError {
             return "Can't serialize \(obj.self)"
         case .saveImageError(let path):
             return "Can't Save image \(path)"
+        case .invalidFileURL(let path):
+            return "Can't read image file from \(path)"
         }
     }
 }

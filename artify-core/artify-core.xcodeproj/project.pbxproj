@@ -20,11 +20,21 @@
 		BA4CDA6A20B15F2200D19C3D /* Models+RxSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4CDA6920B15F2200D19C3D /* Models+RxSwift.swift */; };
 		BA4CDA6C20B1648D00D19C3D /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4CDA6B20B1648D00D19C3D /* APIResponse.swift */; };
 		BA4CDA6E20B2710C00D19C3D /* ArtifyError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4CDA6D20B2710C00D19C3D /* ArtifyError.swift */; };
+		BA6DF60C20BD316C006DBF9F /* GaussianEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = BA6DF60A20BD316C006DBF9F /* GaussianEffect.m */; };
+		BA6DF60D20BD316C006DBF9F /* GaussianEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = BA6DF60B20BD316C006DBF9F /* GaussianEffect.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BA6DF61020BD31CB006DBF9F /* NSImage+CGImage.h in Headers */ = {isa = PBXBuildFile; fileRef = BA6DF60E20BD31CB006DBF9F /* NSImage+CGImage.h */; };
+		BA6DF61120BD31CB006DBF9F /* NSImage+CGImage.m in Sources */ = {isa = PBXBuildFile; fileRef = BA6DF60F20BD31CB006DBF9F /* NSImage+CGImage.m */; };
+		BA6DF61420BD32B6006DBF9F /* NSImage+Scale.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6DF61320BD32B6006DBF9F /* NSImage+Scale.swift */; };
+		BA6DF61620BD32D6006DBF9F /* NSImage+Extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6DF61520BD32D6006DBF9F /* NSImage+Extenstion.swift */; };
+		BA6DF61820BD38F0006DBF9F /* GaussianData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6DF61720BD38F0006DBF9F /* GaussianData.swift */; };
+		BA6DF64120BD7374006DBF9F /* WallpaperProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6DF64020BD7374006DBF9F /* WallpaperProcessor.swift */; };
 		BA79308120AC0756002A7CE4 /* artify_core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA79307720AC0756002A7CE4 /* artify_core.framework */; };
 		BA79308620AC0756002A7CE4 /* artify_coreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA79308520AC0756002A7CE4 /* artify_coreTests.swift */; };
 		BA79308820AC0756002A7CE4 /* artify_core.h in Headers */ = {isa = PBXBuildFile; fileRef = BA79307A20AC0756002A7CE4 /* artify_core.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BA947A1420BBBE5B00DBD94D /* WallpaperService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA947A1320BBBE5B00DBD94D /* WallpaperService.swift */; };
 		BA947A1620BBCBAC00DBD94D /* String+Encoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA947A1520BBCBAC00DBD94D /* String+Encoding.swift */; };
+		BA947A1920BBDFFB00DBD94D /* GenerationAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA947A1820BBDFFB00DBD94D /* GenerationAlgorithm.swift */; };
+		BA947A1B20BBE18400DBD94D /* GaussianAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA947A1A20BBE18400DBD94D /* GaussianAlgorithm.swift */; };
 		BAA2560A20AC5B6300BBA837 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA2560920AC5B6300BBA837 /* HomeViewModel.swift */; };
 		BAC0BC3B20BA9A690092A541 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0BC3A20BA9A690092A541 /* FileManager.swift */; };
 /* End PBXBuildFile section */
@@ -55,6 +65,14 @@
 		BA4CDA6920B15F2200D19C3D /* Models+RxSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Models+RxSwift.swift"; sourceTree = "<group>"; };
 		BA4CDA6B20B1648D00D19C3D /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
 		BA4CDA6D20B2710C00D19C3D /* ArtifyError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtifyError.swift; sourceTree = "<group>"; };
+		BA6DF60A20BD316C006DBF9F /* GaussianEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GaussianEffect.m; sourceTree = "<group>"; };
+		BA6DF60B20BD316C006DBF9F /* GaussianEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GaussianEffect.h; sourceTree = "<group>"; };
+		BA6DF60E20BD31CB006DBF9F /* NSImage+CGImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSImage+CGImage.h"; sourceTree = "<group>"; };
+		BA6DF60F20BD31CB006DBF9F /* NSImage+CGImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSImage+CGImage.m"; sourceTree = "<group>"; };
+		BA6DF61320BD32B6006DBF9F /* NSImage+Scale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSImage+Scale.swift"; sourceTree = "<group>"; };
+		BA6DF61520BD32D6006DBF9F /* NSImage+Extenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSImage+Extenstion.swift"; sourceTree = "<group>"; };
+		BA6DF61720BD38F0006DBF9F /* GaussianData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaussianData.swift; sourceTree = "<group>"; };
+		BA6DF64020BD7374006DBF9F /* WallpaperProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperProcessor.swift; sourceTree = "<group>"; };
 		BA79307720AC0756002A7CE4 /* artify_core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = artify_core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA79307A20AC0756002A7CE4 /* artify_core.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = artify_core.h; sourceTree = "<group>"; };
 		BA79307B20AC0756002A7CE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -63,6 +81,8 @@
 		BA79308720AC0756002A7CE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA947A1320BBBE5B00DBD94D /* WallpaperService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperService.swift; sourceTree = "<group>"; };
 		BA947A1520BBCBAC00DBD94D /* String+Encoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Encoding.swift"; sourceTree = "<group>"; };
+		BA947A1820BBDFFB00DBD94D /* GenerationAlgorithm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerationAlgorithm.swift; sourceTree = "<group>"; };
+		BA947A1A20BBE18400DBD94D /* GaussianAlgorithm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaussianAlgorithm.swift; sourceTree = "<group>"; };
 		BAA2560920AC5B6300BBA837 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		BAC0BC3A20BA9A690092A541 /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -133,6 +153,37 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		BA6DF60820BD3140006DBF9F /* Gaussian */ = {
+			isa = PBXGroup;
+			children = (
+				BA6DF61220BD32AB006DBF9F /* Scale */,
+				BA6DF60920BD314A006DBF9F /* Extensions */,
+				BA947A1A20BBE18400DBD94D /* GaussianAlgorithm.swift */,
+				BA6DF61720BD38F0006DBF9F /* GaussianData.swift */,
+			);
+			path = Gaussian;
+			sourceTree = "<group>";
+		};
+		BA6DF60920BD314A006DBF9F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BA6DF60B20BD316C006DBF9F /* GaussianEffect.h */,
+				BA6DF60A20BD316C006DBF9F /* GaussianEffect.m */,
+				BA6DF60E20BD31CB006DBF9F /* NSImage+CGImage.h */,
+				BA6DF60F20BD31CB006DBF9F /* NSImage+CGImage.m */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		BA6DF61220BD32AB006DBF9F /* Scale */ = {
+			isa = PBXGroup;
+			children = (
+				BA6DF61320BD32B6006DBF9F /* NSImage+Scale.swift */,
+				BA6DF61520BD32D6006DBF9F /* NSImage+Extenstion.swift */,
+			);
+			path = Scale;
+			sourceTree = "<group>";
+		};
 		BA79306D20AC0756002A7CE4 = {
 			isa = PBXGroup;
 			children = (
@@ -156,6 +207,7 @@
 		BA79307920AC0756002A7CE4 /* artify-core */ = {
 			isa = PBXGroup;
 			children = (
+				BA947A1720BBDFE100DBD94D /* Algorithm */,
 				BA4CDA6820B15F1400D19C3D /* Extension */,
 				BA4CDA5F20B14B8200D19C3D /* Constants */,
 				BA4CDA5420B13E8200D19C3D /* Models */,
@@ -177,6 +229,15 @@
 			path = "artify-coreTests";
 			sourceTree = "<group>";
 		};
+		BA947A1720BBDFE100DBD94D /* Algorithm */ = {
+			isa = PBXGroup;
+			children = (
+				BA6DF60820BD3140006DBF9F /* Gaussian */,
+				BA947A1820BBDFFB00DBD94D /* GenerationAlgorithm.swift */,
+			);
+			path = Algorithm;
+			sourceTree = "<group>";
+		};
 		BAA255FD20AC5AB300BBA837 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -194,6 +255,7 @@
 				BA4CDA6620B15CF400D19C3D /* DownloadService.swift */,
 				BAC0BC3A20BA9A690092A541 /* FileManager.swift */,
 				BA947A1320BBBE5B00DBD94D /* WallpaperService.swift */,
+				BA6DF64020BD7374006DBF9F /* WallpaperProcessor.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -206,6 +268,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA79308820AC0756002A7CE4 /* artify_core.h in Headers */,
+				BA6DF60D20BD316C006DBF9F /* GaussianEffect.h in Headers */,
+				BA6DF61020BD31CB006DBF9F /* NSImage+CGImage.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,15 +397,23 @@
 				BA4CDA6320B1563400D19C3D /* Photo.swift in Sources */,
 				BA4CDA6E20B2710C00D19C3D /* ArtifyError.swift in Sources */,
 				BAC0BC3B20BA9A690092A541 /* FileManager.swift in Sources */,
+				BA6DF61420BD32B6006DBF9F /* NSImage+Scale.swift in Sources */,
+				BA6DF61120BD31CB006DBF9F /* NSImage+CGImage.m in Sources */,
 				BA947A1420BBBE5B00DBD94D /* WallpaperService.swift in Sources */,
 				BA4CDA5C20B14AA000D19C3D /* NetworkService.swift in Sources */,
 				BA4CDA5820B13FA700D19C3D /* Coordinator.swift in Sources */,
 				BA4CDA6720B15CF400D19C3D /* DownloadService.swift in Sources */,
+				BA947A1920BBDFFB00DBD94D /* GenerationAlgorithm.swift in Sources */,
+				BA6DF61620BD32D6006DBF9F /* NSImage+Extenstion.swift in Sources */,
+				BA6DF60C20BD316C006DBF9F /* GaussianEffect.m in Sources */,
 				BA4CDA6C20B1648D00D19C3D /* APIResponse.swift in Sources */,
 				BA947A1620BBCBAC00DBD94D /* String+Encoding.swift in Sources */,
 				BA4CDA6520B1564300D19C3D /* Author.swift in Sources */,
+				BA6DF61820BD38F0006DBF9F /* GaussianData.swift in Sources */,
 				BA4CDA5E20B14AD600D19C3D /* ArtifyCoreAPI.swift in Sources */,
 				BA4CDA6120B14B9600D19C3D /* Environment.swift in Sources */,
+				BA6DF64120BD7374006DBF9F /* WallpaperProcessor.swift in Sources */,
+				BA947A1B20BBE18400DBD94D /* GaussianAlgorithm.swift in Sources */,
 				BA4CDA5620B13E9200D19C3D /* Menu.swift in Sources */,
 				BA4CDA5320B13E3C00D19C3D /* StatusBarViewModel.swift in Sources */,
 				BAA2560A20AC5B6300BBA837 /* HomeViewModel.swift in Sources */,
@@ -490,6 +562,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3FB3468F5B8AC035B1211CF5 /* Pods-artify-core.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -510,6 +583,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.art.artify-core";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 			};
@@ -519,6 +593,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7C4B613A9F337A747661A5A4 /* Pods-artify-core.release.xcconfig */;
 			buildSettings = {
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -539,6 +614,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.art.artify-core";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;

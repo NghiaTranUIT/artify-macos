@@ -27,7 +27,8 @@ public class Coordinator {
         self.fileHandler = FileStorage()
         self.downloadService = DownloadService(network: networkingService,
                                                fileHandler: fileHandler)
-        self.wallpaperService = WallpaperService(downloadService: downloadService)
+        self.wallpaperService = WallpaperService(downloadService: downloadService,
+                                                 fileHandler: fileHandler)
     }
 
     // MARK: - Public
