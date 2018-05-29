@@ -9,20 +9,21 @@
 import Foundation
 import RxSwift
 
-struct DataGeneration {
+protocol DataGenerationType {
 
-    let screenSize: NSSize
-    let image: NSImage
+    var screenSize: CGSize { get }
+    var perfectSize: CGSize { get }
+    var originalImage: NSImage { get }
 }
 
 protocol GenerationAlgorithm {
 
-    func process(data: DataGeneration) -> DataGeneration
+    func process(data: DataGenerationType) -> DataGenerationType
 }
 
 extension GenerationAlgorithm {
 
-    func rx_process(data: DataGeneration) -> Observable<DataGeneration> {
+    func rx_process(data: DataGenerationType) -> Observable<DataGenerationType> {
         return Observable.create({ (observer) -> Disposable in
             let finalData = self.process(data: data)
             observer.onNext(finalData)

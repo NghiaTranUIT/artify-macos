@@ -21,11 +21,12 @@
 		BA4CDA6C20B1648D00D19C3D /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4CDA6B20B1648D00D19C3D /* APIResponse.swift */; };
 		BA4CDA6E20B2710C00D19C3D /* ArtifyError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4CDA6D20B2710C00D19C3D /* ArtifyError.swift */; };
 		BA6DF60C20BD316C006DBF9F /* GaussianEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = BA6DF60A20BD316C006DBF9F /* GaussianEffect.m */; };
-		BA6DF60D20BD316C006DBF9F /* GaussianEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = BA6DF60B20BD316C006DBF9F /* GaussianEffect.h */; };
+		BA6DF60D20BD316C006DBF9F /* GaussianEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = BA6DF60B20BD316C006DBF9F /* GaussianEffect.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BA6DF61020BD31CB006DBF9F /* NSImage+CGImage.h in Headers */ = {isa = PBXBuildFile; fileRef = BA6DF60E20BD31CB006DBF9F /* NSImage+CGImage.h */; };
 		BA6DF61120BD31CB006DBF9F /* NSImage+CGImage.m in Sources */ = {isa = PBXBuildFile; fileRef = BA6DF60F20BD31CB006DBF9F /* NSImage+CGImage.m */; };
 		BA6DF61420BD32B6006DBF9F /* NSImage+Scale.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6DF61320BD32B6006DBF9F /* NSImage+Scale.swift */; };
 		BA6DF61620BD32D6006DBF9F /* NSImage+Extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6DF61520BD32D6006DBF9F /* NSImage+Extenstion.swift */; };
+		BA6DF61820BD38F0006DBF9F /* GaussianData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6DF61720BD38F0006DBF9F /* GaussianData.swift */; };
 		BA79308120AC0756002A7CE4 /* artify_core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA79307720AC0756002A7CE4 /* artify_core.framework */; };
 		BA79308620AC0756002A7CE4 /* artify_coreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA79308520AC0756002A7CE4 /* artify_coreTests.swift */; };
 		BA79308820AC0756002A7CE4 /* artify_core.h in Headers */ = {isa = PBXBuildFile; fileRef = BA79307A20AC0756002A7CE4 /* artify_core.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -69,6 +70,7 @@
 		BA6DF60F20BD31CB006DBF9F /* NSImage+CGImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSImage+CGImage.m"; sourceTree = "<group>"; };
 		BA6DF61320BD32B6006DBF9F /* NSImage+Scale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSImage+Scale.swift"; sourceTree = "<group>"; };
 		BA6DF61520BD32D6006DBF9F /* NSImage+Extenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSImage+Extenstion.swift"; sourceTree = "<group>"; };
+		BA6DF61720BD38F0006DBF9F /* GaussianData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaussianData.swift; sourceTree = "<group>"; };
 		BA79307720AC0756002A7CE4 /* artify_core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = artify_core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA79307A20AC0756002A7CE4 /* artify_core.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = artify_core.h; sourceTree = "<group>"; };
 		BA79307B20AC0756002A7CE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				BA6DF61220BD32AB006DBF9F /* Scale */,
 				BA6DF60920BD314A006DBF9F /* Extensions */,
 				BA947A1A20BBE18400DBD94D /* GaussianAlgorithm.swift */,
+				BA6DF61720BD38F0006DBF9F /* GaussianData.swift */,
 			);
 			path = Gaussian;
 			sourceTree = "<group>";
@@ -403,6 +406,7 @@
 				BA4CDA6C20B1648D00D19C3D /* APIResponse.swift in Sources */,
 				BA947A1620BBCBAC00DBD94D /* String+Encoding.swift in Sources */,
 				BA4CDA6520B1564300D19C3D /* Author.swift in Sources */,
+				BA6DF61820BD38F0006DBF9F /* GaussianData.swift in Sources */,
 				BA4CDA5E20B14AD600D19C3D /* ArtifyCoreAPI.swift in Sources */,
 				BA4CDA6120B14B9600D19C3D /* Environment.swift in Sources */,
 				BA947A1B20BBE18400DBD94D /* GaussianAlgorithm.swift in Sources */,
@@ -554,6 +558,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3FB3468F5B8AC035B1211CF5 /* Pods-artify-core.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -574,6 +579,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.art.artify-core";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 			};
@@ -583,6 +589,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7C4B613A9F337A747661A5A4 /* Pods-artify-core.release.xcconfig */;
 			buildSettings = {
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -603,6 +610,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.art.artify-core";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;

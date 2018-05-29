@@ -7,6 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "GaussianEffect.h"
 
 //! Project version number for artify_core.
 FOUNDATION_EXPORT double artify_coreVersionNumber;
