@@ -43,7 +43,6 @@ final class FileStorage: FileHandler {
         } catch (let error) {
             print("[ERROR] Can't Create folder = \(appFolder), error = \(error)")
         }
-
     }
 
     func saveImageIfNeed(_ image: NSImage, name: String) -> URL {
