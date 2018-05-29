@@ -27,6 +27,8 @@
 		BA6DF61420BD32B6006DBF9F /* NSImage+Scale.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6DF61320BD32B6006DBF9F /* NSImage+Scale.swift */; };
 		BA6DF61620BD32D6006DBF9F /* NSImage+Extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6DF61520BD32D6006DBF9F /* NSImage+Extenstion.swift */; };
 		BA6DF61820BD38F0006DBF9F /* GaussianData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6DF61720BD38F0006DBF9F /* GaussianData.swift */; };
+		BA6DF64120BD7374006DBF9F /* WallpaperProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6DF64020BD7374006DBF9F /* WallpaperProcessor.swift */; };
+		BA6DF64320BD7577006DBF9F /* WallpaperPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6DF64220BD7577006DBF9F /* WallpaperPayload.swift */; };
 		BA79308120AC0756002A7CE4 /* artify_core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA79307720AC0756002A7CE4 /* artify_core.framework */; };
 		BA79308620AC0756002A7CE4 /* artify_coreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA79308520AC0756002A7CE4 /* artify_coreTests.swift */; };
 		BA79308820AC0756002A7CE4 /* artify_core.h in Headers */ = {isa = PBXBuildFile; fileRef = BA79307A20AC0756002A7CE4 /* artify_core.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -71,6 +73,8 @@
 		BA6DF61320BD32B6006DBF9F /* NSImage+Scale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSImage+Scale.swift"; sourceTree = "<group>"; };
 		BA6DF61520BD32D6006DBF9F /* NSImage+Extenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSImage+Extenstion.swift"; sourceTree = "<group>"; };
 		BA6DF61720BD38F0006DBF9F /* GaussianData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaussianData.swift; sourceTree = "<group>"; };
+		BA6DF64020BD7374006DBF9F /* WallpaperProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperProcessor.swift; sourceTree = "<group>"; };
+		BA6DF64220BD7577006DBF9F /* WallpaperPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperPayload.swift; sourceTree = "<group>"; };
 		BA79307720AC0756002A7CE4 /* artify_core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = artify_core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA79307A20AC0756002A7CE4 /* artify_core.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = artify_core.h; sourceTree = "<group>"; };
 		BA79307B20AC0756002A7CE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -129,6 +133,7 @@
 				BA4CDA6220B1563400D19C3D /* Photo.swift */,
 				BA4CDA6420B1564300D19C3D /* Author.swift */,
 				BA4CDA6B20B1648D00D19C3D /* APIResponse.swift */,
+				BA6DF64220BD7577006DBF9F /* WallpaperPayload.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -253,6 +258,7 @@
 				BA4CDA6620B15CF400D19C3D /* DownloadService.swift */,
 				BAC0BC3A20BA9A690092A541 /* FileManager.swift */,
 				BA947A1320BBBE5B00DBD94D /* WallpaperService.swift */,
+				BA6DF64020BD7374006DBF9F /* WallpaperProcessor.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -390,6 +396,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA6DF64320BD7577006DBF9F /* WallpaperPayload.swift in Sources */,
 				BA4CDA6A20B15F2200D19C3D /* Models+RxSwift.swift in Sources */,
 				BA4CDA6320B1563400D19C3D /* Photo.swift in Sources */,
 				BA4CDA6E20B2710C00D19C3D /* ArtifyError.swift in Sources */,
@@ -409,6 +416,7 @@
 				BA6DF61820BD38F0006DBF9F /* GaussianData.swift in Sources */,
 				BA4CDA5E20B14AD600D19C3D /* ArtifyCoreAPI.swift in Sources */,
 				BA4CDA6120B14B9600D19C3D /* Environment.swift in Sources */,
+				BA6DF64120BD7374006DBF9F /* WallpaperProcessor.swift in Sources */,
 				BA947A1B20BBE18400DBD94D /* GaussianAlgorithm.swift in Sources */,
 				BA4CDA5620B13E9200D19C3D /* Menu.swift in Sources */,
 				BA4CDA5320B13E3C00D19C3D /* StatusBarViewModel.swift in Sources */,

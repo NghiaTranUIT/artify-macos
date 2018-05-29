@@ -13,10 +13,9 @@ class GaussianData: DataGenerationType {
     let screenSize: CGSize
     let originalImage: NSImage
 
-    private let ratio: CGFloat = 14.0 / 255.0
-    var perfectSize: NSSize {
-        return CGSize(width: ratio * screenSize.width,
-                      height: ratio * screenSize.height)
+    private let ratio: CGFloat = 14.0 / 225.0
+    var scaleHeight: CGFloat {
+        return screenSize.height - (ratio * screenSize.height * 2.0)
     }
 
     init(screenSize: CGSize, originalImage: NSImage) {

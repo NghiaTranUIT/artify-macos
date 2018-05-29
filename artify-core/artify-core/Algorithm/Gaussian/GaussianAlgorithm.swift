@@ -1,4 +1,4 @@
-//
+g//
 //  GaussianAlgorithm.swift
 //  artify-core
 //
@@ -10,13 +10,12 @@ import Foundation
 
 struct GaussianAlgorithm: GenerationAlgorithm {
 
-    func process(data: DataGenerationType) -> DataGenerationType {
+    func process(data: DataGenerationType) -> NSImage {
 
         let scaleImage = scalePerfectImage(data: data)
-        let backgroundImage = generateGaussianBackground(scaleImage, width: data.perfectSize.width)
+        let backgroundImage = generateGaussianBackground(scaleImage, width: data.screenSize.width)
         let artifyImage = drawArtify(image: scaleImage, backgroundImage: backgroundImage, size: data.screenSize)
-        
-        return GaussianData(screenSize: data.screenSize, originalImage: artifyImage)
+        return artifyImage
     }
 }
 
@@ -24,8 +23,7 @@ struct GaussianAlgorithm: GenerationAlgorithm {
 extension GaussianAlgorithm {
 
     fileprivate func scalePerfectImage(data: DataGenerationType) -> NSImage {
-        let height = data.perfectSize.height
-        return data.originalImage.scale(with: .fillHeight(height))
+        return data.originalImage.scale(with: .fillHeight(data.scaleHeight))
     }
 
     fileprivate func generateGaussianBackground(_ image: NSImage, width: CGFloat) -> NSImage {

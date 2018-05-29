@@ -12,22 +12,11 @@ import RxSwift
 protocol DataGenerationType {
 
     var screenSize: CGSize { get }
-    var perfectSize: CGSize { get }
+    var scaleHeight: CGFloat { get }
     var originalImage: NSImage { get }
 }
 
 protocol GenerationAlgorithm {
 
-    func process(data: DataGenerationType) -> DataGenerationType
-}
-
-extension GenerationAlgorithm {
-
-    func rx_process(data: DataGenerationType) -> Observable<DataGenerationType> {
-        return Observable.create({ (observer) -> Disposable in
-            let finalData = self.process(data: data)
-            observer.onNext(finalData)
-            return Disposables.create()
-        })
-    }
+    func process(data: DataGenerationType) -> NSImage
 }
