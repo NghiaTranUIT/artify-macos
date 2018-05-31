@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		696ECA90EFCB09BE3F635915 /* Pods_Artify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BEC2ECE6ECF0CDAA2F5BD6A /* Pods_Artify.framework */; };
-		BA4CDA5A20B1402D00D19C3D /* artify_core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA4CDA5920B1402D00D19C3D /* artify_core.framework */; };
+		BA1515AE20BFE0B300CFFDC0 /* artify_core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BA4CDA5920B1402D00D19C3D /* artify_core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BA1515B120BFE0C600CFFDC0 /* Pods_Artify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA1515B020BFE0C600CFFDC0 /* Pods_Artify.framework */; };
 		BA7930AA20AC0F39002A7CE4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7930A920AC0F39002A7CE4 /* AppDelegate.swift */; };
 		BA7930AC20AC0F39002A7CE4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7930AB20AC0F39002A7CE4 /* ViewController.swift */; };
 		BA7930AE20AC0F3A002A7CE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA7930AD20AC0F3A002A7CE4 /* Assets.xcassets */; };
@@ -26,8 +26,23 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		BA1515AF20BFE0B400CFFDC0 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BA1515AE20BFE0B300CFFDC0 /* artify_core.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		6BEC2ECE6ECF0CDAA2F5BD6A /* Pods_Artify.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Artify.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA1515B020BFE0C600CFFDC0 /* Pods_Artify.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_Artify.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA4CDA5920B1402D00D19C3D /* artify_core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = artify_core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA7930A620AC0F39002A7CE4 /* Artify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Artify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA7930A920AC0F39002A7CE4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -48,8 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA4CDA5A20B1402D00D19C3D /* artify_core.framework in Frameworks */,
-				696ECA90EFCB09BE3F635915 /* Pods_Artify.framework in Frameworks */,
+				BA1515B120BFE0C600CFFDC0 /* Pods_Artify.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +80,7 @@
 		2F2F0B363DE381BAF5609E83 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BA1515B020BFE0C600CFFDC0 /* Pods_Artify.framework */,
 				BA4CDA5920B1402D00D19C3D /* artify_core.framework */,
 				6BEC2ECE6ECF0CDAA2F5BD6A /* Pods_Artify.framework */,
 			);
@@ -215,6 +230,7 @@
 				BA7930A320AC0F39002A7CE4 /* Frameworks */,
 				BA7930A420AC0F39002A7CE4 /* Resources */,
 				77E1B90956460F03CC766164 /* [CP] Embed Pods Frameworks */,
+				BA1515AF20BFE0B400CFFDC0 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -531,6 +547,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DDEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.art.Artify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -553,6 +570,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DPRODUCTION";
 				PRODUCT_BUNDLE_IDENTIFIER = com.art.Artify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
