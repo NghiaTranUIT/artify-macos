@@ -12,6 +12,7 @@ import Alamofire
 
 enum ArtifyCoreAPI {
     case getFeature
+    case checkUpdate(AppInfo)
 }
 
 extension ArtifyCoreAPI: TargetType {
@@ -23,11 +24,15 @@ extension ArtifyCoreAPI: TargetType {
         switch self {
         case .getFeature:
             return "feature/today"
+        case .checkUpdate:
+            return "version/update"
         }
     }
 
     var method: Moya.Method {
         switch self {
+        case .checkUpdate:
+            fallthrough
         case .getFeature:
             return Moya.Method.get
         }
@@ -38,8 +43,14 @@ extension ArtifyCoreAPI: TargetType {
     }
 
     var task: Task {
-        if let parameter = self.parameter {
-            return Task.requestParameters(parameters: parameter, encoding: JSONEncoding.default)
+        switch self {
+        case .checkUpdate:
+            let param = self.parameter!
+            return Task.requestParameters(parameters: param, encoding: URLEncoding.default)
+        default:
+            if let parameter = self.parameter {
+                return Task.requestParameters(parameters: parameter, encoding: JSONEncoding.default)
+            }
         }
         return Task.requestPlain
     }
@@ -49,7 +60,12 @@ extension ArtifyCoreAPI: TargetType {
     }
 
     var parameter: [String: Any]? {
-        return nil
+        switch self {
+        case .checkUpdate(let info):
+            return ["build_version": info.appVersion]
+        default:
+            return nil
+        }
     }
 
 }
