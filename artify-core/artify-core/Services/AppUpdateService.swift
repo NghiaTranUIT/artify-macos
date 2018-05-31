@@ -39,11 +39,17 @@ class AppUpdateService: Updatable {
 
     func updateAppIfNeed() {
         updater.startAutomaticChecks(withInterval: Constant.UpdateInterval)
-        updater.updates.subscribeNext({ (update) in
-            guard let download = update as? SQRLDownloadedUpdate else {
+        updater.updates.subscribeNext({[weak self] (update) in
+            guard let strongSelf = self,
+                let download = update as? SQRLDownloadedUpdate else {
                 return
             }
             print("New build = \(download.update)")
+
+            // Force re-launch
+            strongSelf.updater.relaunchToInstallUpdate().subscribeError({ (error) in
+                print("Error \(String(describing: error))")
+            })
         }) { (error) in
             print("Error = \(String(describing: error))")
         }
