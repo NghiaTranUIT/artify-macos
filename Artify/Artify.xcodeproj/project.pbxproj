@@ -17,6 +17,9 @@
 		BAC0B75220C038F600FF4FDF /* Mantle.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BAC0B74C20C0371E00FF4FDF /* Mantle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BAC0B75420C038F600FF4FDF /* ReactiveCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BAC0B74D20C0371E00FF4FDF /* ReactiveCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BAC0B75620C038F600FF4FDF /* Squirrel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BAC0B74B20C0371E00FF4FDF /* Squirrel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BAC0B76620C1896800FF4FDF /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC0B76420C1896800FF4FDF /* Crashlytics.framework */; };
+		BAC0B76720C1896800FF4FDF /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC0B76520C1896800FF4FDF /* Fabric.framework */; };
+		BAC0B76920C18AA000FF4FDF /* String+UUID.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0B76820C18AA000FF4FDF /* String+UUID.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +66,9 @@
 		BAC0B74B20C0371E00FF4FDF /* Squirrel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Squirrel.framework; path = "../artify-core/Squirrel.framework"; sourceTree = "<group>"; };
 		BAC0B74C20C0371E00FF4FDF /* Mantle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mantle.framework; path = "../artify-core/Mantle.framework"; sourceTree = "<group>"; };
 		BAC0B74D20C0371E00FF4FDF /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = "../artify-core/ReactiveCocoa.framework"; sourceTree = "<group>"; };
+		BAC0B76420C1896800FF4FDF /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		BAC0B76520C1896800FF4FDF /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		BAC0B76820C18AA000FF4FDF /* String+UUID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+UUID.swift"; sourceTree = "<group>"; };
 		CE76D14A9E4B3E7FDBF1E63D /* Pods-Artify.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Artify.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-Artify/Pods-Artify.debug.xcconfig"; sourceTree = "<group>"; };
 		DB1D3B10AA160A53725BAC00 /* Pods-Artify.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Artify.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Artify/Pods-Artify.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -72,7 +78,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAC0B76620C1896800FF4FDF /* Crashlytics.framework in Frameworks */,
 				BA1515B120BFE0C600CFFDC0 /* Pods_Artify.framework in Frameworks */,
+				BAC0B76720C1896800FF4FDF /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +97,8 @@
 		2F2F0B363DE381BAF5609E83 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BAC0B76420C1896800FF4FDF /* Crashlytics.framework */,
+				BAC0B76520C1896800FF4FDF /* Fabric.framework */,
 				BAC0B74C20C0371E00FF4FDF /* Mantle.framework */,
 				BAC0B74D20C0371E00FF4FDF /* ReactiveCocoa.framework */,
 				BAC0B74B20C0371E00FF4FDF /* Squirrel.framework */,
@@ -169,6 +179,7 @@
 		BAA2560420AC5B2D00BBA837 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				BAC0B76820C18AA000FF4FDF /* String+UUID.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -243,6 +254,7 @@
 				BA7930A420AC0F39002A7CE4 /* Resources */,
 				77E1B90956460F03CC766164 /* [CP] Embed Pods Frameworks */,
 				BA1515AF20BFE0B400CFFDC0 /* Embed Frameworks */,
+				BAC0B76320C1894E00FF4FDF /* Fabric */,
 			);
 			buildRules = (
 			);
@@ -390,6 +402,20 @@
 			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-Artify/Pods-Artify-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		BAC0B76320C1894E00FF4FDF /* Fabric */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Fabric;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 465d79d16a75f8b427ccd5af4c9fa4631c7133cb 7ddf9273f0ffeb85cb15cfa75ed767a47b63b89bc9d16c227933f6d3fc2428bd";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -397,6 +423,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAC0B76920C18AA000FF4FDF /* String+UUID.swift in Sources */,
 				BA7930AC20AC0F39002A7CE4 /* ViewController.swift in Sources */,
 				BA7930AA20AC0F39002A7CE4 /* AppDelegate.swift in Sources */,
 			);
@@ -466,7 +493,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -568,6 +595,7 @@
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/Unbox\"",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/Wrap\"",
 					"${SRCROOT}/../artify-core/",
+					"$(PROJECT_DIR)",
 				);
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "$(SRCROOT)/Artify/Resources/Info/Info.plist";
@@ -607,6 +635,7 @@
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/Unbox\"",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/Wrap\"",
 					"${SRCROOT}/../artify-core/",
+					"$(PROJECT_DIR)",
 				);
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "$(SRCROOT)/Artify/Resources/Info/Info.plist";

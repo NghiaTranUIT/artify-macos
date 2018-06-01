@@ -9,6 +9,8 @@
 import Cocoa
 import artify_core
 import RxSwift
+import Fabric
+import Crashlytics
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -45,6 +47,10 @@ extension AppDelegate {
 
     fileprivate func initApp() {
         coordinator.makeDefaut()
+        Fabric.with([Crashlytics.self])
+        UserDefaults.standard.register(defaults: ["NSApplicationCrashOnExceptions": true])
+        Crashlytics.sharedInstance().setUserIdentifier(String.macSerialNumber())
+        Crashlytics.sharedInstance().setUserName(NSUserName())
     }
     
     fileprivate func initStatusBarApp() {
