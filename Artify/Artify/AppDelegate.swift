@@ -30,6 +30,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         initApp()
         initStatusBarApp()
         binding()
+
+        // Update app
+        coordinator.updateAppIfNeed()
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {

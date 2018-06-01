@@ -16,9 +16,11 @@ public class Coordinator {
     // MARK: - Variable
     private let fileHandler: FileHandler
     private let networkingService: NetworkingServiceType
+    private let appUpdater: Updatable
     let wallpaperService: WallpaperServiceType
     let downloadService: DownloadService
     let environment: Environment
+
 
     // MARK: - Init
     public init(kind: Environment.Kind) {
@@ -29,10 +31,15 @@ public class Coordinator {
                                                fileHandler: fileHandler)
         self.wallpaperService = WallpaperService(downloadService: downloadService,
                                                  fileHandler: fileHandler)
+        self.appUpdater = AppUpdateService(network: networkingService)
     }
 
     // MARK: - Public
     public func makeDefaut() {
         Coordinator.default = self
+    }
+
+    public func updateAppIfNeed() {
+        appUpdater.updateAppIfNeed()
     }
 }

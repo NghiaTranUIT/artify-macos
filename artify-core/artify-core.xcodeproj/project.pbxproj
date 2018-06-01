@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		6DC208D45B2655A8413D123E /* Pods_artify_core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0486739449050E8BACA43C7E /* Pods_artify_core.framework */; };
+		BA2FA37120C02C96006F9344 /* Squirrel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA2FA37020C02C96006F9344 /* Squirrel.framework */; };
+		BA2FA37320C02D0E006F9344 /* AppUpdateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2FA37220C02D0E006F9344 /* AppUpdateService.swift */; };
 		BA4CDA5320B13E3C00D19C3D /* StatusBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4CDA5220B13E3C00D19C3D /* StatusBarViewModel.swift */; };
 		BA4CDA5620B13E9200D19C3D /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4CDA5520B13E9200D19C3D /* Menu.swift */; };
 		BA4CDA5820B13FA700D19C3D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4CDA5720B13FA700D19C3D /* Coordinator.swift */; };
@@ -36,6 +38,9 @@
 		BA947A1920BBDFFB00DBD94D /* GenerationAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA947A1820BBDFFB00DBD94D /* GenerationAlgorithm.swift */; };
 		BA947A1B20BBE18400DBD94D /* GaussianAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA947A1A20BBE18400DBD94D /* GaussianAlgorithm.swift */; };
 		BAA2560A20AC5B6300BBA837 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA2560920AC5B6300BBA837 /* HomeViewModel.swift */; };
+		BAC0B74120C0321C00FF4FDF /* Mantle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC0B73F20C0321C00FF4FDF /* Mantle.framework */; };
+		BAC0B74220C0321C00FF4FDF /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC0B74020C0321C00FF4FDF /* ReactiveCocoa.framework */; };
+		BAC0B74420C0338000FF4FDF /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0B74320C0338000FF4FDF /* AppInfo.swift */; };
 		BAC0BC3B20BA9A690092A541 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0BC3A20BA9A690092A541 /* FileManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +58,8 @@
 		0486739449050E8BACA43C7E /* Pods_artify_core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_artify_core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FB3468F5B8AC035B1211CF5 /* Pods-artify-core.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-artify-core.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-artify-core/Pods-artify-core.debug.xcconfig"; sourceTree = "<group>"; };
 		7C4B613A9F337A747661A5A4 /* Pods-artify-core.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-artify-core.release.xcconfig"; path = "../Pods/Target Support Files/Pods-artify-core/Pods-artify-core.release.xcconfig"; sourceTree = "<group>"; };
+		BA2FA37020C02C96006F9344 /* Squirrel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Squirrel.framework; sourceTree = "<group>"; };
+		BA2FA37220C02D0E006F9344 /* AppUpdateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUpdateService.swift; sourceTree = "<group>"; };
 		BA4CDA5220B13E3C00D19C3D /* StatusBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarViewModel.swift; sourceTree = "<group>"; };
 		BA4CDA5520B13E9200D19C3D /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		BA4CDA5720B13FA700D19C3D /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -84,6 +91,9 @@
 		BA947A1820BBDFFB00DBD94D /* GenerationAlgorithm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerationAlgorithm.swift; sourceTree = "<group>"; };
 		BA947A1A20BBE18400DBD94D /* GaussianAlgorithm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaussianAlgorithm.swift; sourceTree = "<group>"; };
 		BAA2560920AC5B6300BBA837 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		BAC0B73F20C0321C00FF4FDF /* Mantle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Mantle.framework; sourceTree = "<group>"; };
+		BAC0B74020C0321C00FF4FDF /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ReactiveCocoa.framework; sourceTree = "<group>"; };
+		BAC0B74320C0338000FF4FDF /* AppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
 		BAC0BC3A20BA9A690092A541 /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,6 +103,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				6DC208D45B2655A8413D123E /* Pods_artify_core.framework in Frameworks */,
+				BA2FA37120C02C96006F9344 /* Squirrel.framework in Frameworks */,
+				BAC0B74120C0321C00FF4FDF /* Mantle.framework in Frameworks */,
+				BAC0B74220C0321C00FF4FDF /* ReactiveCocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,6 +123,9 @@
 		15F767FB358A3C17E218587E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BAC0B73F20C0321C00FF4FDF /* Mantle.framework */,
+				BAC0B74020C0321C00FF4FDF /* ReactiveCocoa.framework */,
+				BA2FA37020C02C96006F9344 /* Squirrel.framework */,
 				0486739449050E8BACA43C7E /* Pods_artify_core.framework */,
 			);
 			name = Frameworks;
@@ -131,6 +147,7 @@
 				BA4CDA6220B1563400D19C3D /* Photo.swift */,
 				BA4CDA6420B1564300D19C3D /* Author.swift */,
 				BA4CDA6B20B1648D00D19C3D /* APIResponse.swift */,
+				BAC0B74320C0338000FF4FDF /* AppInfo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -256,6 +273,7 @@
 				BAC0BC3A20BA9A690092A541 /* FileManager.swift */,
 				BA947A1320BBBE5B00DBD94D /* WallpaperService.swift */,
 				BA6DF64020BD7374006DBF9F /* WallpaperProcessor.swift */,
+				BA2FA37220C02D0E006F9344 /* AppUpdateService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -404,11 +422,13 @@
 				BA4CDA5820B13FA700D19C3D /* Coordinator.swift in Sources */,
 				BA4CDA6720B15CF400D19C3D /* DownloadService.swift in Sources */,
 				BA947A1920BBDFFB00DBD94D /* GenerationAlgorithm.swift in Sources */,
+				BAC0B74420C0338000FF4FDF /* AppInfo.swift in Sources */,
 				BA6DF61620BD32D6006DBF9F /* NSImage+Extenstion.swift in Sources */,
 				BA6DF60C20BD316C006DBF9F /* GaussianEffect.m in Sources */,
 				BA4CDA6C20B1648D00D19C3D /* APIResponse.swift in Sources */,
 				BA947A1620BBCBAC00DBD94D /* String+Encoding.swift in Sources */,
 				BA4CDA6520B1564300D19C3D /* Author.swift in Sources */,
+				BA2FA37320C02D0E006F9344 /* AppUpdateService.swift in Sources */,
 				BA6DF61820BD38F0006DBF9F /* GaussianData.swift in Sources */,
 				BA4CDA5E20B14AD600D19C3D /* ArtifyCoreAPI.swift in Sources */,
 				BA4CDA6120B14B9600D19C3D /* Environment.swift in Sources */,
@@ -571,6 +591,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = "artify-core/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -602,6 +626,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = "artify-core/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
