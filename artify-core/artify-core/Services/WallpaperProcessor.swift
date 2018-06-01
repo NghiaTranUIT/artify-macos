@@ -15,35 +15,31 @@ enum Effect {
 
 protocol ProcessorType {
 
-    func apply(image: NSImage, screenSize: CGSize, with effect: Effect) -> NSImage
+    func apply(payload: WallpaperPayload) -> WallpaperResponse
 }
 
 struct WallpaperProcessor: ProcessorType {
 
-    func apply(image: NSImage, screenSize: CGSize, with effect: Effect) -> NSImage {
-        switch effect {
+    func apply(payload: WallpaperPayload) -> WallpaperResponse {
+        switch payload.effect {
         case .gaussianBeautify:
-            let payload = GaussianData(screenSize: screenSize, originalImage: image)
-            return GaussianAlgorithm().process(data: payload)
+            let data = GaussianData(screenSize: payload.screenSize, originalImage: payload.originalImage)
+            let processedImage = GaussianAlgorithm().process(data: data)
+            return WallpaperResponse(photo: payload.photo,
+                                    screenSize: payload.screenSize,
+                                    wallpaperImage: processedImage)
         }
     }
 }
 
 extension ProcessorType {
 
-    func rx_apply(image: NSImage, screenSize: CGSize, with effect: Effect) -> Observable<NSImage> {
+    func rx_apply(payload: WallpaperPayload) -> Observable<WallpaperResponse> {
         return Observable.create({ (observer) -> Disposable in
-            let finalImage = self.apply(image: image, screenSize: screenSize, with: effect)
+            let finalImage = self.apply(payload: payload)
             observer.onNext(finalImage)
             observer.onCompleted()
             return Disposables.create()
         })
-    }
-
-    func rx_apply(url: URL, screenSize: CGSize, with effect: Effect) -> Observable<NSImage> {
-        guard let image = NSImage(contentsOfFile: url.path) else {
-            return .error(ArtfiyError.invalidFileURL(url))
-        }
-        return rx_apply(image: image, screenSize: screenSize, with: effect)
     }
 }

@@ -41,6 +41,11 @@
 		BAC0B74120C0321C00FF4FDF /* Mantle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC0B73F20C0321C00FF4FDF /* Mantle.framework */; };
 		BAC0B74220C0321C00FF4FDF /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC0B74020C0321C00FF4FDF /* ReactiveCocoa.framework */; };
 		BAC0B74420C0338000FF4FDF /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0B74320C0338000FF4FDF /* AppInfo.swift */; };
+		BAC0B75820C11BC800FF4FDF /* Observable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0B75720C11BC800FF4FDF /* Observable+Extension.swift */; };
+		BAC0B75A20C11D9500FF4FDF /* FilePayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0B75920C11D9500FF4FDF /* FilePayload.swift */; };
+		BAC0B75C20C124FE00FF4FDF /* DownloadPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0B75B20C124FE00FF4FDF /* DownloadPayload.swift */; };
+		BAC0B75E20C125DE00FF4FDF /* WallpaperPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0B75D20C125DE00FF4FDF /* WallpaperPayload.swift */; };
+		BAC0B76020C129C700FF4FDF /* CGSize+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0B75F20C129C700FF4FDF /* CGSize+String.swift */; };
 		BAC0BC3B20BA9A690092A541 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0BC3A20BA9A690092A541 /* FileManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -94,6 +99,11 @@
 		BAC0B73F20C0321C00FF4FDF /* Mantle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Mantle.framework; sourceTree = "<group>"; };
 		BAC0B74020C0321C00FF4FDF /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ReactiveCocoa.framework; sourceTree = "<group>"; };
 		BAC0B74320C0338000FF4FDF /* AppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
+		BAC0B75720C11BC800FF4FDF /* Observable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+Extension.swift"; sourceTree = "<group>"; };
+		BAC0B75920C11D9500FF4FDF /* FilePayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilePayload.swift; sourceTree = "<group>"; };
+		BAC0B75B20C124FE00FF4FDF /* DownloadPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadPayload.swift; sourceTree = "<group>"; };
+		BAC0B75D20C125DE00FF4FDF /* WallpaperPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperPayload.swift; sourceTree = "<group>"; };
+		BAC0B75F20C129C700FF4FDF /* CGSize+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGSize+String.swift"; sourceTree = "<group>"; };
 		BAC0BC3A20BA9A690092A541 /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -148,6 +158,9 @@
 				BA4CDA6420B1564300D19C3D /* Author.swift */,
 				BA4CDA6B20B1648D00D19C3D /* APIResponse.swift */,
 				BAC0B74320C0338000FF4FDF /* AppInfo.swift */,
+				BAC0B75920C11D9500FF4FDF /* FilePayload.swift */,
+				BAC0B75B20C124FE00FF4FDF /* DownloadPayload.swift */,
+				BAC0B75D20C125DE00FF4FDF /* WallpaperPayload.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -166,6 +179,8 @@
 			children = (
 				BA4CDA6920B15F2200D19C3D /* Models+RxSwift.swift */,
 				BA947A1520BBCBAC00DBD94D /* String+Encoding.swift */,
+				BAC0B75720C11BC800FF4FDF /* Observable+Extension.swift */,
+				BAC0B75F20C129C700FF4FDF /* CGSize+String.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -411,15 +426,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAC0B75C20C124FE00FF4FDF /* DownloadPayload.swift in Sources */,
 				BA4CDA6A20B15F2200D19C3D /* Models+RxSwift.swift in Sources */,
 				BA4CDA6320B1563400D19C3D /* Photo.swift in Sources */,
 				BA4CDA6E20B2710C00D19C3D /* ArtifyError.swift in Sources */,
 				BAC0BC3B20BA9A690092A541 /* FileManager.swift in Sources */,
+				BAC0B75E20C125DE00FF4FDF /* WallpaperPayload.swift in Sources */,
 				BA6DF61420BD32B6006DBF9F /* NSImage+Scale.swift in Sources */,
 				BA6DF61120BD31CB006DBF9F /* NSImage+CGImage.m in Sources */,
+				BAC0B75820C11BC800FF4FDF /* Observable+Extension.swift in Sources */,
 				BA947A1420BBBE5B00DBD94D /* WallpaperService.swift in Sources */,
 				BA4CDA5C20B14AA000D19C3D /* NetworkService.swift in Sources */,
 				BA4CDA5820B13FA700D19C3D /* Coordinator.swift in Sources */,
+				BAC0B75A20C11D9500FF4FDF /* FilePayload.swift in Sources */,
 				BA4CDA6720B15CF400D19C3D /* DownloadService.swift in Sources */,
 				BA947A1920BBDFFB00DBD94D /* GenerationAlgorithm.swift in Sources */,
 				BAC0B74420C0338000FF4FDF /* AppInfo.swift in Sources */,
@@ -434,6 +453,7 @@
 				BA4CDA6120B14B9600D19C3D /* Environment.swift in Sources */,
 				BA6DF64120BD7374006DBF9F /* WallpaperProcessor.swift in Sources */,
 				BA947A1B20BBE18400DBD94D /* GaussianAlgorithm.swift in Sources */,
+				BAC0B76020C129C700FF4FDF /* CGSize+String.swift in Sources */,
 				BA4CDA5620B13E9200D19C3D /* Menu.swift in Sources */,
 				BA4CDA5320B13E3C00D19C3D /* StatusBarViewModel.swift in Sources */,
 				BAA2560A20AC5B6300BBA837 /* HomeViewModel.swift in Sources */,

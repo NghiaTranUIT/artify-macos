@@ -36,16 +36,24 @@ final class WallpaperService: WallpaperServiceType {
         return CocoaAction {
             return Observable.just(())
                 .observeOn(ConcurrentDispatchQueueScheduler(qos: DispatchQoS.background))
-                .flatMapLatest({[unowned self] _ -> Observable<URL> in
+                .flatMapLatest({[unowned self] _ -> Observable<DownloadPayload> in
                     return self.downloadService.downloadFeaturePhoto()
                 })
-                .flatMapLatest({[unowned self] (url) -> Observable<NSImage> in
-                    return self.processor.rx_apply(url: url,
-                                                   screenSize: self.screenSize,
-                                                   with: .gaussianBeautify)
+                .flatMapLatest({[unowned self] (payload) -> Observable<WallpaperResponse> in
+                    guard let image = NSImage(contentsOfFile: payload.fileUrl.path) else {
+                        return .error(ArtfiyError.invalidFileURL(payload.fileUrl))
+                    }
+                    let processPayload = WallpaperPayload(photo: payload.photo,
+                                                          originalImage: image,
+                                                          screenSize: self.screenSize,
+                                                          effect: .gaussianBeautify)
+                    return self.processor.rx_apply(payload: processPayload)
                 })
-                .flatMapLatest({[unowned self] (image) -> Observable<URL> in
-                    return self.fileHandler.rx_saveImageIfNeed(image, name: "final_image_\(self.screenSize.width)_\(self.screenSize.height)")
+                .flatMapLatest({[unowned self] (payload) -> Observable<URL> in
+                    let filePayload = FilePayload(image: payload.wallpaperImage,
+                                                  photo: payload.photo,
+                                                  prefix: self.screenSize.toString)
+                    return self.fileHandler.rx_saveImageIfNeed(filePayload)
                 })
                 .do(onNext: { url in
                     print("✅[SUCCESS] Set Wallpaper at \(url)")
