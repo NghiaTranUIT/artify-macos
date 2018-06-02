@@ -14,6 +14,7 @@
 		BA7930AE20AC0F3A002A7CE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA7930AD20AC0F3A002A7CE4 /* Assets.xcassets */; };
 		BA7930B120AC0F3A002A7CE4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA7930AF20AC0F3A002A7CE4 /* Main.storyboard */; };
 		BA7930BD20AC0F3A002A7CE4 /* ArtifyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7930BC20AC0F3A002A7CE4 /* ArtifyTests.swift */; };
+		BA99A6AA20C26D5E00DF88F8 /* LaunchOnStartup.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA99A6A920C26D5E00DF88F8 /* LaunchOnStartup.swift */; };
 		BAC0B75220C038F600FF4FDF /* Mantle.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BAC0B74C20C0371E00FF4FDF /* Mantle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BAC0B75420C038F600FF4FDF /* ReactiveCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BAC0B74D20C0371E00FF4FDF /* ReactiveCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BAC0B75620C038F600FF4FDF /* Squirrel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BAC0B74B20C0371E00FF4FDF /* Squirrel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -63,6 +64,7 @@
 		BA7930B820AC0F3A002A7CE4 /* ArtifyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArtifyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA7930BC20AC0F3A002A7CE4 /* ArtifyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtifyTests.swift; sourceTree = "<group>"; };
 		BA7930BE20AC0F3A002A7CE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA99A6A920C26D5E00DF88F8 /* LaunchOnStartup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchOnStartup.swift; sourceTree = "<group>"; };
 		BAC0B74B20C0371E00FF4FDF /* Squirrel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Squirrel.framework; path = "../artify-core/Squirrel.framework"; sourceTree = "<group>"; };
 		BAC0B74C20C0371E00FF4FDF /* Mantle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mantle.framework; path = "../artify-core/Mantle.framework"; sourceTree = "<group>"; };
 		BAC0B74D20C0371E00FF4FDF /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = "../artify-core/ReactiveCocoa.framework"; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				BAA2560520AC5B3100BBA837 /* Resources */,
 				BAA255FF20AC5ACD00BBA837 /* Source */,
 				BA7930A920AC0F39002A7CE4 /* AppDelegate.swift */,
+				BA99A6A920C26D5E00DF88F8 /* LaunchOnStartup.swift */,
 				BA7930B320AC0F3A002A7CE4 /* Artify.entitlements */,
 			);
 			path = Artify;
@@ -426,6 +429,7 @@
 				BAC0B76920C18AA000FF4FDF /* String+UUID.swift in Sources */,
 				BA7930AC20AC0F39002A7CE4 /* ViewController.swift in Sources */,
 				BA7930AA20AC0F39002A7CE4 /* AppDelegate.swift in Sources */,
+				BA99A6AA20C26D5E00DF88F8 /* LaunchOnStartup.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -510,7 +514,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -564,7 +568,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -578,7 +582,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Mac Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = D54Y88Y9CY;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -603,7 +607,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DDEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.art.Artify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -618,9 +622,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Mac Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = D54Y88Y9CY;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/Action\"",
@@ -643,7 +647,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DPRODUCTION";
 				PRODUCT_BUNDLE_IDENTIFIER = com.art.Artify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
