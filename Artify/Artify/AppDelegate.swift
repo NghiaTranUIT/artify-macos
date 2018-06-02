@@ -36,6 +36,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Update app
         coordinator.updateAppIfNeed()
         LaunchOnStartup.setLaunchAtStartup(Setting.shared.isLaunchOnStartup)
+
+        // Fetch feature if need
+        viewModel.input.getFeatureWallpaperPublisher.onNext(())
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {

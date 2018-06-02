@@ -21,11 +21,12 @@ public protocol StatusBarViewModelType {
 
 public protocol StatusBarViewModelInput {
 
+    var getFeatureWallpaperPublisher: PublishSubject<Void> { get }
 }
 
 public protocol StatusBarViewModelOutput {
 
-    var menuItems: Driver<[NSMenuItem]>! { get }
+    var menuItems: Variable<[NSMenuItem]> { get }
     var terminalApp: PublishSubject<Void> { get }
 }
 
@@ -35,20 +36,25 @@ public final class StatusBarViewModel: StatusBarViewModelType, StatusBarViewMode
     public var output: StatusBarViewModelOutput { return self }
 
     // MARK: - Variable
-    
+    private let bag = DisposeBag()
+
+    // MARK: - Input
+    public var getFeatureWallpaperPublisher = PublishSubject<Void>()
+
     // MARK: - Output
-    public var menuItems: Driver<[NSMenuItem]>!
-    public var menus = Variable<[Menu]>([Menu(kind: .getFeature, selector: #selector(StatusBarViewModel.getFeatureOnTap), keyEquivalent: "F"),
+    public let menuItems = Variable<[NSMenuItem]>([])
+    public let menus = Variable<[Menu]>([Menu(kind: .getFeature, selector: #selector(StatusBarViewModel.getFeatureOnTap(_:)), keyEquivalent: "F"),
                                          Menu(kind: .separator, selector: nil),
                                          Menu(kind: .launchOnStartup, selector: #selector(StatusBarViewModel.launchOnStartUp(_:)), defaultState: Setting.shared.isLaunchOnStartup ? .on : .off),
                                          Menu(kind: .separator, selector: nil),
                                          Menu(kind: .quit, selector: #selector(StatusBarViewModel.quitOnTap), keyEquivalent: "Q")])
-    public var terminalApp = PublishSubject<Void>()
+    public let terminalApp = PublishSubject<Void>()
 
     // MARK: - Init
     public init() {
 
-        menuItems = menus.asObservable()
+        // Menu
+        menus.asObservable()
             .map {[unowned self] in
                 $0.map({ (menu) -> NSMenuItem in
                     if menu.kind == Menu.Kind.separator {
@@ -61,12 +67,34 @@ public final class StatusBarViewModel: StatusBarViewModelType, StatusBarViewMode
                     item.state = menu.defaultState
                     return item
                 })
-        }
-        .asDriver(onErrorJustReturn: [])
+            }
+            .bind(to: menuItems)
+            .disposed(by: bag)
+
+        // Get feature
+        getFeatureWallpaperPublisher.asObserver()
+            .map { _ in self.menus.value.index(where: { $0.kind == Menu.Kind.getFeature } )! }
+            .map { self.menuItems.value[$0] }
+            .subscribe(onNext: {[weak self] (menu) in
+                guard let strongSelf = self else { return }
+                strongSelf.getFeatureOnTap(menu)
+            })
+            .disposed(by: bag)
     }
 
-    @objc private func getFeatureOnTap() {
-        Coordinator.default.wallpaperService.setFeaturePhotoAction.execute(())
+    @objc private func getFeatureOnTap(_ menu: NSMenuItem) {
+        let action = Coordinator.default.wallpaperService.setFeaturePhotoAction
+
+        // Enable/Disable
+        action
+            .executing
+            .subscribe(onNext: { (isExecuting) in
+                menu.isEnabled = !isExecuting
+            })
+            .disposed(by: bag)
+
+        // Execute
+        action.execute(())
     }
 
     @objc private func launchOnStartUp(_ menu: NSMenuItem) {
