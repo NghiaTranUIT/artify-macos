@@ -39,7 +39,9 @@ public final class StatusBarViewModel: StatusBarViewModelType, StatusBarViewMode
     // MARK: - Output
     public var menuItems: Driver<[NSMenuItem]>!
     public var menus = Variable<[Menu]>([Menu(kind: .getFeature, selector: #selector(StatusBarViewModel.getFeatureOnTap), keyEquivalent: "F"),
-                                         Menu(kind: .separator, selector: nil, keyEquivalent: ""),
+                                         Menu(kind: .separator, selector: nil),
+                                         Menu(kind: .launchOnStartup, selector: #selector(StatusBarViewModel.launchOnStartUp(_:)), defaultState: Setting.shared.isLaunchOnStartup ? .on : .off),
+                                         Menu(kind: .separator, selector: nil),
                                          Menu(kind: .quit, selector: #selector(StatusBarViewModel.quitOnTap), keyEquivalent: "Q")])
     public var terminalApp = PublishSubject<Void>()
 
@@ -56,6 +58,7 @@ public final class StatusBarViewModel: StatusBarViewModelType, StatusBarViewMode
                                           action: menu.selector,
                                           keyEquivalent: menu.keyEquivalent)
                     item.target = self // Override the target
+                    item.state = menu.defaultState
                     return item
                 })
         }
@@ -64,6 +67,16 @@ public final class StatusBarViewModel: StatusBarViewModelType, StatusBarViewMode
 
     @objc private func getFeatureOnTap() {
         Coordinator.default.wallpaperService.setFeaturePhotoAction.execute(())
+    }
+
+    @objc private func launchOnStartUp(_ menu: NSMenuItem) {
+        let newState = (menu.state == NSControl.StateValue.on) ? NSControl.StateValue.off : NSControl.StateValue.on
+        menu.state = newState
+
+        // Save
+        let newValue = newState == .on
+        Setting.shared.isLaunchOnStartup = newValue
+        LaunchOnStartup.setLaunchAtStartup(newValue)
     }
 
     @objc private func quitOnTap() {

@@ -47,6 +47,8 @@
 		BAC0B75E20C125DE00FF4FDF /* WallpaperPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0B75D20C125DE00FF4FDF /* WallpaperPayload.swift */; };
 		BAC0B76020C129C700FF4FDF /* CGSize+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0B75F20C129C700FF4FDF /* CGSize+String.swift */; };
 		BAC0BC3B20BA9A690092A541 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0BC3A20BA9A690092A541 /* FileManager.swift */; };
+		BAEB942C20C2761E0048F18B /* LaunchOnStartup.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEB942A20C2761E0048F18B /* LaunchOnStartup.swift */; };
+		BAEB942D20C2761E0048F18B /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEB942B20C2761E0048F18B /* Setting.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +107,8 @@
 		BAC0B75D20C125DE00FF4FDF /* WallpaperPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperPayload.swift; sourceTree = "<group>"; };
 		BAC0B75F20C129C700FF4FDF /* CGSize+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGSize+String.swift"; sourceTree = "<group>"; };
 		BAC0BC3A20BA9A690092A541 /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
+		BAEB942A20C2761E0048F18B /* LaunchOnStartup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LaunchOnStartup.swift; path = "artify-core/Setting/LaunchOnStartup.swift"; sourceTree = SOURCE_ROOT; };
+		BAEB942B20C2761E0048F18B /* Setting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Setting.swift; path = "artify-core/Setting/Setting.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -239,6 +243,7 @@
 		BA79307920AC0756002A7CE4 /* artify-core */ = {
 			isa = PBXGroup;
 			children = (
+				BAEB942520C26F7C0048F18B /* Setting */,
 				BA947A1720BBDFE100DBD94D /* Algorithm */,
 				BA4CDA6820B15F1400D19C3D /* Extension */,
 				BA4CDA5F20B14B8200D19C3D /* Constants */,
@@ -291,6 +296,16 @@
 				BA2FA37220C02D0E006F9344 /* AppUpdateService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		BAEB942520C26F7C0048F18B /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				BAEB942A20C2761E0048F18B /* LaunchOnStartup.swift */,
+				BAEB942B20C2761E0048F18B /* Setting.swift */,
+			);
+			name = Setting;
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -443,6 +458,7 @@
 				BA947A1920BBDFFB00DBD94D /* GenerationAlgorithm.swift in Sources */,
 				BAC0B74420C0338000FF4FDF /* AppInfo.swift in Sources */,
 				BA6DF61620BD32D6006DBF9F /* NSImage+Extenstion.swift in Sources */,
+				BAEB942D20C2761E0048F18B /* Setting.swift in Sources */,
 				BA6DF60C20BD316C006DBF9F /* GaussianEffect.m in Sources */,
 				BA4CDA6C20B1648D00D19C3D /* APIResponse.swift in Sources */,
 				BA947A1620BBCBAC00DBD94D /* String+Encoding.swift in Sources */,
@@ -453,6 +469,7 @@
 				BA4CDA6120B14B9600D19C3D /* Environment.swift in Sources */,
 				BA6DF64120BD7374006DBF9F /* WallpaperProcessor.swift in Sources */,
 				BA947A1B20BBE18400DBD94D /* GaussianAlgorithm.swift in Sources */,
+				BAEB942C20C2761E0048F18B /* LaunchOnStartup.swift in Sources */,
 				BAC0B76020C129C700FF4FDF /* CGSize+String.swift in Sources */,
 				BA4CDA5620B13E9200D19C3D /* Menu.swift in Sources */,
 				BA4CDA5320B13E3C00D19C3D /* StatusBarViewModel.swift in Sources */,

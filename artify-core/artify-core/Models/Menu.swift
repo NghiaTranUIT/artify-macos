@@ -13,6 +13,7 @@ public struct Menu {
     public enum Kind {
         case getFeature
         case separator
+        case launchOnStartup
         case quit
     }
 
@@ -20,6 +21,7 @@ public struct Menu {
     public let kind: Menu.Kind
     public let keyEquivalent: String
     public var selector: Selector?
+    public let defaultState: NSControl.StateValue
 
     public var title: String {
         switch kind {
@@ -27,15 +29,18 @@ public struct Menu {
             return "Feature"
         case .quit:
             return "Quit"
+        case .launchOnStartup:
+            return "Launch on Startup"
         case .separator:
             return ""
         }
     }
 
     // MARK: - Init
-    public init(kind: Menu.Kind, selector: Selector?, keyEquivalent: String) {
+    public init(kind: Menu.Kind, selector: Selector?, keyEquivalent: String = "", defaultState: NSControl.StateValue = .off) {
         self.kind = kind
         self.selector = selector
         self.keyEquivalent = keyEquivalent
+        self.defaultState = defaultState
     }
 }

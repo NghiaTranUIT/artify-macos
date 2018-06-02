@@ -1,16 +1,15 @@
 //
 //  LaunchOnStartup.swift
-//  kawa
+//  artify-core
 //
-//  Created by utatti on 02/08/2015.
-//  Copyright (c) 2015-2017 utatti and project contributors.
-//  Licensed under the MIT License.
+//  Created by Nghia Tran on 6/2/18.
+//  Copyright © 2018 com.art.artify.core. All rights reserved.
 //
 
 import Foundation
 
-class LaunchOnStartup {
-    static func itemReferencesInLoginItems() -> (existingReference: LSSharedFileListItem?, lastReference: LSSharedFileListItem?) {
+public final class LaunchOnStartup {
+    private class func itemReferencesInLoginItems() -> (existingReference: LSSharedFileListItem?, lastReference: LSSharedFileListItem?) {
         let appUrl = URL(fileURLWithPath: Bundle.main.bundlePath)
         let loginItemsRef = LSSharedFileListCreate(
             nil,
@@ -39,7 +38,8 @@ class LaunchOnStartup {
         return (nil, nil)
     }
 
-    static func setLaunchAtStartup(_ shouldLaunch: Bool) {
+    public class func setLaunchAtStartup(_ shouldLaunch: Bool) {
+        print("[INFO] Launch at startup = \(shouldLaunch)")
         let itemReferences = itemReferencesInLoginItems()
         let alreadyExists = (itemReferences.existingReference != nil)
         let loginItemsRef = LSSharedFileListCreate(

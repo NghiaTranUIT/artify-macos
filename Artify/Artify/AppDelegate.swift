@@ -35,8 +35,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         // Update app
         coordinator.updateAppIfNeed()
-
-        LaunchOnStartup.setLaunchAtStartup(true)
+        LaunchOnStartup.setLaunchAtStartup(Setting.shared.isLaunchOnStartup)
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
