@@ -105,9 +105,11 @@ public final class StatusBarViewModel: StatusBarViewModelType, StatusBarViewMode
         let newValue = newState == .on
         Setting.shared.isLaunchOnStartup = newValue
         LaunchOnStartup.setLaunchAtStartup(newValue)
+        TrackingService.default.tracking(.launchOnStartup(LaunchOnStartupParam(isEnable: newValue)))
     }
 
     @objc private func quitOnTap() {
+        TrackingService.default.tracking(.exitApp)
         terminalApp.onNext(())
     }
 }
