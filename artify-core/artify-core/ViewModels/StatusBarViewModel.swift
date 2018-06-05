@@ -35,6 +35,10 @@ public final class StatusBarViewModel: StatusBarViewModelType, StatusBarViewMode
     public var input: StatusBarViewModelInput { return self }
     public var output: StatusBarViewModelOutput { return self }
 
+    struct Constant {
+        static let FetchInterval: RxTimeInterval = 4 * 60 * 60 // 4 hours
+    }
+
     // MARK: - Variable
     private let bag = DisposeBag()
 
@@ -72,7 +76,19 @@ public final class StatusBarViewModel: StatusBarViewModelType, StatusBarViewMode
             .disposed(by: bag)
 
         // Get feature
-        getFeatureWallpaperPublisher.asObserver()
+        let getFeature = getFeatureWallpaperPublisher.asObserver()
+
+        // Wake up
+        let appWakeup = NSWorkspace.shared.notificationCenter.rx
+            .notification(NSWorkspace.didWakeNotification, object: nil)
+            .mapToVoid()
+
+        // Interval
+        let interval = Observable<Int>.interval(Constant.FetchInterval, scheduler: MainScheduler.instance).mapToVoid()
+
+        // Get feature
+        Observable.merge([getFeature, appWakeup, interval])
+            .observeOn(MainScheduler.instance)
             .map { _ in self.menus.value.index(where: { $0.kind == Menu.Kind.getFeature } )! }
             .map { self.menuItems.value[$0] }
             .subscribe(onNext: {[weak self] (menu) in

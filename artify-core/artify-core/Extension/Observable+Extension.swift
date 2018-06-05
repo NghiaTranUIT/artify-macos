@@ -8,3 +8,10 @@
 
 import Foundation
 import RxSwift
+
+extension Observable {
+
+    func mapToVoid() -> Observable<Void> {
+        return self.map { _ in }
+    }
+}
