@@ -72,7 +72,16 @@ public final class StatusBarViewModel: StatusBarViewModelType, StatusBarViewMode
             .disposed(by: bag)
 
         // Get feature
-        getFeatureWallpaperPublisher.asObserver()
+        let getFeature = getFeatureWallpaperPublisher.asObserver()
+
+        // Wake up
+        let appWakeup = NSWorkspace.shared.notificationCenter.rx
+            .notification(NSWorkspace.didWakeNotification, object: nil)
+            .mapToVoid()
+
+        // Get feature
+        Observable.merge([getFeature, appWakeup])
+            .observeOn(MainScheduler.instance)
             .map { _ in self.menus.value.index(where: { $0.kind == Menu.Kind.getFeature } )! }
             .map { self.menuItems.value[$0] }
             .subscribe(onNext: {[weak self] (menu) in
