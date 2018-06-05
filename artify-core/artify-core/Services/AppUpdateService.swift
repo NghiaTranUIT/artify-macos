@@ -48,6 +48,9 @@ class AppUpdateService: Updatable {
 
             // Force re-launch
             strongSelf.updater.relaunchToInstallUpdate().subscribeError({ (error) in
+                let appInfo = AppInfo.current
+                TrackingService.default.tracking(.appUpdated(AppUpdatedParam(buildVersion: appInfo.appVersion,
+                                                                             buildNumber: appInfo.buildNumber)))
                 print("Error \(String(describing: error))")
             })
         }) { (error) in

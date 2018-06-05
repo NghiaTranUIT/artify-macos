@@ -18,3 +18,10 @@ func + <K,V>(left: Dictionary<K,V>, right: Dictionary<K,V>) -> Dictionary<K,V> {
     }
     return map
 }
+
+extension Dictionary where Value == Optional<Any>  {
+
+    func filterNil() -> [Key: Any] {
+        return self.filter( { $0.value != nil }).mapValues( { $0! })
+    }
+}

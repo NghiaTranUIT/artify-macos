@@ -53,6 +53,7 @@ final class WallpaperService: WallpaperServiceType {
                     let filePayload = FilePayload(image: payload.wallpaperImage,
                                                   photo: payload.photo,
                                                   prefix: self.screenSize.toString)
+                    TrackingService.default.tracking(.setWallapper(SetWallpaperParam(photo: payload.photo, screenSize: self.screenSize)))
                     return self.fileHandler.rx_saveImageIfNeed(filePayload)
                 })
                 .do(onNext: { url in

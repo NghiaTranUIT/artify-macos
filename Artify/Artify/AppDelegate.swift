@@ -95,7 +95,7 @@ extension AppDelegate {
         #endif
 
         // Track
-        coordinator.trackingService.tracking(.openApp)
+        TrackingService.default.tracking(.openApp)
     }
 }
 

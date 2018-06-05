@@ -26,6 +26,7 @@ public final class TrackingService: TrackingServiceType {
         case fetchFeaturePhoto(FetchFeaturePhotoParam)
         case launchOnStartup(LaunchOnStartupParam)
         case setWallapper(SetWallpaperParam)
+        case appUpdated(AppUpdatedParam)
 
         public var methodName: String {
             switch self {
@@ -39,6 +40,8 @@ public final class TrackingService: TrackingServiceType {
                 return "Launch on startup"
             case .setWallapper:
                 return "Set wallpaper"
+            case .appUpdated:
+                return "App updated"
             }
         }
     }
@@ -54,4 +57,10 @@ public final class TrackingService: TrackingServiceType {
     public func tracking(_ type: TrackingService.Kind) {
         trackable.tracking(type)
     }
+}
+
+// MARK: - Helper
+extension TrackingService {
+
+    public static let `default` = Coordinator.default.trackingService
 }

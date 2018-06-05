@@ -17,7 +17,7 @@ public class Coordinator {
     private let fileHandler: FileHandler
     private let networkingService: NetworkingServiceType
     private let appUpdater: Updatable
-    public let trackingService: TrackingServiceType
+    let trackingService: TrackingServiceType
     let wallpaperService: WallpaperServiceType
     let downloadService: DownloadService
     let environment: Environment

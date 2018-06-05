@@ -43,10 +43,34 @@ public struct LaunchOnStartupParam: TrackingParameter {
 public struct FetchFeaturePhotoParam: TrackingParameter {
 
     public let isSuccess: Bool
-    public let photo: Photo
+    public let photo: Photo?
+    public let error: Error?
+
+    public init(isSuccess: Bool, photo: Photo? = nil, error: Error? = nil) {
+        self.isSuccess = isSuccess
+        self.photo = photo
+        self.error = error
+    }
 
     public func toAttribute() -> [String : Any]? {
-        return Device.info + ["photoName": photo.name,
-                              "isSuccess": isSuccess]
+        return ["photoName": photo?.name,
+                "isSuccess": isSuccess,
+                "error": error].filterNil()
+    }
+}
+
+public struct AppUpdatedParam: TrackingParameter {
+
+    public let buildVersion: String
+    public let buildNumber: String
+
+    public init(buildVersion: String, buildNumber: String) {
+        self.buildVersion = buildVersion
+        self.buildNumber = buildNumber
+    }
+
+    public func toAttribute() -> [String : Any]? {
+        return Device.info + ["buildVersion": buildVersion,
+                              "buildNumber": buildNumber]
     }
 }

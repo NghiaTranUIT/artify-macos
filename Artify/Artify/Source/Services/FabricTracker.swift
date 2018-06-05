@@ -25,6 +25,8 @@ final class FabricTracker: Trackable {
             Answers.logCustomEvent(withName: type.methodName, customAttributes: param.toAttribute())
         case .setWallapper(let param):
             Answers.logCustomEvent(withName: type.methodName, customAttributes: param.toAttribute())
+        case .appUpdated(let param):
+            Answers.logCustomEvent(withName: type.methodName, customAttributes: param.toAttribute())
         }
     }
 }

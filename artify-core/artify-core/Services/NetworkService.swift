@@ -37,6 +37,11 @@ final class NetworkingService: NetworkingServiceType {
             .request(.getFeature)
             .mapToModel(type: Photo.self)
             .asObservable()
+            .do(onNext: { (photo) in
+                TrackingService.default.tracking(.fetchFeaturePhoto(FetchFeaturePhotoParam(isSuccess: true, photo: photo)))
+            }, onError: { (error) in
+                TrackingService.default.tracking(.fetchFeaturePhoto(FetchFeaturePhotoParam(isSuccess: false, error: error)))
+            })
     }
 }
 
