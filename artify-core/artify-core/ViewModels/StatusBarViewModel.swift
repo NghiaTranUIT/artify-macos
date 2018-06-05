@@ -108,6 +108,7 @@ public final class StatusBarViewModel: StatusBarViewModelType, StatusBarViewMode
     }
 
     @objc private func quitOnTap() {
+        Coordinator.default.trackingService.tracking(.exitApp)
         terminalApp.onNext(())
     }
 }

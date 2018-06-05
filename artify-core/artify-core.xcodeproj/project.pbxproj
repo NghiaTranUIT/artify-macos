@@ -38,6 +38,7 @@
 		BA947A1920BBDFFB00DBD94D /* GenerationAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA947A1820BBDFFB00DBD94D /* GenerationAlgorithm.swift */; };
 		BA947A1B20BBE18400DBD94D /* GaussianAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA947A1A20BBE18400DBD94D /* GaussianAlgorithm.swift */; };
 		BAA2560A20AC5B6300BBA837 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA2560920AC5B6300BBA837 /* HomeViewModel.swift */; };
+		BAC02E7A20C6693D00CADB25 /* Dictionary+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC02E7920C6693D00CADB25 /* Dictionary+Extension.swift */; };
 		BAC0B74120C0321C00FF4FDF /* Mantle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC0B73F20C0321C00FF4FDF /* Mantle.framework */; };
 		BAC0B74220C0321C00FF4FDF /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC0B74020C0321C00FF4FDF /* ReactiveCocoa.framework */; };
 		BAC0B74420C0338000FF4FDF /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0B74320C0338000FF4FDF /* AppInfo.swift */; };
@@ -49,6 +50,8 @@
 		BAC0BC3B20BA9A690092A541 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0BC3A20BA9A690092A541 /* FileManager.swift */; };
 		BAEB942C20C2761E0048F18B /* LaunchOnStartup.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEB942A20C2761E0048F18B /* LaunchOnStartup.swift */; };
 		BAEB942D20C2761E0048F18B /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEB942B20C2761E0048F18B /* Setting.swift */; };
+		BAF1EE8020C501F200692AA7 /* TrackingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF1EE7F20C501F200692AA7 /* TrackingService.swift */; };
+		BAF1EE8620C5077900692AA7 /* TrackingParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF1EE8520C5077900692AA7 /* TrackingParameter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +101,7 @@
 		BA947A1820BBDFFB00DBD94D /* GenerationAlgorithm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerationAlgorithm.swift; sourceTree = "<group>"; };
 		BA947A1A20BBE18400DBD94D /* GaussianAlgorithm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaussianAlgorithm.swift; sourceTree = "<group>"; };
 		BAA2560920AC5B6300BBA837 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		BAC02E7920C6693D00CADB25 /* Dictionary+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Extension.swift"; sourceTree = "<group>"; };
 		BAC0B73F20C0321C00FF4FDF /* Mantle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Mantle.framework; sourceTree = "<group>"; };
 		BAC0B74020C0321C00FF4FDF /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ReactiveCocoa.framework; sourceTree = "<group>"; };
 		BAC0B74320C0338000FF4FDF /* AppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
@@ -109,6 +113,8 @@
 		BAC0BC3A20BA9A690092A541 /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
 		BAEB942A20C2761E0048F18B /* LaunchOnStartup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LaunchOnStartup.swift; path = "artify-core/Setting/LaunchOnStartup.swift"; sourceTree = SOURCE_ROOT; };
 		BAEB942B20C2761E0048F18B /* Setting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Setting.swift; path = "artify-core/Setting/Setting.swift"; sourceTree = SOURCE_ROOT; };
+		BAF1EE7F20C501F200692AA7 /* TrackingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingService.swift; sourceTree = "<group>"; };
+		BAF1EE8520C5077900692AA7 /* TrackingParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingParameter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +191,7 @@
 				BA947A1520BBCBAC00DBD94D /* String+Encoding.swift */,
 				BAC0B75720C11BC800FF4FDF /* Observable+Extension.swift */,
 				BAC0B75F20C129C700FF4FDF /* CGSize+String.swift */,
+				BAC02E7920C6693D00CADB25 /* Dictionary+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -243,6 +250,7 @@
 		BA79307920AC0756002A7CE4 /* artify-core */ = {
 			isa = PBXGroup;
 			children = (
+				BAF1EE8420C5076A00692AA7 /* TrackingParameter */,
 				BAEB942520C26F7C0048F18B /* Setting */,
 				BA947A1720BBDFE100DBD94D /* Algorithm */,
 				BA4CDA6820B15F1400D19C3D /* Extension */,
@@ -294,6 +302,7 @@
 				BA947A1320BBBE5B00DBD94D /* WallpaperService.swift */,
 				BA6DF64020BD7374006DBF9F /* WallpaperProcessor.swift */,
 				BA2FA37220C02D0E006F9344 /* AppUpdateService.swift */,
+				BAF1EE7F20C501F200692AA7 /* TrackingService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -306,6 +315,14 @@
 			);
 			name = Setting;
 			path = "New Group";
+			sourceTree = "<group>";
+		};
+		BAF1EE8420C5076A00692AA7 /* TrackingParameter */ = {
+			isa = PBXGroup;
+			children = (
+				BAF1EE8520C5077900692AA7 /* TrackingParameter.swift */,
+			);
+			path = TrackingParameter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -368,7 +385,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = com.art.artify.core;
 				TargetAttributes = {
 					BA79307620AC0756002A7CE4 = {
@@ -464,12 +481,15 @@
 				BA947A1620BBCBAC00DBD94D /* String+Encoding.swift in Sources */,
 				BA4CDA6520B1564300D19C3D /* Author.swift in Sources */,
 				BA2FA37320C02D0E006F9344 /* AppUpdateService.swift in Sources */,
+				BAC02E7A20C6693D00CADB25 /* Dictionary+Extension.swift in Sources */,
 				BA6DF61820BD38F0006DBF9F /* GaussianData.swift in Sources */,
 				BA4CDA5E20B14AD600D19C3D /* ArtifyCoreAPI.swift in Sources */,
 				BA4CDA6120B14B9600D19C3D /* Environment.swift in Sources */,
 				BA6DF64120BD7374006DBF9F /* WallpaperProcessor.swift in Sources */,
 				BA947A1B20BBE18400DBD94D /* GaussianAlgorithm.swift in Sources */,
+				BAF1EE8020C501F200692AA7 /* TrackingService.swift in Sources */,
 				BAEB942C20C2761E0048F18B /* LaunchOnStartup.swift in Sources */,
+				BAF1EE8620C5077900692AA7 /* TrackingParameter.swift in Sources */,
 				BAC0B76020C129C700FF4FDF /* CGSize+String.swift in Sources */,
 				BA4CDA5620B13E9200D19C3D /* Menu.swift in Sources */,
 				BA4CDA5320B13E3C00D19C3D /* StatusBarViewModel.swift in Sources */,
@@ -621,7 +641,7 @@
 			buildSettings = {
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;

@@ -18,9 +18,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     // MARK: - Variable
     fileprivate lazy var coordinator: Coordinator = {
         #if DEBUG
-        return Coordinator(kind: .sandbox)
+        return Coordinator(kind: .sandbox, trackable: FabricTracker())
         #else
-        return Coordinator(kind: .production)
+        return Coordinator(kind: .production, trackable: FabricTracker())
         #endif
     }()
     fileprivate let bag = DisposeBag()
@@ -32,10 +32,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         initApp()
         initStatusBarApp()
         binding()
-
-        // Update app
-        coordinator.updateAppIfNeed()
-        LaunchOnStartup.setLaunchAtStartup(Setting.shared.isLaunchOnStartup)
+        setupApp()
 
         // Fetch feature if need
         viewModel.input.getFeatureWallpaperPublisher.onNext(())
@@ -85,6 +82,20 @@ extension AppDelegate {
             NSApplication.shared.terminate(nil)
         })
         .disposed(by: bag)
+    }
+
+    fileprivate func setupApp() {
+
+        // Update app
+        coordinator.updateAppIfNeed()
+
+        // Launch on startup if need
+        #if !DEBUG
+            LaunchOnStartup.setLaunchAtStartup(Setting.shared.isLaunchOnStartup)
+        #endif
+
+        // Track
+        coordinator.trackingService.tracking(.openApp)
     }
 }
 

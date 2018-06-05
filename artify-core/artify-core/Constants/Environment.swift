@@ -22,7 +22,7 @@ public struct Environment {
         case .sandbox:
             return "http://0.0.0.0:7300"
         case .production:
-            return "www.artify.com"
+            return "http://206.189.95.95:7300"
         }
     }
 }
