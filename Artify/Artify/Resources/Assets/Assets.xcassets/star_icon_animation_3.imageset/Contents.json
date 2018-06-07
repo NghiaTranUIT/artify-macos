@@ -2,12 +2,12 @@
   "images" : [
     {
       "idiom" : "mac",
-      "filename" : "explosion copy.png",
+      "filename" : "explosion copy 5.png",
       "scale" : "1x"
     },
     {
       "idiom" : "mac",
-      "filename" : "star_icon@2x.png",
+      "filename" : "star_icon_animation_3@2x.png",
       "scale" : "2x"
     }
   ],
