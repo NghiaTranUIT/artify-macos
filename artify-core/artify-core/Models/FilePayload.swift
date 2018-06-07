@@ -28,13 +28,15 @@ struct FilePayload {
     let photo: Photo
     let kind: Kind
     let prefix: String?
-
+    let override: Bool
+    
     // MARK: - Public
-    init(image: NSImage, photo: Photo, kind: Kind = .jpg, prefix: String? = nil) {
+    init(image: NSImage, photo: Photo, kind: Kind = .jpg, prefix: String? = nil, override: Bool = true) {
         self.image = image
         self.photo = photo
         self.kind = kind
         self.prefix = prefix
+        self.override = override
     }
 
     var fileExtension: String {
