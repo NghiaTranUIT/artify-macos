@@ -35,9 +35,13 @@ final class FileStorage: FileHandler {
 
     func saveImageIfNeed(_ payload: FilePayload) -> URL {
         let path = appFolder.appendingPathComponent(payload.fileName)
-        guard !isPhotoFileExist(payload.fileName) else {
+
+        // Override file if need
+        if !payload.override && isPhotoFileExist(payload.fileName) {
             return path
         }
+
+        // Write
         try? payload.dataRepresentation.write(to: path, options: .atomic)
         return path
     }

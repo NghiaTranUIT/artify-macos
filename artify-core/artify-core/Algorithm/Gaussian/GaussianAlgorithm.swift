@@ -37,8 +37,9 @@ extension GaussianAlgorithm {
         final.lockFocus()
 
         // Background
-        let backgroundOrigin = NSPoint.zero
-        backgroundImage.draw(in: CGRect(origin: backgroundOrigin, size: size))
+        let backgroundOrigin = CGPoint(x: 0, y: (size.height - backgroundImage.pointSize.height) / 2)
+        let backgroundRect = CGRect(origin: backgroundOrigin, size: backgroundImage.pointSize)
+        backgroundImage.draw(in: backgroundRect)
 
         // Prepare
         let imageOrigin = NSPoint(x: (size.width - image.pointSize.width) / 2,
