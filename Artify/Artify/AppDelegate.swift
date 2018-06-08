@@ -25,7 +25,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }()
     fileprivate let bag = DisposeBag()
     fileprivate let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
-    fileprivate let viewModel = StatusBarViewModel()
+    fileprivate lazy var viewModel: StatusBarViewModelType = StatusBarViewModel()
+    fileprivate lazy var animator: Animator = StatusBarAnimator(statusBarBtn: self.statusItem.button!,
+                                                                iconName: "star_icon_animation",
+                                                                original: "StatusBarButtonImage")
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
 
@@ -33,7 +36,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         initStatusBarApp()
         binding()
         setupApp()
-
+        
         // Fetch feature if need
         viewModel.input.getFeatureWallpaperPublisher.onNext(())
     }
@@ -56,7 +59,7 @@ extension AppDelegate {
     
     fileprivate func initStatusBarApp() {
         if let button = statusItem.button {
-            button.image = NSImage(named:NSImage.Name("StatusBarButtonImage"))
+            button.image = NSImage(named: NSImage.Name("StatusBarButtonImage"))
         }
     }
 
@@ -80,6 +83,18 @@ extension AppDelegate {
         // Terminal app
         output.terminalApp.subscribe(onNext: { _ in
             NSApplication.shared.terminate(nil)
+        })
+        .disposed(by: bag)
+
+        // Animation
+        output.isLoading.drive(onNext: {[weak self] (isLoading) in
+            print("isLoading = \(isLoading)")
+            guard let strongSelf = self else { return }
+            if isLoading {
+                strongSelf.animator.start()
+            } else {
+                strongSelf.animator.stop()
+            }
         })
         .disposed(by: bag)
     }
