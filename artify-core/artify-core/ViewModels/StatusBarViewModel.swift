@@ -28,6 +28,7 @@ public protocol StatusBarViewModelOutput {
 
     var menuItems: Variable<[NSMenuItem]> { get }
     var terminalApp: PublishSubject<Void> { get }
+    var isLoading: Driver<Bool> { get }
 }
 
 public final class StatusBarViewModel: StatusBarViewModelType, StatusBarViewModelInput, StatusBarViewModelOutput {
@@ -41,6 +42,7 @@ public final class StatusBarViewModel: StatusBarViewModelType, StatusBarViewMode
 
     // MARK: - Variable
     private let bag = DisposeBag()
+    private let getFeatureAction: CocoaAction
 
     // MARK: - Input
     public var getFeatureWallpaperPublisher = PublishSubject<Void>()
@@ -53,10 +55,20 @@ public final class StatusBarViewModel: StatusBarViewModelType, StatusBarViewMode
                                          Menu(kind: .separator, selector: nil),
                                          Menu(kind: .quit, selector: #selector(StatusBarViewModel.quitOnTap), keyEquivalent: "Q")])
     public let terminalApp = PublishSubject<Void>()
+    public let isLoading: Driver<Bool>
 
     // MARK: - Init
     public init() {
 
+        // Feauture action
+        getFeatureAction = Coordinator.default.wallpaperService.setFeaturePhotoAction
+
+        // isLoading
+        isLoading = getFeatureAction.enabled
+            .map { !$0 }
+            .distinctUntilChanged()
+            .asDriver(onErrorJustReturn: false)
+        
         // Menu
         menus.asObservable()
             .map {[unowned self] in
@@ -74,6 +86,8 @@ public final class StatusBarViewModel: StatusBarViewModelType, StatusBarViewMode
             }
             .bind(to: menuItems)
             .disposed(by: bag)
+
+
 
         // Get feature
         let getFeature = getFeatureWallpaperPublisher.asObserver()
@@ -99,18 +113,7 @@ public final class StatusBarViewModel: StatusBarViewModelType, StatusBarViewMode
     }
 
     @objc private func getFeatureOnTap(_ menu: NSMenuItem) {
-        let action = Coordinator.default.wallpaperService.setFeaturePhotoAction
-
-        // Enable/Disable
-        action
-            .executing
-            .subscribe(onNext: { (isExecuting) in
-                menu.isEnabled = !isExecuting
-            })
-            .disposed(by: bag)
-
-        // Execute
-        action.execute(())
+        getFeatureAction.execute(())
     }
 
     @objc private func launchOnStartUp(_ menu: NSMenuItem) {

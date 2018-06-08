@@ -25,7 +25,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }()
     fileprivate let bag = DisposeBag()
     fileprivate let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
-    fileprivate let viewModel = StatusBarViewModel()
+    fileprivate lazy var viewModel: StatusBarViewModelType = StatusBarViewModel()
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
 
@@ -80,6 +80,12 @@ extension AppDelegate {
         // Terminal app
         output.terminalApp.subscribe(onNext: { _ in
             NSApplication.shared.terminate(nil)
+        })
+        .disposed(by: bag)
+
+        // Animation
+        output.isLoading.drive(onNext: { (isLoading) in
+            print("isLoading = \(isLoading)")
         })
         .disposed(by: bag)
     }
