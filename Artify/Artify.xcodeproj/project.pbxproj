@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		BA1515AE20BFE0B300CFFDC0 /* artify_core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BA4CDA5920B1402D00D19C3D /* artify_core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BA1515B120BFE0C600CFFDC0 /* Pods_Artify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA1515B020BFE0C600CFFDC0 /* Pods_Artify.framework */; };
+		BA634DFC20CA297B00CE5CA5 /* StatusBarAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA634DFB20CA297B00CE5CA5 /* StatusBarAnimator.swift */; };
 		BA7930AA20AC0F39002A7CE4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7930A920AC0F39002A7CE4 /* AppDelegate.swift */; };
 		BA7930AC20AC0F39002A7CE4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7930AB20AC0F39002A7CE4 /* ViewController.swift */; };
 		BA7930AE20AC0F3A002A7CE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA7930AD20AC0F3A002A7CE4 /* Assets.xcassets */; };
@@ -54,6 +55,7 @@
 		6BEC2ECE6ECF0CDAA2F5BD6A /* Pods_Artify.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Artify.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA1515B020BFE0C600CFFDC0 /* Pods_Artify.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_Artify.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA4CDA5920B1402D00D19C3D /* artify_core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = artify_core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA634DFB20CA297B00CE5CA5 /* StatusBarAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarAnimator.swift; sourceTree = "<group>"; };
 		BA7930A620AC0F39002A7CE4 /* Artify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Artify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA7930A920AC0F39002A7CE4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA7930AB20AC0F39002A7CE4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +113,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BA634DFA20CA296A00CE5CA5 /* Animator */ = {
+			isa = PBXGroup;
+			children = (
+				BA634DFB20CA297B00CE5CA5 /* StatusBarAnimator.swift */,
+			);
+			path = Animator;
+			sourceTree = "<group>";
+		};
 		BA79309D20AC0F39002A7CE4 = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +164,7 @@
 		BAA255FF20AC5ACD00BBA837 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				BA634DFA20CA296A00CE5CA5 /* Animator */,
 				BAF1EE8120C503AD00692AA7 /* Services */,
 				BAA2560420AC5B2D00BBA837 /* Extensions */,
 				BAA2560020AC5AD300BBA837 /* Scenes */,
@@ -437,6 +448,7 @@
 				BAC0B76920C18AA000FF4FDF /* String+UUID.swift in Sources */,
 				BAF1EE8320C503BC00692AA7 /* FabricTracker.swift in Sources */,
 				BA7930AC20AC0F39002A7CE4 /* ViewController.swift in Sources */,
+				BA634DFC20CA297B00CE5CA5 /* StatusBarAnimator.swift in Sources */,
 				BA7930AA20AC0F39002A7CE4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
