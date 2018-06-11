@@ -20,6 +20,7 @@ def pod_required
     pod 'RxOptional'
     pod 'Moya/RxSwift', '~> 11.0'
     pod 'RxNuke'
+    pod 'Sparkle'
 end
 
 
