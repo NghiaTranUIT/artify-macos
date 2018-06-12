@@ -24,8 +24,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         #endif
     }()
     fileprivate let bag = DisposeBag()
+    fileprivate let appUpdater = SparkleUpdater()
     fileprivate let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
-    fileprivate lazy var viewModel: StatusBarViewModelType = StatusBarViewModel()
+    fileprivate lazy var viewModel: StatusBarViewModelType = {
+        return StatusBarViewModel(updater: self.appUpdater)
+    }()
     fileprivate lazy var animator: Animator = StatusBarAnimator(statusBarBtn: self.statusItem.button!,
                                                                 iconName: "star_icon_animation",
                                                                 original: "StatusBarButtonImage")
@@ -97,12 +100,20 @@ extension AppDelegate {
             }
         })
         .disposed(by: bag)
+
+        // Open About
+        output.openAboutWindow
+            .drive(onNext: {[weak self] in
+                guard let strongSelf = self else { return }
+
+                let about = AboutWindowController(windowNibName: NSNib.Name("AboutWindowController"))
+                about.showWindow(strongSelf)
+                NSApp.activate(ignoringOtherApps: true)
+            })
+            .disposed(by: bag)
     }
 
     fileprivate func setupApp() {
-
-        // Update app
-        coordinator.updateAppIfNeed()
 
         // Launch on startup if need
         #if !DEBUG

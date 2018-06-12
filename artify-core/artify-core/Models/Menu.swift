@@ -14,6 +14,8 @@ public struct Menu {
         case getFeature
         case separator
         case launchOnStartup
+        case checkForUpdate
+        case about
         case quit
     }
 
@@ -33,6 +35,10 @@ public struct Menu {
             return "Launch on Startup"
         case .separator:
             return ""
+        case .checkForUpdate:
+            return "Check for Updates..."
+        case .about:
+            return "About"
         }
     }
 

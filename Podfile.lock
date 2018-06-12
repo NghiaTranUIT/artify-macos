@@ -20,6 +20,7 @@ PODS:
     - RxCocoa (~> 4.0)
     - RxSwift (~> 4.0)
   - RxSwift (4.0.0)
+  - Sparkle (1.19.0)
   - Unbox (3.0.0)
   - Wrap (3.0.0)
 
@@ -31,6 +32,7 @@ DEPENDENCIES:
   - RxNuke
   - RxOptional
   - RxSwift (~> 4.0.0)
+  - Sparkle
   - Unbox
   - Wrap
 
@@ -45,6 +47,7 @@ SPEC REPOS:
     - RxNuke
     - RxOptional
     - RxSwift
+    - Sparkle
     - Unbox
     - Wrap
 
@@ -58,9 +61,10 @@ SPEC CHECKSUMS:
   RxNuke: b1873b2c384668678ef75a46c35a5a87b82b3a37
   RxOptional: fabc37fc8e3cf4c336ebaeb5c92b576c64b2e6c5
   RxSwift: fd680d75283beb5e2559486f3c0ff852f0d35334
+  Sparkle: 8486d2493599665e466b5076e72b28849776e32f
   Unbox: 9ed33b2a31f7a8a049f54b94d40c4a52a28c4d9d
   Wrap: 918fdb5157e4f701f9503b2633752d6f94616f84
 
-PODFILE CHECKSUM: 54c538dfb1bec2cee31188a90400b53a9f33619d
+PODFILE CHECKSUM: 9ce4a1ee1d86724f94f8bcf6f0760c78e87a8124
 
-COCOAPODS: 1.5.2
+COCOAPODS: 1.5.3
