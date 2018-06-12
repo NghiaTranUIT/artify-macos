@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		BA1515AE20BFE0B300CFFDC0 /* artify_core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BA4CDA5920B1402D00D19C3D /* artify_core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BA1515B120BFE0C600CFFDC0 /* Pods_Artify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA1515B020BFE0C600CFFDC0 /* Pods_Artify.framework */; };
+		BA30611520CFAB3F0011AB63 /* NSColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA30611420CFAB3F0011AB63 /* NSColor+Hex.swift */; };
 		BA634DFC20CA297B00CE5CA5 /* StatusBarAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA634DFB20CA297B00CE5CA5 /* StatusBarAnimator.swift */; };
 		BA7930AA20AC0F39002A7CE4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7930A920AC0F39002A7CE4 /* AppDelegate.swift */; };
 		BA7930AC20AC0F39002A7CE4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7930AB20AC0F39002A7CE4 /* ViewController.swift */; };
@@ -18,7 +19,6 @@
 		BA79835420CF767000DE2828 /* SparkleUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA79835320CF767000DE2828 /* SparkleUpdater.swift */; };
 		BA79835E20CF79F100DE2828 /* AboutWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA79835C20CF79F100DE2828 /* AboutWindowController.swift */; };
 		BA79835F20CF79F100DE2828 /* AboutWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA79835D20CF79F100DE2828 /* AboutWindowController.xib */; };
-		BA79836120CF7B1300DE2828 /* about_image.png in Resources */ = {isa = PBXBuildFile; fileRef = BA79836020CF7B1300DE2828 /* about_image.png */; };
 		BAC0B76620C1896800FF4FDF /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC0B76420C1896800FF4FDF /* Crashlytics.framework */; };
 		BAC0B76720C1896800FF4FDF /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC0B76520C1896800FF4FDF /* Fabric.framework */; };
 		BAC0B76920C18AA000FF4FDF /* String+UUID.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0B76820C18AA000FF4FDF /* String+UUID.swift */; };
@@ -53,6 +53,7 @@
 /* Begin PBXFileReference section */
 		6BEC2ECE6ECF0CDAA2F5BD6A /* Pods_Artify.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Artify.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA1515B020BFE0C600CFFDC0 /* Pods_Artify.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_Artify.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA30611420CFAB3F0011AB63 /* NSColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSColor+Hex.swift"; sourceTree = "<group>"; };
 		BA4CDA5920B1402D00D19C3D /* artify_core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = artify_core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA634DFB20CA297B00CE5CA5 /* StatusBarAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarAnimator.swift; sourceTree = "<group>"; };
 		BA7930A620AC0F39002A7CE4 /* Artify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Artify.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,7 +69,6 @@
 		BA79835320CF767000DE2828 /* SparkleUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparkleUpdater.swift; sourceTree = "<group>"; };
 		BA79835C20CF79F100DE2828 /* AboutWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutWindowController.swift; sourceTree = "<group>"; };
 		BA79835D20CF79F100DE2828 /* AboutWindowController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutWindowController.xib; sourceTree = "<group>"; };
-		BA79836020CF7B1300DE2828 /* about_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = about_image.png; sourceTree = "<group>"; };
 		BAC0B76420C1896800FF4FDF /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		BAC0B76520C1896800FF4FDF /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		BAC0B76820C18AA000FF4FDF /* String+UUID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+UUID.swift"; sourceTree = "<group>"; };
@@ -199,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				BAC0B76820C18AA000FF4FDF /* String+UUID.swift */,
+				BA30611420CFAB3F0011AB63 /* NSColor+Hex.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -206,7 +207,6 @@
 		BAA2560520AC5B3100BBA837 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				BA79836020CF7B1300DE2828 /* about_image.png */,
 				BAA2560820AC5B4200BBA837 /* Info */,
 				BAA2560720AC5B3D00BBA837 /* Assets */,
 				BAA2560620AC5B3600BBA837 /* Xibs */,
@@ -349,7 +349,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA7930AE20AC0F3A002A7CE4 /* Assets.xcassets in Resources */,
-				BA79836120CF7B1300DE2828 /* about_image.png in Resources */,
 				BAE7FEA220CE882100DE4713 /* dsa_pub.pem in Resources */,
 				BA79835F20CF79F100DE2828 /* AboutWindowController.xib in Resources */,
 				BA7930B120AC0F3A002A7CE4 /* Main.storyboard in Resources */,
@@ -451,6 +450,7 @@
 				BAF1EE8320C503BC00692AA7 /* FabricTracker.swift in Sources */,
 				BA7930AC20AC0F39002A7CE4 /* ViewController.swift in Sources */,
 				BA634DFC20CA297B00CE5CA5 /* StatusBarAnimator.swift in Sources */,
+				BA30611520CFAB3F0011AB63 /* NSColor+Hex.swift in Sources */,
 				BA7930AA20AC0F39002A7CE4 /* AppDelegate.swift in Sources */,
 				BA79835420CF767000DE2828 /* SparkleUpdater.swift in Sources */,
 				BA79835E20CF79F100DE2828 /* AboutWindowController.swift in Sources */,
