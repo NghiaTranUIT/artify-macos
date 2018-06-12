@@ -108,8 +108,7 @@ extension AppDelegate {
 
                 let about = AboutWindowController(windowNibName: NSNib.Name("AboutWindowController"))
                 about.showWindow(strongSelf)
-                about.becomeFirstResponder()
-                about.window?.makeKeyAndOrderFront(about.window)
+                NSApp.activate(ignoringOtherApps: true)
             })
             .disposed(by: bag)
     }

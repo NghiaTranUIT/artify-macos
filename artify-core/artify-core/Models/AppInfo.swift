@@ -8,14 +8,14 @@
 
 import Foundation
 
-struct AppInfo {
+public struct AppInfo {
 
-    static let current = AppInfo(bundleInfo: Bundle.main.infoDictionary!)
+    public static let current = AppInfo(bundleInfo: Bundle.main.infoDictionary!)
     
-    let appVersion: String
-    let buildNumber: String
+    public let appVersion: String
+    public let buildNumber: String
 
-    init(bundleInfo: [String: Any]) {
+    private init(bundleInfo: [String: Any]) {
         appVersion = bundleInfo["CFBundleShortVersionString"] as! String
         buildNumber = bundleInfo["CFBundleVersion"] as! String
     }
