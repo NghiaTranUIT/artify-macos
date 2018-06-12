@@ -7,13 +7,18 @@
 //
 
 import Cocoa
+import artify_core
 
 class AboutWindowController: NSWindowController {
 
-    @IBOutlet weak var cell: NSButtonCell!
+    @IBOutlet weak var verionLbl: NSTextField!
+    
     override func windowDidLoad() {
         super.windowDidLoad()
         self.window?.styleMask = NSWindow.StyleMask(rawValue: self.window!.styleMask.rawValue & ~NSWindow.StyleMask.resizable.rawValue)
+
+        let app = AppInfo.current
+        verionLbl.stringValue = "Version \(app.appVersion) (\(app.buildNumber))"
     }
 
     @IBAction func nghiaTranBtnOnTap(_ sender: Any) {

@@ -10,7 +10,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="AboutWindowController" customModule="Artify" customModuleProvider="target">
             <connections>
-                <outlet property="cell" destination="O7l-s9-MyM" id="ccL-3Y-mHe"/>
+                <outlet property="verionLbl" destination="qrr-Nd-Jmb" id="2gZ-za-XxB"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
