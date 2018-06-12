@@ -100,6 +100,16 @@ extension AppDelegate {
             }
         })
         .disposed(by: bag)
+
+        // Open About
+        output.openAboutWindow
+            .drive(onNext: {[weak self] in
+                guard let strongSelf = self else { return }
+
+                let about = AboutWindowController(windowNibName: NSNib.Name("AboutWindowController"))
+                about.showWindow(strongSelf)
+            })
+            .disposed(by: bag)
     }
 
     fileprivate func setupApp() {

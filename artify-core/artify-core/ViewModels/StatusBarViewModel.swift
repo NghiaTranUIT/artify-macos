@@ -29,6 +29,7 @@ public protocol StatusBarViewModelOutput {
     var menuItems: Variable<[NSMenuItem]> { get }
     var terminalApp: PublishSubject<Void> { get }
     var isLoading: Driver<Bool> { get }
+    var openAboutWindow: Driver<Void> { get }
 }
 
 public final class StatusBarViewModel: StatusBarViewModelType, StatusBarViewModelInput, StatusBarViewModelOutput {
@@ -44,6 +45,7 @@ public final class StatusBarViewModel: StatusBarViewModelType, StatusBarViewMode
     private let bag = DisposeBag()
     private let getFeatureAction: CocoaAction
     private let updater: AppUpdatable
+    private let openAboutPublisher = PublishSubject<Void>()
 
     // MARK: - Input
     public var getFeatureWallpaperPublisher = PublishSubject<Void>()
@@ -60,10 +62,14 @@ public final class StatusBarViewModel: StatusBarViewModelType, StatusBarViewMode
                                          Menu(kind: .quit, selector: #selector(StatusBarViewModel.quitOnTap), keyEquivalent: "Q")])
     public let terminalApp = PublishSubject<Void>()
     public let isLoading: Driver<Bool>
+    public let openAboutWindow: Driver<Void>
 
     // MARK: - Init
     public init(updater: AppUpdatable) {
         self.updater = updater
+
+        // Open About
+        openAboutWindow = openAboutPublisher.asObserver().asDriver(onErrorJustReturn: ())
 
         // Feauture action
         getFeatureAction = Coordinator.default.wallpaperService.setFeaturePhotoAction
@@ -142,6 +148,6 @@ public final class StatusBarViewModel: StatusBarViewModelType, StatusBarViewMode
     }
 
     @objc private func about() {
-
+        openAboutPublisher.onNext(())
     }
 }
