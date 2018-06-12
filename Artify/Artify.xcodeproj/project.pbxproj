@@ -18,6 +18,7 @@
 		BAC0B76620C1896800FF4FDF /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC0B76420C1896800FF4FDF /* Crashlytics.framework */; };
 		BAC0B76720C1896800FF4FDF /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC0B76520C1896800FF4FDF /* Fabric.framework */; };
 		BAC0B76920C18AA000FF4FDF /* String+UUID.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0B76820C18AA000FF4FDF /* String+UUID.swift */; };
+		BAE7FEA220CE882100DE4713 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = BAE7FEA120CE882100DE4713 /* dsa_pub.pem */; };
 		BAF1EE8320C503BC00692AA7 /* FabricTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF1EE8220C503BC00692AA7 /* FabricTracker.swift */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +64,7 @@
 		BAC0B76420C1896800FF4FDF /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		BAC0B76520C1896800FF4FDF /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		BAC0B76820C18AA000FF4FDF /* String+UUID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+UUID.swift"; sourceTree = "<group>"; };
+		BAE7FEA120CE882100DE4713 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		BAF1EE8220C503BC00692AA7 /* FabricTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FabricTracker.swift; sourceTree = "<group>"; };
 		CE76D14A9E4B3E7FDBF1E63D /* Pods-Artify.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Artify.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-Artify/Pods-Artify.debug.xcconfig"; sourceTree = "<group>"; };
 		DB1D3B10AA160A53725BAC00 /* Pods-Artify.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Artify.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Artify/Pods-Artify.release.xcconfig"; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 		BAA2560820AC5B4200BBA837 /* Info */ = {
 			isa = PBXGroup;
 			children = (
+				BAE7FEA120CE882100DE4713 /* dsa_pub.pem */,
 				BA7930B220AC0F3A002A7CE4 /* Info.plist */,
 			);
 			path = Info;
@@ -342,6 +345,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA7930AE20AC0F3A002A7CE4 /* Assets.xcassets in Resources */,
+				BAE7FEA220CE882100DE4713 /* dsa_pub.pem in Resources */,
 				BA7930B120AC0F3A002A7CE4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
