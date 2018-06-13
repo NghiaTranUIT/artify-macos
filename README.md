@@ -1,6 +1,6 @@
 
 <p align="center">
-  <img src="https://github.com/NghiaTranUIT/artify-macos/blob/master/images/logo.png" alt="Artify App Logo" width="520" height="auto"/>
+  <img src="https://github.com/NghiaTranUIT/artify-macos/blob/master/images/logo.png" alt="Artify App Logo" width="600" height="auto"/>
 </p>
 
 <h2>
@@ -16,7 +16,7 @@
   </a>
 </h2>
 
-A desktop macOS X application for bringing dedicatedly 18th century Arts to everyone
+A macOS X application for bringing dedicatedly 18th century Arts to everyone
 
 <a href="#screenshots">Screenshots</a> •
 <a href="#features">Features</a> •
@@ -44,4 +44,29 @@ A desktop macOS X application for bringing dedicatedly 18th century Arts to ever
 * 🌎 On-demand art, You can pick your favorites art-style, artist (Comming soon 🙇🏻‍♂️)
 * 🍉 Open-source project.
 * 💯 Totally Free.
+
+### Downloads
+<a href='https://github.com/NghiaTranUIT/artify-macos/releases/download/0.5.1/Artify.zip'>Download Artify 0.5.1</a>
+
+[More Download Options](https://github.com/hql287/Manta/releases)
+
+#### macOS Requirement
+The minimum version supported is macOS 10.11.
+
+### Technologies
+* [Swift 4.1](https://swift.org)
+* [macOS Native](https://developer.apple.com/documentation/)
+* [RxSwift](https://github.com/ReactiveX/RxSwift)
+* [MVVM](https://www.objc.io/issues/13-architecture/mvvm/)
+
+### 3rd Libraries
+* [Moya/RxSwift](https://github.com/Moya/Moya)
+* [RxSwift](https://github.com/ReactiveX/RxSwift)
+* [RxCocoa](https://github.com/ReactiveX/RxSwift/tree/master/RxCocoa)
+* [RxOptional](https://github.com/RxSwiftCommunity/RxOptional)
+* [Action](https://github.com/RxSwiftCommunity/Action)
+* [Alamofire](https://github.com/Alamofire/Alamofire)
+* [Unbox](https://github.com/JohnSundell/Unbox)
+* [RxNuke](https://github.com/kean/RxNuke)
+* [Sparkle](https://sparkle-project.org)
 
