@@ -9,13 +9,19 @@
 import Cocoa
 import artify_core
 
-class AboutWindowController: NSWindowController {
+class AboutWindowController: NSViewController {
 
     @IBOutlet weak var verionLbl: NSTextField!
+
+    class func presentController(_ from: Any) {
+        let about = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil).instantiateController(withIdentifier: NSStoryboard.SceneIdentifier("AboutWindowController")) as! NSWindowController
+        about.showWindow(from)
+        NSApp.activate(ignoringOtherApps: true)
+    }
     
-    override func windowDidLoad() {
-        super.windowDidLoad()
-        self.window?.styleMask = NSWindow.StyleMask(rawValue: self.window!.styleMask.rawValue & ~NSWindow.StyleMask.resizable.rawValue)
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.view.window?.styleMask = NSWindow.StyleMask(rawValue: self.view.window!.styleMask.rawValue & ~NSWindow.StyleMask.resizable.rawValue)
 
         let app = AppInfo.current
         verionLbl.stringValue = "Version \(app.appVersion) (\(app.buildNumber))"
@@ -27,8 +33,12 @@ class AboutWindowController: NSWindowController {
     }
 
     @IBAction func artifyMacOSBtnOnTap(_ sender: Any) {
-        print("Hi")
         let url = URL(string: "https://github.com/NghiaTranUIT/artify-macos")!
+        NSWorkspace.shared.open(url)
+    }
+
+    @IBAction func githubBtnOnTap(_ sender: Any) {
+        let url = URL(string: "https://github.com/NghiaTranUIT")!
         NSWorkspace.shared.open(url)
     }
 
