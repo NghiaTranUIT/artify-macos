@@ -85,7 +85,7 @@ After starting the development server.
 
 Yes, Artify is built on top of Swift 4.1 and macOS Native library.
 
-* ***Why is 18th century art?*
+* **Why is 18th century art?**
 
 Every time I have a short trip to an overseas country, I often spent 1 or 2 days to visit all famous art museum. I could stand for an hour to look at the detail, the scrape from those old oil photo. Individual traits could represent the history, the effort, the dream from original authors.
 
