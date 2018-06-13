@@ -41,7 +41,7 @@ A macOS X application for bringing dedicatedly 18th century Arts to everyone
 * 😍 Hand-picked 18th Arts.
 * 👨‍💻 Generate beautiful wallpaper depend on your screen size.
 * 👑 Automatically fetch feature art for everydays.
-* 🌎 On-demand art, You can pick your favorites art-style, artist (Comming soon 🙇🏻‍♂️)
+* 🌎 On-demand art, You can pick your favorites art-style, artist (Coming soon 🙇🏻‍♂️)
 * 🍉 Open-source project.
 * 💯 Totally Free.
 
@@ -70,3 +70,40 @@ The minimum version supported is macOS 10.11.
 * [RxNuke](https://github.com/kean/RxNuke)
 * [Sparkle](https://sparkle-project.org)
 
+### Development
+Artify requires [Artify Core](https://github.com/NghiaTranUIT/artify-core) as a backend. Pls follow this [Instruction](https://github.com/NghiaTranUIT/artify-core/blob/master/README.md) in order to start the core successfully 😎
+
+After starting the development server.
+* Clone this project
+* Run `$ pod install`
+* Open `ArtifyWorkspace.xcworkspace`
+* Happy coding 😍
+
+### FAQ
+
+* **Is this app built with Swift?**
+
+Yes, Artify is built on top of Swift 4.1 and macOS Native library.
+
+* ***Why is 18th century art?*
+
+Every time I have a short trip to an overseas country, I often spent 1 or 2 days to visit all famous art museum. I could stand for an hour to look at the detail, the scrape from those old oil photo. Individual traits could represent the history, the effort, the dream from original authors.
+
+I realize I fall in love with the 18th art somehow 🤣
+
+Then I come up with the idea, why don't we bring it to everybody, who has the same passion as me.
+
+Let imagine, every day, when I open my latop at 9 AM, I can see the best photo of this day, with detail information, history, and the author. 
+That would be amazing 😱
+
+Without considering, I start to develop the macOS app as well as the Artify-Core, which is written by Golang.
+
+All of the art pictures will be hand-picked by me and my best girlfriend. Hope you enjoy it 😍 
+
+* **Are you available for hire?**
+
+Yes, I appreciate if you're looking for a newly dedicated teammate. Shot me an email if you'd to hire me.
+
+* **How do I contact you?**
+
+Don't hesitate to open Issue on Github if you encounter any problems. Or give a welcome hug to me at vinhnghiatran@gmail.com.
