@@ -3,6 +3,9 @@
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14113"/>
+        <capability name="box content view" minToolsVersion="7.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+        <capability name="system font weights other than Regular or Bold" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -680,5 +683,206 @@
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
         </scene>
+        <!--Window Controller-->
+        <scene sceneID="mNf-bL-2dw">
+            <objects>
+                <customObject id="n55-FE-Pbo" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <windowController storyboardIdentifier="AboutWindowController" id="BoU-bI-MRc" sceneMemberID="viewController">
+                    <window key="window" title="About Artify" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" showsToolbarButton="NO" frameAutosaveName="" animationBehavior="default" titlebarAppearsTransparent="YES" id="0j7-1n-gVt">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="478" y="552" width="510" height="278"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
+                        <connections>
+                            <outlet property="delegate" destination="BoU-bI-MRc" id="4M3-si-P5X"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="UyQ-gm-OH7" kind="relationship" relationship="window.shadowedContentViewController" id="IFw-zA-8vg"/>
+                    </connections>
+                </windowController>
+            </objects>
+            <point key="canvasLocation" x="79" y="340"/>
+        </scene>
+        <!--About Window Controller-->
+        <scene sceneID="6t3-9r-7Ll">
+            <objects>
+                <customObject id="2eK-fn-YKL" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <viewController id="UyQ-gm-OH7" customClass="AboutWindowController" customModule="Artify" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="aZ6-qO-1F8">
+                        <rect key="frame" x="0.0" y="0.0" width="518" height="280"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <box horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" boxType="custom" borderType="none" borderWidth="0.0" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="Evb-YZ-M3L">
+                                <rect key="frame" x="0.0" y="0.0" width="518" height="280"/>
+                                <view key="contentView" id="RCt-PB-bCQ">
+                                    <rect key="frame" x="0.0" y="0.0" width="518" height="280"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <color key="fillColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </box>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FjZ-51-4oe">
+                                <rect key="frame" x="36" y="76" width="128" height="128"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="about" id="LyL-Ff-PBV"/>
+                            </imageView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="klj-F7-bpM">
+                                <rect key="frame" x="198" y="205" width="148" height="57"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="ARTIFY" id="cn1-G1-Q2m">
+                                    <font key="font" metaFont="systemThin" size="48"/>
+                                    <color key="textColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="kni-Z9-ma5">
+                                <rect key="frame" x="198" y="188" width="108" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Version 0.4 (500)" id="Cv4-Sk-4HJ">
+                                    <font key="font" metaFont="systemLight" size="13"/>
+                                    <color key="textColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="JMK-uR-fYw">
+                                <rect key="frame" x="198" y="155" width="98" height="19"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Developed by" id="JAC-J6-aoH">
+                                    <font key="font" metaFont="system" size="15"/>
+                                    <color key="textColor" white="0.14999999999999999" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="JU0-xk-5XQ">
+                                <rect key="frame" x="198" y="122" width="137" height="19"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Wanna contribute ?" id="HFb-ta-86o">
+                                    <font key="font" metaFont="system" size="15"/>
+                                    <color key="textColor" white="0.14999999999999999" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UIX-Cq-C9l">
+                                <rect key="frame" x="200" y="79" width="50" height="21"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="github" id="H5b-Ew-J2z"/>
+                            </imageView>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Svq-l2-not">
+                                <rect key="frame" x="382" y="67" width="114" height="43"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="110" id="73a-Xd-WHm"/>
+                                    <constraint firstAttribute="height" constant="38" id="LmU-a9-kZp"/>
+                                </constraints>
+                                <buttonCell key="cell" type="bevel" title="Artify Core" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="k5Z-Kc-Td6">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="artifyCoreBtnOnTap:" target="UyQ-gm-OH7" id="8QT-6p-U89"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bRp-wG-Ypx">
+                                <rect key="frame" x="260" y="67" width="114" height="43"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="110" id="Pd4-cJ-xst"/>
+                                    <constraint firstAttribute="height" constant="38" id="m8H-H8-2mS"/>
+                                </constraints>
+                                <buttonCell key="cell" type="bevel" title="Artify macOS" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="LpC-oz-2bx">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="artifyMacOSBtnOnTap:" target="UyQ-gm-OH7" id="o10-pm-UoK"/>
+                                </connections>
+                            </button>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tWs-Gm-mJ4">
+                                <rect key="frame" x="205" y="29" width="41" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="kaa-3m-RGx"/>
+                                    <constraint firstAttribute="width" constant="41" id="uUL-ya-2KH"/>
+                                </constraints>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="link" id="eRh-Fz-uhp"/>
+                            </imageView>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3U1-Ss-zVL">
+                                <rect key="frame" x="260" y="18" width="114" height="43"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="GJp-J0-7GK"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="110" id="nal-X2-ZGg"/>
+                                </constraints>
+                                <buttonCell key="cell" type="bevel" title="nghiatran.me" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="G0L-aA-c0z">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="nghiaTranBtnOnTap:" target="UyQ-gm-OH7" id="8sl-f0-BvF"/>
+                                </connections>
+                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Z6h-12-uxG">
+                                <rect key="frame" x="296" y="155" width="96" height="19"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="NGHIA TRAN" id="Vzt-rF-NdM">
+                                    <font key="font" metaFont="systemMedium" size="15"/>
+                                    <color key="textColor" white="0.14628906250000001" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Tjo-6I-Wra">
+                                <rect key="frame" x="398" y="153" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="MdE-Jo-68F"/>
+                                    <constraint firstAttribute="width" constant="24" id="bs1-cz-ri3"/>
+                                </constraints>
+                                <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="github_logo" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="tGa-BE-9iX">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="githubBtnOnTap:" target="UyQ-gm-OH7" id="YLo-3f-QVd"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="Tjo-6I-Wra" firstAttribute="leading" secondItem="Z6h-12-uxG" secondAttribute="trailing" constant="8" id="1et-Nm-U9m"/>
+                            <constraint firstItem="klj-F7-bpM" firstAttribute="leading" secondItem="FjZ-51-4oe" secondAttribute="trailing" constant="36" id="1ua-mH-dq3"/>
+                            <constraint firstAttribute="trailing" secondItem="Evb-YZ-M3L" secondAttribute="trailing" id="2La-A5-kc5"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="JU0-xk-5XQ" secondAttribute="trailing" constant="24" id="3hJ-OC-itP"/>
+                            <constraint firstItem="kni-Z9-ma5" firstAttribute="leading" secondItem="klj-F7-bpM" secondAttribute="leading" id="5cI-p8-gZi"/>
+                            <constraint firstItem="bRp-wG-Ypx" firstAttribute="leading" secondItem="UIX-Cq-C9l" secondAttribute="trailing" constant="12" id="BeZ-VQ-a9Y"/>
+                            <constraint firstItem="JU0-xk-5XQ" firstAttribute="leading" secondItem="JMK-uR-fYw" secondAttribute="leading" id="Fv9-uR-X7E"/>
+                            <constraint firstItem="tWs-Gm-mJ4" firstAttribute="top" secondItem="UIX-Cq-C9l" secondAttribute="bottom" constant="28" id="G5q-wZ-uvQ"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Svq-l2-not" secondAttribute="trailing" constant="24" id="G6X-mj-xRB"/>
+                            <constraint firstItem="Evb-YZ-M3L" firstAttribute="top" secondItem="aZ6-qO-1F8" secondAttribute="top" id="GRX-NP-coU"/>
+                            <constraint firstItem="JU0-xk-5XQ" firstAttribute="top" secondItem="JMK-uR-fYw" secondAttribute="bottom" constant="14" id="HY6-jh-bzW"/>
+                            <constraint firstAttribute="bottom" secondItem="Evb-YZ-M3L" secondAttribute="bottom" id="ORb-pn-utw"/>
+                            <constraint firstItem="tWs-Gm-mJ4" firstAttribute="centerX" secondItem="UIX-Cq-C9l" secondAttribute="centerX" id="Oua-1y-Ckl"/>
+                            <constraint firstItem="Svq-l2-not" firstAttribute="centerY" secondItem="bRp-wG-Ypx" secondAttribute="centerY" id="RHS-99-hhG"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="3U1-Ss-zVL" secondAttribute="trailing" constant="24" id="UKE-Sh-1FX"/>
+                            <constraint firstItem="FjZ-51-4oe" firstAttribute="centerY" secondItem="aZ6-qO-1F8" secondAttribute="centerY" id="X9L-HX-0sQ"/>
+                            <constraint firstItem="Tjo-6I-Wra" firstAttribute="centerY" secondItem="Z6h-12-uxG" secondAttribute="centerY" id="YIX-sR-ERy"/>
+                            <constraint firstItem="Z6h-12-uxG" firstAttribute="centerY" secondItem="JMK-uR-fYw" secondAttribute="centerY" id="YY5-iQ-0tb"/>
+                            <constraint firstItem="bRp-wG-Ypx" firstAttribute="centerY" secondItem="UIX-Cq-C9l" secondAttribute="centerY" id="ZE8-IX-odH"/>
+                            <constraint firstItem="JMK-uR-fYw" firstAttribute="leading" secondItem="kni-Z9-ma5" secondAttribute="leading" id="a2w-Ir-9bo"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="kni-Z9-ma5" secondAttribute="trailing" constant="24" id="aAW-yE-5An"/>
+                            <constraint firstItem="klj-F7-bpM" firstAttribute="top" secondItem="aZ6-qO-1F8" secondAttribute="top" constant="18" id="bcf-Wd-69r"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Z6h-12-uxG" secondAttribute="trailing" constant="24" id="d0i-SS-JM3"/>
+                            <constraint firstItem="UIX-Cq-C9l" firstAttribute="top" secondItem="JU0-xk-5XQ" secondAttribute="bottom" constant="22" id="eN5-LM-325"/>
+                            <constraint firstItem="Evb-YZ-M3L" firstAttribute="leading" secondItem="aZ6-qO-1F8" secondAttribute="leading" id="evb-CF-f6Y"/>
+                            <constraint firstItem="UIX-Cq-C9l" firstAttribute="leading" secondItem="JU0-xk-5XQ" secondAttribute="leading" id="fNC-xT-gkC"/>
+                            <constraint firstItem="3U1-Ss-zVL" firstAttribute="centerY" secondItem="tWs-Gm-mJ4" secondAttribute="centerY" id="pYF-NG-ZEa"/>
+                            <constraint firstItem="kni-Z9-ma5" firstAttribute="top" secondItem="klj-F7-bpM" secondAttribute="bottom" id="s68-aR-Sxe"/>
+                            <constraint firstItem="JMK-uR-fYw" firstAttribute="top" secondItem="kni-Z9-ma5" secondAttribute="bottom" constant="14" id="srw-B2-wPn"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="klj-F7-bpM" secondAttribute="trailing" constant="24" id="uj9-2d-qh5"/>
+                            <constraint firstItem="Z6h-12-uxG" firstAttribute="leading" secondItem="JMK-uR-fYw" secondAttribute="trailing" constant="4" id="uti-MA-yHG"/>
+                            <constraint firstItem="Svq-l2-not" firstAttribute="leading" secondItem="bRp-wG-Ypx" secondAttribute="trailing" constant="12" id="wEC-x7-UQR"/>
+                            <constraint firstItem="3U1-Ss-zVL" firstAttribute="leading" secondItem="bRp-wG-Ypx" secondAttribute="leading" id="xSH-YZ-LKX"/>
+                            <constraint firstItem="FjZ-51-4oe" firstAttribute="leading" secondItem="aZ6-qO-1F8" secondAttribute="leading" constant="36" id="yV8-bI-iR4"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="verionLbl" destination="kni-Z9-ma5" id="LgS-HJ-yKo"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="797" y="315"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="about" width="128" height="128"/>
+        <image name="github" width="50" height="20.5"/>
+        <image name="github_logo" width="64" height="64"/>
+        <image name="link" width="51.200000762939453" height="51.200000762939453"/>
+    </resources>
 </document>

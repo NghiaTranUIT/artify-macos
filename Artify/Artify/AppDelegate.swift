@@ -106,9 +106,8 @@ extension AppDelegate {
             .drive(onNext: {[weak self] in
                 guard let strongSelf = self else { return }
 
-                let about = AboutWindowController(windowNibName: NSNib.Name("AboutWindowController"))
-                about.showWindow(strongSelf)
-                NSApp.activate(ignoringOtherApps: true)
+                // Present modal
+                AboutWindowController.presentController(strongSelf)
             })
             .disposed(by: bag)
     }
