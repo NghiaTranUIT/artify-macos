@@ -5,7 +5,7 @@
 
 <h2>
   Artify
-  <a href="https://travis-ci.org/hql287/Manta">
+  <a href="https://travis-ci.org/NghiaTranUIT/artify-macos">
     <img src="https://travis-ci.org/NghiaTranUIT/artify-macos.svg?branch=master" alt="Build Status">
   </a>
   <a href="https://github.com/NghiaTranUIT/artify-macos/releases/tag/0.5.1">
@@ -40,7 +40,7 @@ A macOS X application for bringing dedicatedly 18th century Arts to everyone
 ### Features
 * 😍 Hand-picked 18th Arts.
 * 👨‍💻 Generate beautiful wallpaper depend on your screen size.
-* 👑 Automatically fetch feature art for everydays.
+* 👑 Automatically fetch feature art for every days.
 * 🌎 On-demand art, You can pick your favorites art-style, artist (Coming soon 🙇🏻‍♂️)
 * 🍉 Open-source project.
 * 💯 Totally Free.
@@ -48,7 +48,7 @@ A macOS X application for bringing dedicatedly 18th century Arts to everyone
 ### Downloads
 <a href='https://github.com/NghiaTranUIT/artify-macos/releases/download/0.5.1/Artify.zip'>Download Artify 0.5.1</a>
 
-[More Download Options](https://github.com/hql287/Manta/releases)
+[More Download Options](https://github.com/NghiaTranUIT/artify-macos/releases)
 
 #### macOS Requirement
 The minimum version supported is macOS 10.11.
@@ -93,12 +93,12 @@ I realize I fall in love with the 18th art somehow 🤣
 
 Then I come up with the idea, why don't we bring it to everybody, who has the same passion as me.
 
-Let imagine, every day, when I open my latop at 9 AM, I can see the best photo of this day, with detail information, history, and the author. 
+Let imagine, every day, when I open my laptop at 9 AM, I can see the best photo of this day, with detail information, history, and the author.
 That would be amazing 😱
 
-Without considering, I start to develop the macOS app as well as the Artify-Core, which is written by Golang.
+Without considering, I start to develop the macOS app as well as the [Artify-Core](https://github.com/NghiaTranUIT/artify-core), which is written by Golang.
 
-All of the art pictures will be hand-picked by me and my best girlfriend. Hope you enjoy it 😍 
+All of the art pictures will be hand-picked by me and my best girlfriend. Hope you enjoy it 😍
 
 * **Are you available for hire?**
 
