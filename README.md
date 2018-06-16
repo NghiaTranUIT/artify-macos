@@ -79,79 +79,79 @@ After starting the development server.
 
 * **Is it a original idea?**
 
-Nowadays, Almost idea is mixing. The original idea was inspired by a guy in HN-Show I've seen in a couple months ago. It's just a tool to generate a photo after dragging manually my original picture. It has lack of capability. 
+> Nowadays, Almost idea is mixing. The original idea was inspired by a guy in HN-Show I've seen in a couple months ago. It's just a tool to generate a photo after dragging manually my original picture. It has lack of capability. 
 
-I'm a lazy guy, I'd something could do it automatically every time. Ultimately, I came up with this idea.
+> I'm a lazy guy, I'd something could do it automatically every time. Ultimately, I came up with this idea.
 
 * **Where is the Backend side?**
 
-I'm in charge of developing the [Artify Core](https://github.com/NghiaTranUIT/artify-core), as a Golang backend serverside. Feel free to contribute cooperatively.
+> I'm in charge of developing the [Artify Core](https://github.com/NghiaTranUIT/artify-core), as a Golang backend serverside. > Feel free to contribute cooperatively.
 
 * **Why do you choose RxSwift + MVVM?**
 
-I have solid experience when working with RxSwift + MVVM for a couple projects on Production. I'm so happy when writing concise, elegant Observable, Driver,... rather than clumsy functions with tons of nested-callbacks.
+> I have solid experience when working with RxSwift + MVVM for a couple projects on Production. I'm so happy when writing concise, elegant Observable, Driver,... rather than clumsy functions with tons of nested-callbacks.
 
-If something makes me happy, I will follow it. Simple enough 😂
+> If something makes me happy, I will follow it. Simple enough 😂
 
 * **Is this app built with Swift?**
 
-Yes, Artify is built on top of Swift 4.1 and macOS Native library.
+> Yes, Artify is built on top of Swift 4.1 and macOS Native library.
 
 * **Why is it an OSS?**
 
-The source code is a trash if keep it in your inventory forever. I'd contribute back to the dev community when I have an opportunity.
+> The source code is a trash if keep it in your inventory forever. I'd contribute back to the dev community when I have an opportunity.
 
-The best way is publishing your source code 👨‍💻.
+> The best way is publishing your source code 👨‍💻.
 
 * **Why is 18th century art?**
 
-Every time I have a short trip to an overseas country, I often spent 1 or 2 days to visit all famous art museum. I could stand for an hour to look at the detail, the scrape from those old oil photo. Individual traits could represent the history, the effort, the dream from original authors.
+> Every time I have a short trip to an overseas country, I often spent 1 or 2 days to visit all famous art museum. I could stand for an hour to look at the detail, the scrape from those old oil photo. Individual traits could represent the history, the effort, the dream from original authors.
 
-I realize I fall in love with the 18th art somehow 🤣
+> I realize I fall in love with the 18th art somehow 🤣
 
-Then I come up with the idea, why don't we bring it to everybody, who has the same passion as me.
+> Then I come up with the idea, why don't we bring it to everybody, who has the same passion as me.
 
-Let imagine, every day, when I open my laptop at 9 AM, I can see the best photo of this day, with detail information, history, and the author.
+> Let imagine, every day, when I open my laptop at 9 AM, I can see the best photo of this day, with detail information, history, and the author.
 That would be amazing 😱
 
-Without considering, I start to develop the macOS app as well as the [Artify-Core](https://github.com/NghiaTranUIT/artify-core), which is written by Golang.
+> Without considering, I start to develop the macOS app as well as the [Artify-Core](https://github.com/NghiaTranUIT/artify-core), which is written by Golang.
 
-All of the art pictures will be hand-picked by me and my best girlfriend. Hope you enjoy it 😍
+> All of the art pictures will be hand-picked by me and my best girlfriend. Hope you enjoy it 😍
 
 * **How does Artify generate the beautify wallpaper?**
 
-[TL;DR]
+> **[TL;DR]**
 
-1. Determine the golden size, which relies on your current screen size. It makes sure every generated wallpaper is as nice as possible.
-2. Draw this image with the desired size in the middle
-3. Draw shadow 
-4. Scale the background with "aspect to fill" mode
-5. Apply Gaussian algorithm
-6. Combine everything and cached locally.
+> 1. Determine the golden size, which relies on your current screen size. It makes sure every generated wallpaper is as nice as possible.
+> 2. Draw this image with the desired size in the middle
+> 3. Draw shadow 
+> 4. Scale the background with "aspect to fill" mode
+> 5. Apply Gaussian algorithm
+> 6. Combine everything and cached locally.
 
-[Detail implementation]
-Here is the [algorithm](https://github.com/NghiaTranUIT/artify-macos/blob/master/artify-core/artify-core/Algorithm/Gaussian/GaussianAlgorithm.swift)
+> **[Detail implementation]**
+> Here is the [algorithm](https://github.com/NghiaTranUIT/artify-macos/blob/master/artify-core/artify-core/Algorithm/Gaussian/GaussianAlgorithm.swift)
 
 * **Where does the Artify's resource come from?**
 
-Every art pictures are hand-picked from [WikiArt](https://www.wikiart.org).
+> Every art pictures are hand-picked from [WikiArt](https://www.wikiart.org).
 
-If you wonder how I collect the data. Here is my partner, [Spider Man](https://github.com/NghiaTranUIT/artify-core/blob/master/scripts/spider.ruby), which is a Ruby script. 
+> If you wonder how I collect the data. Here is my partner, [Spider Man](https://github.com/NghiaTranUIT/artify-core/blob/master/scripts/spider.ruby), which is a Ruby script. 
 
-The conjunction of [Nokogiri](http://www.nokogiri.org) and [Watir](http://watir.com) are perfect for this scenario. Indeed,I'm a lazy man, I don't want to collect data like a manual labor 😅.
+> The conjunction of [Nokogiri](http://www.nokogiri.org) and [Watir](http://watir.com) are perfect for this scenario. Indeed,I'm a lazy man, I don't want to collect data like a manual labor 😅.
 
 * **What are the tough problems, which you confronts when developing this project?**
 
-The Implementation of the [Artify Core](https://github.com/NghiaTranUIT/artify-core) by Golang with latest technologies and the Artify Gaussian algorithm are two things take me most the effort.
+> The Implementation of the [Artify Core](https://github.com/NghiaTranUIT/artify-core) by Golang with latest technologies and the Artify Gaussian algorithm are two things take me most the effort.
 
 * **Can I become a contributor?**
 
-Defintely, I appreciate your effort to become a contributor. Clone the project and setup your workspace. Happy coding guys 🚢
+> Defintely, I appreciate your effort to become a contributor. Clone the project and setup your workspace. Happy coding guys 🚢
 
 * **Are you available for hire?**
 
-Yes, I appreciate if you're looking for a newly dedicated teammate. Shot me an email if you'd to hire me.
+> Yes, I appreciate if you're looking for a newly dedicated teammate. Shot me an email if you'd to hire me.
 
 * **How do I contact you?**
 
-Don't hesitate to open Issue on Github if you encounter any problems. Or give a welcome hug to me at vinhnghiatran@gmail.com.
+> Don't hesitate to open Issue on Github if you encounter any problems. Or give a welcome hug to me at vinhnghiatran@gmail.com.
