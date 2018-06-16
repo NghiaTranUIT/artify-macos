@@ -120,7 +120,7 @@ That would be amazing 😱
 
 * **How does Artify generate the beautify wallpaper?**
 
-> **[TL;DR]**
+> **[DR;TL]**
 
 > 1. Determine the golden size, which relies on your current screen size. It makes sure every generated wallpaper is as nice as possible.
 > 2. Draw this image with the desired size in the middle
@@ -130,6 +130,7 @@ That would be amazing 😱
 > 6. Combine everything and cached locally.
 
 > **[Detail implementation]**
+
 > Here is the [algorithm](https://github.com/NghiaTranUIT/artify-macos/blob/master/artify-core/artify-core/Algorithm/Gaussian/GaussianAlgorithm.swift)
 
 * **Where does the Artify's resource come from?**
