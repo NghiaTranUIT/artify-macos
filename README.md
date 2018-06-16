@@ -33,6 +33,8 @@ A macOS X application for bringing dedicatedly 18th century Arts to everyone �
     <div align="center">Red Vineyard At Arles</div>
     <img src="https://github.com/NghiaTranUIT/artify-macos/blob/master/images/the-starry-night.jpg" width="100%" />
     <div align="center">The Starry Night</div>
+    <img src="https://github.com/NghiaTranUIT/artify-macos/blob/master/images/1440_900_the_wanderer_above_the_sea_of_fog.jpg" width="100%" />
+    <div align="center">The Wanderer Above The Sea of Fog</div>
 </div>
 
 ## Features
@@ -79,7 +81,7 @@ After starting the development server.
 
 * **Is it a original idea?**
 
-> Nowadays, Almost idea is mixing. The original idea was inspired by a guy in HN-Show I've seen in a couple months ago. It's just a tool to generate a photo after dragging manually my original picture. It has lack of capability. 
+> Nowadays, Almost idea is mixing. The original idea was inspired by a guy in HN-Show I've seen in a couple months ago. It's just a tool to generate a photo after dragging manually my original picture. It has lack of capability.
 
 > I'm a lazy guy, I'd something could do it automatically every time. Ultimately, I came up with this idea.
 
@@ -124,7 +126,7 @@ That would be amazing 😱
 
 > 1. Determine the golden size, which relies on your current screen size. It makes sure every generated wallpaper is as nice as possible.
 > 2. Draw this image with the desired size in the middle
-> 3. Draw shadow 
+> 3. Draw shadow
 > 4. Scale the background with "aspect to fill" mode
 > 5. Apply Gaussian algorithm
 > 6. Combine everything and cached locally.
@@ -137,7 +139,7 @@ That would be amazing 😱
 
 > Every art pictures are hand-picked from [WikiArt](https://www.wikiart.org).
 
-> If you wonder how I collect the data. Here is my partner, [Spider Man](https://github.com/NghiaTranUIT/artify-core/blob/master/scripts/spider.ruby), which is a Ruby script. 
+> If you wonder how I collect the data. Here is my partner, [Spider Man](https://github.com/NghiaTranUIT/artify-core/blob/master/scripts/spider.ruby), which is a Ruby script.
 
 > The conjunction of [Nokogiri](http://www.nokogiri.org) and [Watir](http://watir.com) are perfect for this scenario. Indeed,I'm a lazy man, I don't want to collect data like a manual labor 😅.
 
@@ -149,9 +151,8 @@ That would be amazing 😱
 
 > Defintely, I appreciate your effort to become a contributor. Clone the project and setup your workspace. Happy coding guys 🚢
 
-* **Are you available for hire?**
-
-> Yes, I appreciate if you're looking for a newly dedicated teammate. Shot me an email if you'd to hire me.
+* **Do you have personal blog?**
+> Yes, I often write blog at [My lab](www.nghiatran.me) 👨‍🍳
 
 * **How do I contact you?**
 
