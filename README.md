@@ -16,17 +16,15 @@
   </a>
 </h2>
 
-A macOS X application for bringing dedicatedly 18th century Arts to everyone
+A macOS X application for bringing dedicatedly 18th century Arts to everyone 🌎.
 
-<a href="#screenshots">Screenshots</a> •
+<a href="#screenshots">Wallpaper</a> •
 <a href="#features">Features</a> •
 <a href="#downloads">Downloads</a> •
 <a href="#technologies">Technologies</a> •
-<a href="#why">Why?</a> •
-<a href="#goals">Goals</a> •
+<a href="#3rd-libraries">3rd Libraries</a> •
 <a href="#development">Development</a> •
 <a href="#faq">FAQ</a> •
-<a href="#acknowledgement">Acknowledgement</a>
 
 ## Wallpaper
 
