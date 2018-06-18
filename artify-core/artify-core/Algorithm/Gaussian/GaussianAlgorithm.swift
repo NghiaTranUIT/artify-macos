@@ -7,14 +7,16 @@
 //
 
 import Foundation
+import CoreImage
 
 struct GaussianAlgorithm: GenerationAlgorithm {
 
     func process(data: DataGenerationType) -> NSImage {
 
         let scaleImage = scalePerfectImage(data: data)
-        let backgroundImage = generateGaussianBackground(scaleImage, width: data.screenSize.width)
-        let artifyImage = drawArtify(image: scaleImage, backgroundImage: backgroundImage, size: data.screenSize)
+        let enchancedImage = applyAutoEnchancement(scaleImage)
+        let backgroundImage = generateGaussianBackground(enchancedImage, width: data.screenSize.width)
+        let artifyImage = drawArtify(image: enchancedImage, backgroundImage: backgroundImage, size: data.screenSize)
         return artifyImage
     }
 }
@@ -24,6 +26,10 @@ extension GaussianAlgorithm {
 
     fileprivate func scalePerfectImage(data: DataGenerationType) -> NSImage {
         return data.originalImage.scale(with: .fillHeight(data.scaleHeight))
+    }
+
+    fileprivate func applyAutoEnchancement(_ image: NSImage) -> NSImage {
+        return image.autoEnchance()
     }
 
     fileprivate func generateGaussianBackground(_ image: NSImage, width: CGFloat) -> NSImage {
