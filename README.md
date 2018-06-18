@@ -89,6 +89,10 @@ After starting the development server.
 
 > I'm in charge of developing the [Artify Core](https://github.com/NghiaTranUIT/artify-core), as a Golang backend serverside. > Feel free to contribute cooperatively.
 
+* **What is the current progress?**
+
+> Here is [Open Ticket](https://github.com/NghiaTranUIT/artify-macos/issues?q=is%3Aopen+is%3Aissue) and [Close Ticket](https://github.com/NghiaTranUIT/artify-macos/issues?q=is%3Aissue+is%3Aclosed)
+
 * **Why do you choose RxSwift + MVVM?**
 
 > I have solid experience when working with RxSwift + MVVM for a couple projects on Production. I'm so happy when writing concise, elegant Observable, Driver,... rather than clumsy functions with tons of nested-callbacks.
