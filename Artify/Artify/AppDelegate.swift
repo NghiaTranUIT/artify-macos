@@ -123,7 +123,9 @@ extension AppDelegate {
         TrackingService.default.tracking(.openApp)
 
         // Move app to Application
-        PFMoveToApplicationsFolderIfNecessary()
+        #if !DEBUG
+            PFMoveToApplicationsFolderIfNecessary()
+        #endif
     }
 }
 
