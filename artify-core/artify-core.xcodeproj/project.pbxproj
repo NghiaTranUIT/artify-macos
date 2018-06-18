@@ -45,6 +45,8 @@
 		BAC0B75E20C125DE00FF4FDF /* WallpaperPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0B75D20C125DE00FF4FDF /* WallpaperPayload.swift */; };
 		BAC0B76020C129C700FF4FDF /* CGSize+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0B75F20C129C700FF4FDF /* CGSize+String.swift */; };
 		BAC0BC3B20BA9A690092A541 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0BC3A20BA9A690092A541 /* FileManager.swift */; };
+		BAD732F920D76F550052391C /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAD732F820D76F550052391C /* CoreImage.framework */; };
+		BAD732FB20D76F750052391C /* Image+AutoEnchance.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD732FA20D76F750052391C /* Image+AutoEnchance.swift */; };
 		BAEB942C20C2761E0048F18B /* LaunchOnStartup.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEB942A20C2761E0048F18B /* LaunchOnStartup.swift */; };
 		BAEB942D20C2761E0048F18B /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEB942B20C2761E0048F18B /* Setting.swift */; };
 		BAF1EE8020C501F200692AA7 /* TrackingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF1EE7F20C501F200692AA7 /* TrackingService.swift */; };
@@ -105,6 +107,8 @@
 		BAC0B75D20C125DE00FF4FDF /* WallpaperPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperPayload.swift; sourceTree = "<group>"; };
 		BAC0B75F20C129C700FF4FDF /* CGSize+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGSize+String.swift"; sourceTree = "<group>"; };
 		BAC0BC3A20BA9A690092A541 /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
+		BAD732F820D76F550052391C /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		BAD732FA20D76F750052391C /* Image+AutoEnchance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+AutoEnchance.swift"; sourceTree = "<group>"; };
 		BAEB942A20C2761E0048F18B /* LaunchOnStartup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LaunchOnStartup.swift; path = "artify-core/Setting/LaunchOnStartup.swift"; sourceTree = SOURCE_ROOT; };
 		BAEB942B20C2761E0048F18B /* Setting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Setting.swift; path = "artify-core/Setting/Setting.swift"; sourceTree = SOURCE_ROOT; };
 		BAF1EE7F20C501F200692AA7 /* TrackingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingService.swift; sourceTree = "<group>"; };
@@ -116,6 +120,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAD732F920D76F550052391C /* CoreImage.framework in Frameworks */,
 				6DC208D45B2655A8413D123E /* Pods_artify_core.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -134,6 +139,7 @@
 		15F767FB358A3C17E218587E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BAD732F820D76F550052391C /* CoreImage.framework */,
 				0486739449050E8BACA43C7E /* Pods_artify_core.framework */,
 			);
 			name = Frameworks;
@@ -202,6 +208,7 @@
 				BA6DF60A20BD316C006DBF9F /* GaussianEffect.m */,
 				BA6DF60E20BD31CB006DBF9F /* NSImage+CGImage.h */,
 				BA6DF60F20BD31CB006DBF9F /* NSImage+CGImage.m */,
+				BAD732FA20D76F750052391C /* Image+AutoEnchance.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -470,6 +477,7 @@
 				BA947A1620BBCBAC00DBD94D /* String+Encoding.swift in Sources */,
 				BA4CDA6520B1564300D19C3D /* Author.swift in Sources */,
 				BAC02E7A20C6693D00CADB25 /* Dictionary+Extension.swift in Sources */,
+				BAD732FB20D76F750052391C /* Image+AutoEnchance.swift in Sources */,
 				BA6DF61820BD38F0006DBF9F /* GaussianData.swift in Sources */,
 				BA4CDA5E20B14AD600D19C3D /* ArtifyCoreAPI.swift in Sources */,
 				BA4CDA6120B14B9600D19C3D /* Environment.swift in Sources */,

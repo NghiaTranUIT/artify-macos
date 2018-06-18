@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreImage
 
 struct GaussianAlgorithm: GenerationAlgorithm {
 
