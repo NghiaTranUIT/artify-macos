@@ -31,7 +31,7 @@ struct SetWallpaperPush: PushContent {
     // MARK: - Init
     init(photo: Photo) {
         _title = photo.name
-        _message = "\(photo.author.name) | Romanticism"
-        url = photo.imageURL
+        _message = "\(photo.author.name) | \(photo.style)"
+        url = photo.originalSource
     }
 }
