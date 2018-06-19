@@ -21,6 +21,7 @@
 		BAC0B76620C1896800FF4FDF /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC0B76420C1896800FF4FDF /* Crashlytics.framework */; };
 		BAC0B76720C1896800FF4FDF /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC0B76520C1896800FF4FDF /* Fabric.framework */; };
 		BAC0B76920C18AA000FF4FDF /* String+UUID.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0B76820C18AA000FF4FDF /* String+UUID.swift */; };
+		BAD2B47420D80736002280FD /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAD2B47320D80736002280FD /* Security.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		BAE7FEA220CE882100DE4713 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = BAE7FEA120CE882100DE4713 /* dsa_pub.pem */; };
 		BAF1EE8320C503BC00692AA7 /* FabricTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF1EE8220C503BC00692AA7 /* FabricTracker.swift */; };
 /* End PBXBuildFile section */
@@ -70,6 +71,7 @@
 		BAC0B76420C1896800FF4FDF /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		BAC0B76520C1896800FF4FDF /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		BAC0B76820C18AA000FF4FDF /* String+UUID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+UUID.swift"; sourceTree = "<group>"; };
+		BAD2B47320D80736002280FD /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		BAE7FEA120CE882100DE4713 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		BAF1EE8220C503BC00692AA7 /* FabricTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FabricTracker.swift; sourceTree = "<group>"; };
 		CE76D14A9E4B3E7FDBF1E63D /* Pods-Artify.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Artify.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-Artify/Pods-Artify.debug.xcconfig"; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAD2B47420D80736002280FD /* Security.framework in Frameworks */,
 				BAC0B76620C1896800FF4FDF /* Crashlytics.framework in Frameworks */,
 				BA1515B120BFE0C600CFFDC0 /* Pods_Artify.framework in Frameworks */,
 				BAC0B76720C1896800FF4FDF /* Fabric.framework in Frameworks */,
@@ -100,6 +103,7 @@
 		2F2F0B363DE381BAF5609E83 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BAD2B47320D80736002280FD /* Security.framework */,
 				BAC0B76420C1896800FF4FDF /* Crashlytics.framework */,
 				BAC0B76520C1896800FF4FDF /* Fabric.framework */,
 				BA1515B020BFE0C600CFFDC0 /* Pods_Artify.framework */,

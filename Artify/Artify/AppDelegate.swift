@@ -39,7 +39,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         initStatusBarApp()
         binding()
         setupApp()
-        
+
         // Fetch feature if need
         viewModel.input.getFeatureWallpaperPublisher.onNext(())
     }
@@ -121,6 +121,11 @@ extension AppDelegate {
 
         // Track
         TrackingService.default.tracking(.openApp)
+
+        // Move app to Application
+        #if !DEBUG
+            PFMoveToApplicationsFolderIfNecessary()
+        #endif
     }
 }
 

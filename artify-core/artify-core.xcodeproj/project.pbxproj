@@ -45,6 +45,9 @@
 		BAC0B75E20C125DE00FF4FDF /* WallpaperPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0B75D20C125DE00FF4FDF /* WallpaperPayload.swift */; };
 		BAC0B76020C129C700FF4FDF /* CGSize+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0B75F20C129C700FF4FDF /* CGSize+String.swift */; };
 		BAC0BC3B20BA9A690092A541 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0BC3A20BA9A690092A541 /* FileManager.swift */; };
+		BAD2B46F20D806BB002280FD /* PFMoveApplication.h in Headers */ = {isa = PBXBuildFile; fileRef = BAD2B46D20D806BB002280FD /* PFMoveApplication.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BAD2B47020D806BB002280FD /* PFMoveApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD2B46E20D806BB002280FD /* PFMoveApplication.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		BAD2B47220D8072E002280FD /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAD2B47120D8072E002280FD /* Security.framework */; };
 		BAD732F920D76F550052391C /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAD732F820D76F550052391C /* CoreImage.framework */; };
 		BAD732FB20D76F750052391C /* Image+AutoEnchance.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD732FA20D76F750052391C /* Image+AutoEnchance.swift */; };
 		BAEB942C20C2761E0048F18B /* LaunchOnStartup.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEB942A20C2761E0048F18B /* LaunchOnStartup.swift */; };
@@ -107,6 +110,9 @@
 		BAC0B75D20C125DE00FF4FDF /* WallpaperPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperPayload.swift; sourceTree = "<group>"; };
 		BAC0B75F20C129C700FF4FDF /* CGSize+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGSize+String.swift"; sourceTree = "<group>"; };
 		BAC0BC3A20BA9A690092A541 /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
+		BAD2B46D20D806BB002280FD /* PFMoveApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFMoveApplication.h; sourceTree = "<group>"; };
+		BAD2B46E20D806BB002280FD /* PFMoveApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFMoveApplication.m; sourceTree = "<group>"; };
+		BAD2B47120D8072E002280FD /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		BAD732F820D76F550052391C /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		BAD732FA20D76F750052391C /* Image+AutoEnchance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+AutoEnchance.swift"; sourceTree = "<group>"; };
 		BAEB942A20C2761E0048F18B /* LaunchOnStartup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LaunchOnStartup.swift; path = "artify-core/Setting/LaunchOnStartup.swift"; sourceTree = SOURCE_ROOT; };
@@ -120,6 +126,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAD2B47220D8072E002280FD /* Security.framework in Frameworks */,
 				BAD732F920D76F550052391C /* CoreImage.framework in Frameworks */,
 				6DC208D45B2655A8413D123E /* Pods_artify_core.framework in Frameworks */,
 			);
@@ -139,6 +146,7 @@
 		15F767FB358A3C17E218587E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BAD2B47120D8072E002280FD /* Security.framework */,
 				BAD732F820D76F550052391C /* CoreImage.framework */,
 				0486739449050E8BACA43C7E /* Pods_artify_core.framework */,
 			);
@@ -181,6 +189,7 @@
 		BA4CDA6820B15F1400D19C3D /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				BAD2B46C20D80672002280FD /* LetMove */,
 				BA4CDA6920B15F2200D19C3D /* Models+RxSwift.swift */,
 				BA947A1520BBCBAC00DBD94D /* String+Encoding.swift */,
 				BAC0B75720C11BC800FF4FDF /* Observable+Extension.swift */,
@@ -302,6 +311,15 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		BAD2B46C20D80672002280FD /* LetMove */ = {
+			isa = PBXGroup;
+			children = (
+				BAD2B46D20D806BB002280FD /* PFMoveApplication.h */,
+				BAD2B46E20D806BB002280FD /* PFMoveApplication.m */,
+			);
+			path = LetMove;
+			sourceTree = "<group>";
+		};
 		BAEB942520C26F7C0048F18B /* Setting */ = {
 			isa = PBXGroup;
 			children = (
@@ -329,6 +347,7 @@
 			files = (
 				BA79308820AC0756002A7CE4 /* artify_core.h in Headers */,
 				BA6DF60D20BD316C006DBF9F /* GaussianEffect.h in Headers */,
+				BAD2B46F20D806BB002280FD /* PFMoveApplication.h in Headers */,
 				BA6DF61020BD31CB006DBF9F /* NSImage+CGImage.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -456,6 +475,7 @@
 				BAC0B75C20C124FE00FF4FDF /* DownloadPayload.swift in Sources */,
 				BA4CDA6A20B15F2200D19C3D /* Models+RxSwift.swift in Sources */,
 				BA4CDA6320B1563400D19C3D /* Photo.swift in Sources */,
+				BAD2B47020D806BB002280FD /* PFMoveApplication.m in Sources */,
 				BA4CDA6E20B2710C00D19C3D /* ArtifyError.swift in Sources */,
 				BAC0BC3B20BA9A690092A541 /* FileManager.swift in Sources */,
 				BAC0B75E20C125DE00FF4FDF /* WallpaperPayload.swift in Sources */,
@@ -637,7 +657,7 @@
 			buildSettings = {
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -674,7 +694,7 @@
 			buildSettings = {
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
