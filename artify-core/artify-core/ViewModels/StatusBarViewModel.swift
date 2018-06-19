@@ -79,7 +79,7 @@ public final class StatusBarViewModel: StatusBarViewModelType, StatusBarViewMode
             .map { !$0 }
             .distinctUntilChanged()
             .asDriver(onErrorJustReturn: false)
-        
+
         // Menu
         menus.asObservable()
             .map {[unowned self] in
@@ -97,8 +97,6 @@ public final class StatusBarViewModel: StatusBarViewModelType, StatusBarViewMode
             }
             .bind(to: menuItems)
             .disposed(by: bag)
-
-
 
         // Get feature
         let getFeature = getFeatureWallpaperPublisher.asObserver()

@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		6DC208D45B2655A8413D123E /* Pods_artify_core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0486739449050E8BACA43C7E /* Pods_artify_core.framework */; };
+		BA3D5F3D20D8B4630094C63B /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3D5F3C20D8B4630094C63B /* NotificationService.swift */; };
+		BA3D5F4020D8B6D30094C63B /* PushContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3D5F3F20D8B6D30094C63B /* PushContent.swift */; };
+		BA3D5F4420D8B7BA0094C63B /* PushAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3D5F4320D8B7BA0094C63B /* PushAction.swift */; };
+		BA3D5F4720D8B9DE0094C63B /* SetWallpaperPush.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3D5F4620D8B9DE0094C63B /* SetWallpaperPush.swift */; };
+		BA3D5F4A20D8BB050094C63B /* CloseAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3D5F4920D8BB050094C63B /* CloseAction.swift */; };
+		BA3D5F4C20D8BB890094C63B /* OpenURLAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3D5F4B20D8BB890094C63B /* OpenURLAction.swift */; };
 		BA4CDA5320B13E3C00D19C3D /* StatusBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4CDA5220B13E3C00D19C3D /* StatusBarViewModel.swift */; };
 		BA4CDA5620B13E9200D19C3D /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4CDA5520B13E9200D19C3D /* Menu.swift */; };
 		BA4CDA5820B13FA700D19C3D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4CDA5720B13FA700D19C3D /* Coordinator.swift */; };
@@ -70,6 +76,12 @@
 		0486739449050E8BACA43C7E /* Pods_artify_core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_artify_core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FB3468F5B8AC035B1211CF5 /* Pods-artify-core.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-artify-core.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-artify-core/Pods-artify-core.debug.xcconfig"; sourceTree = "<group>"; };
 		7C4B613A9F337A747661A5A4 /* Pods-artify-core.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-artify-core.release.xcconfig"; path = "../Pods/Target Support Files/Pods-artify-core/Pods-artify-core.release.xcconfig"; sourceTree = "<group>"; };
+		BA3D5F3C20D8B4630094C63B /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		BA3D5F3F20D8B6D30094C63B /* PushContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushContent.swift; sourceTree = "<group>"; };
+		BA3D5F4320D8B7BA0094C63B /* PushAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushAction.swift; sourceTree = "<group>"; };
+		BA3D5F4620D8B9DE0094C63B /* SetWallpaperPush.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetWallpaperPush.swift; sourceTree = "<group>"; };
+		BA3D5F4920D8BB050094C63B /* CloseAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseAction.swift; sourceTree = "<group>"; };
+		BA3D5F4B20D8BB890094C63B /* OpenURLAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenURLAction.swift; sourceTree = "<group>"; };
 		BA4CDA5220B13E3C00D19C3D /* StatusBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarViewModel.swift; sourceTree = "<group>"; };
 		BA4CDA5520B13E9200D19C3D /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		BA4CDA5720B13FA700D19C3D /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -160,6 +172,43 @@
 				7C4B613A9F337A747661A5A4 /* Pods-artify-core.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		BA3D5F3B20D8B44B0094C63B /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				BA3D5F4820D8BAF90094C63B /* Actions */,
+				BA3D5F4520D8B9C20094C63B /* Noti */,
+				BA3D5F3E20D8B6C60094C63B /* Protocols */,
+				BA3D5F3C20D8B4630094C63B /* NotificationService.swift */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
+		BA3D5F3E20D8B6C60094C63B /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				BA3D5F3F20D8B6D30094C63B /* PushContent.swift */,
+				BA3D5F4320D8B7BA0094C63B /* PushAction.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		BA3D5F4520D8B9C20094C63B /* Noti */ = {
+			isa = PBXGroup;
+			children = (
+				BA3D5F4620D8B9DE0094C63B /* SetWallpaperPush.swift */,
+			);
+			path = Noti;
+			sourceTree = "<group>";
+		};
+		BA3D5F4820D8BAF90094C63B /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				BA3D5F4920D8BB050094C63B /* CloseAction.swift */,
+				BA3D5F4B20D8BB890094C63B /* OpenURLAction.swift */,
+			);
+			path = Actions;
 			sourceTree = "<group>";
 		};
 		BA4CDA5420B13E8200D19C3D /* Models */ = {
@@ -254,6 +303,7 @@
 		BA79307920AC0756002A7CE4 /* artify-core */ = {
 			isa = PBXGroup;
 			children = (
+				BA3D5F3B20D8B44B0094C63B /* Notification */,
 				BAF1EE8420C5076A00692AA7 /* TrackingParameter */,
 				BAEB942520C26F7C0048F18B /* Setting */,
 				BA947A1720BBDFE100DBD94D /* Algorithm */,
@@ -480,7 +530,10 @@
 				BAC0BC3B20BA9A690092A541 /* FileManager.swift in Sources */,
 				BAC0B75E20C125DE00FF4FDF /* WallpaperPayload.swift in Sources */,
 				BA6DF61420BD32B6006DBF9F /* NSImage+Scale.swift in Sources */,
+				BA3D5F4420D8B7BA0094C63B /* PushAction.swift in Sources */,
+				BA3D5F4C20D8BB890094C63B /* OpenURLAction.swift in Sources */,
 				BA6DF61120BD31CB006DBF9F /* NSImage+CGImage.m in Sources */,
+				BA3D5F4020D8B6D30094C63B /* PushContent.swift in Sources */,
 				BAC0B75820C11BC800FF4FDF /* Observable+Extension.swift in Sources */,
 				BA947A1420BBBE5B00DBD94D /* WallpaperService.swift in Sources */,
 				BA4CDA5C20B14AA000D19C3D /* NetworkService.swift in Sources */,
@@ -494,6 +547,7 @@
 				BAEB942D20C2761E0048F18B /* Setting.swift in Sources */,
 				BA6DF60C20BD316C006DBF9F /* GaussianEffect.m in Sources */,
 				BA4CDA6C20B1648D00D19C3D /* APIResponse.swift in Sources */,
+				BA3D5F3D20D8B4630094C63B /* NotificationService.swift in Sources */,
 				BA947A1620BBCBAC00DBD94D /* String+Encoding.swift in Sources */,
 				BA4CDA6520B1564300D19C3D /* Author.swift in Sources */,
 				BAC02E7A20C6693D00CADB25 /* Dictionary+Extension.swift in Sources */,
@@ -510,6 +564,8 @@
 				BA4CDA5620B13E9200D19C3D /* Menu.swift in Sources */,
 				BA4CDA5320B13E3C00D19C3D /* StatusBarViewModel.swift in Sources */,
 				BAA2560A20AC5B6300BBA837 /* HomeViewModel.swift in Sources */,
+				BA3D5F4720D8B9DE0094C63B /* SetWallpaperPush.swift in Sources */,
+				BA3D5F4A20D8BB050094C63B /* CloseAction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
