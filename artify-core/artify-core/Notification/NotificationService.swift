@@ -14,6 +14,7 @@ protocol NotificationServiceType {
     func push(_ action: PushContent)
 }
 
+// MARK: - NotificationService
 final class NotificationService: NSObject, NotificationServiceType {
 
     // MARK: - Variable
@@ -32,6 +33,7 @@ final class NotificationService: NSObject, NotificationServiceType {
     }
 }
 
+// MARK: - NSUserNotificationCenterDelegate
 extension NotificationService: NSUserNotificationCenterDelegate {
     public func userNotificationCenter(_ center: NSUserNotificationCenter,
                                        shouldPresent notification: NSUserNotification) -> Bool {
@@ -45,7 +47,9 @@ extension NotificationService: NSUserNotificationCenterDelegate {
 
         switch type {
         case .openURL:
-            break
+            guard let urlPath = userInfo["url"] as? String else { return }
+            let url = URL(string: urlPath)!
+            NSWorkspace.shared.open(url)
         default:
             break
         }

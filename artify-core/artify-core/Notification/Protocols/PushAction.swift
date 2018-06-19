@@ -12,7 +12,7 @@ enum PushActionType {
 
     // Close notification
     // Title = "Close"
-    case closeNotification
+    case close
 
     // Do another action
     // Example: Open certain URL

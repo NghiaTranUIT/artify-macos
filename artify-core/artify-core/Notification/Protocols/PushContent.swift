@@ -59,18 +59,13 @@ extension PushContent {
         // Sound
         noti.soundName = sound
 
-        // Image
-        //        if let appIconPath = Bundle.allBundles.first!.pathForImageResource("AppIcon") {
-        //            noti.contentImage = NSImage(contentsOfFile: appIconPath)
-        //        }
-
         // Action
         noti.hasActionButton = !actions.isEmpty
 
         // Add Buttons
         actions.forEach { (action) in
             switch action.type {
-            case .closeNotification:
+            case .close:
                 noti.otherButtonTitle = action.title
             case .openURL:
                 noti.actionButtonTitle = action.title
