@@ -46,7 +46,7 @@ A macOS X application for bringing dedicatedly 18th century Arts to everyone ðŸŒ
 * ðŸ’¯ Totally Free.
 
 ## Downloads
-<a href='https://github.com/NghiaTranUIT/artify-macos/releases/download/0.5.1/Artify.zip'>Download Artify 0.5.1</a>
+All downloads are available at [Release page](https://github.com/NghiaTranUIT/artify-macos/releases)
 
 ### macOS Requirement
 The minimum version supported is macOS 10.11.
