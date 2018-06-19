@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum PushActionType {
+enum PushActionType: String {
 
     // Close notification
     // Title = "Close"
@@ -35,7 +35,7 @@ protocol PushAction {
 extension PushAction {
 
     var userInfo: [String: Any] {
-        return ["type": type,
+        return ["type": type.rawValue,
                 "url": url]
     }
 }

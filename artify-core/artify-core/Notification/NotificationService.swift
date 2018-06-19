@@ -43,8 +43,9 @@ extension NotificationService: NSUserNotificationCenterDelegate {
     public func userNotificationCenter(_ center: NSUserNotificationCenter,
                                        didActivate notification: NSUserNotification) {
         guard let userInfo = notification.userInfo else { return }
-        guard let type = userInfo["type"] as? PushActionType else { return }
-
+        guard let typeStr = userInfo["type"] as? String else { return }
+        guard let type = PushActionType(rawValue: typeStr) else { return }
+        
         switch type {
         case .openURL:
             guard let urlPath = userInfo["url"] as? String else { return }

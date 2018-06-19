@@ -19,6 +19,7 @@ public class Coordinator {
     let trackingService: TrackingServiceType
     let wallpaperService: WallpaperServiceType
     let downloadService: DownloadService
+    let notificationService: NotificationServiceType
     let environment: Environment
 
     // MARK: - Init
@@ -26,10 +27,12 @@ public class Coordinator {
         self.environment = Environment(kind: kind)
         self.networkingService = NetworkingService(environment: environment)
         self.fileHandler = FileStorage()
+        self.notificationService = NotificationService()
         self.downloadService = DownloadService(network: networkingService,
                                                fileHandler: fileHandler)
         self.wallpaperService = WallpaperService(downloadService: downloadService,
-                                                 fileHandler: fileHandler)
+                                                 fileHandler: fileHandler,
+                                                 notificationService: notificationService)
         self.trackingService = TrackingService(trackable: trackable)
     }
 
