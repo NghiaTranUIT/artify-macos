@@ -26,6 +26,7 @@ protocol PushContent {
 
     // Actions
     var actions: [PushAction] { get }
+    var hideInterval: TimeInterval? { get }
 
     // Options
     var sound: String { get }
@@ -46,6 +47,9 @@ extension PushContent {
 
     // Sub actions
     var actions: [PushAction] { return [] }
+
+    // Hide delay
+    var hideInterval: TimeInterval? { return nil }
 
     // Build
     func build() -> NSUserNotification {

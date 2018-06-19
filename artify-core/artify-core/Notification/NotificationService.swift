@@ -30,6 +30,11 @@ final class NotificationService: NSObject, NotificationServiceType {
     func push(_ action: PushContent) {
         let payload = action.build()
         center.deliver(payload)
+        if let hideInterval = action.hideInterval {
+            center.perform(#selector(center.removeDeliveredNotification(_:)),
+                           with: payload,
+                             afterDelay: hideInterval)
+        }
     }
 }
 
@@ -45,7 +50,7 @@ extension NotificationService: NSUserNotificationCenterDelegate {
         guard let userInfo = notification.userInfo else { return }
         guard let typeStr = userInfo["type"] as? String else { return }
         guard let type = PushActionType(rawValue: typeStr) else { return }
-        
+
         switch type {
         case .openURL:
             guard let urlPath = userInfo["url"] as? String else { return }

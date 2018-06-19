@@ -16,6 +16,7 @@ struct SetWallpaperPush: PushContent {
     // Content
     var title: String { return _title }
     var message: String { return _message }
+    var hideInterval: TimeInterval? { return 5.0 }
 
     // Sub action
     var actions: [PushAction] {
