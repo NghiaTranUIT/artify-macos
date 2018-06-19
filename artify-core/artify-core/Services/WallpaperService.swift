@@ -62,21 +62,34 @@ final class WallpaperService: WallpaperServiceType {
                 .observeOn(MainScheduler.instance)
                 .do(onNext: { tub in
                     print("✅[SUCCESS] Set Wallpaper at \(tub.1)")
-                    let action = SetWallpaperPush(photo: tub.0)
-                    self.notificationService.push(action)
                 }, onError: { error in
                     print("❌[ERROR] \(error)")
                 })
                 .flatMapLatest({[unowned self] (tub) -> Observable<Void> in
-                    return self.setWallpaper(at: tub.1)
+                    return self.setWallpaper(at: tub)
                 })
+
         }
     }()
+    
+    private func setWallpaper(at payload: (Photo, URL)) -> Observable<Void> {
+        var isApplied = false
 
-    private func setWallpaper(at path: URL) -> Observable<Void> {
+        // Apply Wallpaper
         NSScreen.screens.forEach {
-            try? NSWorkspace.shared.setDesktopImageURL(path, for: $0, options: [:])
+            if let url = NSWorkspace.shared.desktopImageURL(for: $0),
+                url.absoluteString != payload.1.absoluteString {
+                isApplied = true
+                try? NSWorkspace.shared.setDesktopImageURL(payload.1, for: $0, options: [:])
+            }
         }
+
+        // Push
+        if isApplied {
+            self.notificationService.push(SetWallpaperPush(photo: payload.0))
+        }
+
+        //
         return Observable.just(())
     }
 }
