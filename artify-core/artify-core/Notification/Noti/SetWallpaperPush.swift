@@ -9,14 +9,18 @@
 import Foundation
 
 struct SetWallpaperPush: PushContent {
-    
+
+    struct Constants {
+        static let DismissInterval: TimeInterval = 12.0
+    }
+
     // Action
     var type: PushContentType { return .applyWallpaperSuccess }
 
     // Content
     var title: String { return _title }
     var message: String { return _message }
-    var hideInterval: TimeInterval? { return 5.0 }
+    var hideInterval: TimeInterval? { return Constants.DismissInterval }
 
     // Sub action
     var actions: [PushAction] {

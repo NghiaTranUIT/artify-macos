@@ -74,6 +74,7 @@ extension AppDelegate {
         output.menuItems.asObservable()
             .map { (menuItems) -> NSMenu in
                 let menu = NSMenu()
+                menu.autoenablesItems = false
                 menuItems.forEach { menu.addItem($0) }
                 return menu
             }

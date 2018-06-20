@@ -12,7 +12,7 @@ import Action
 
 protocol WallpaperServiceType {
 
-    var setFeaturePhotoAction: CocoaAction { get }
+    var setFeaturePhotoAction: Action<Void, Photo> { get }
 }
 
 final class WallpaperService: WallpaperServiceType {
@@ -34,8 +34,8 @@ final class WallpaperService: WallpaperServiceType {
     }
 
     // MARK: - Public
-    lazy var setFeaturePhotoAction: CocoaAction = {
-        return CocoaAction {
+    lazy var setFeaturePhotoAction: Action<Void, Photo> = {
+        return Action<Void, Photo> { (_) -> Observable<Photo> in
             return Observable.just(())
                 .observeOn(ConcurrentDispatchQueueScheduler(qos: DispatchQoS.background))
                 .flatMapLatest({[unowned self] _ -> Observable<DownloadPayload> in
@@ -65,14 +65,14 @@ final class WallpaperService: WallpaperServiceType {
                 }, onError: { error in
                     print("❌[ERROR] \(error)")
                 })
-                .flatMapLatest({[unowned self] (tub) -> Observable<Void> in
+                .flatMapLatest({[unowned self] (tub) -> Observable<Photo> in
                     return self.setWallpaper(at: tub)
                 })
 
         }
     }()
     
-    private func setWallpaper(at payload: (Photo, URL)) -> Observable<Void> {
+    private func setWallpaper(at payload: (Photo, URL)) -> Observable<Photo> {
         var isApplied = false
 
         // Apply Wallpaper
@@ -90,6 +90,6 @@ final class WallpaperService: WallpaperServiceType {
         }
 
         //
-        return Observable.just(())
+        return Observable.just(payload.0)
     }
 }
