@@ -13,6 +13,7 @@ public struct Menu {
     public enum Kind {
         case getFeature
         case separator
+        case aboutThisPhoto
         case launchOnStartup
         case checkForUpdate
         case about
@@ -39,6 +40,8 @@ public struct Menu {
             return "Check for Updates..."
         case .about:
             return "About"
+        case .aboutThisPhoto:
+            return "About this Art"
         }
     }
 

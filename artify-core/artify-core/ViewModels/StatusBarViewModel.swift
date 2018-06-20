@@ -43,16 +43,23 @@ public final class StatusBarViewModel: StatusBarViewModelType, StatusBarViewMode
 
     // MARK: - Variable
     private let bag = DisposeBag()
-    private let getFeatureAction: CocoaAction
+    private let getFeatureAction: Action<Void, Photo>
     private let updater: AppUpdatable
     private let openAboutPublisher = PublishSubject<Void>()
+    private let currentFeaturePhoto = Variable<Photo?>(nil)
+    private var aboutThisArtBtn: NSMenuItem {
+        let index = menus.value.index(where: { $0.kind == Menu.Kind.aboutThisPhoto } )!
+        return menuItems.value[index]
+    }
 
     // MARK: - Input
     public var getFeatureWallpaperPublisher = PublishSubject<Void>()
 
     // MARK: - Output
     public let menuItems = Variable<[NSMenuItem]>([])
-    public let menus = Variable<[Menu]>([Menu(kind: .getFeature, selector: #selector(StatusBarViewModel.getFeatureOnTap(_:)), keyEquivalent: "F"),
+    public let menus = Variable([Menu(kind: .getFeature, selector: #selector(StatusBarViewModel.getFeatureOnTap(_:)), keyEquivalent: "F"),
+                                        Menu(kind: .separator, selector: nil),
+                                        Menu(kind: .aboutThisPhoto, selector: #selector(StatusBarViewModel.aboutThisArt)),
                                          Menu(kind: .separator, selector: nil),
                                          Menu(kind: .launchOnStartup, selector: #selector(StatusBarViewModel.launchOnStartUp(_:)), defaultState: Setting.shared.isLaunchOnStartup ? .on : .off),
                                          Menu(kind: .separator, selector: nil),
@@ -78,6 +85,7 @@ public final class StatusBarViewModel: StatusBarViewModelType, StatusBarViewMode
         isLoading = getFeatureAction.enabled
             .map { !$0 }
             .distinctUntilChanged()
+            .share()
             .asDriver(onErrorJustReturn: false)
 
         // Menu
@@ -119,6 +127,17 @@ public final class StatusBarViewModel: StatusBarViewModelType, StatusBarViewMode
                 strongSelf.getFeatureOnTap(menu)
             })
             .disposed(by: bag)
+
+        // Disable about this art while loading
+        isLoading
+            .drive(onNext: {[weak self] (isLoading) in
+                guard let strongSelf = self else { return }
+                strongSelf.aboutThisArtBtn.isEnabled = !isLoading
+            })
+            .disposed(by: bag)
+
+        // Hook the current feature photo
+        getFeatureAction.elements.bind(to: currentFeaturePhoto).disposed(by: bag)
     }
 
     @objc private func getFeatureOnTap(_ menu: NSMenuItem) {
@@ -147,5 +166,11 @@ public final class StatusBarViewModel: StatusBarViewModelType, StatusBarViewMode
 
     @objc private func about() {
         openAboutPublisher.onNext(())
+    }
+
+    @objc private func aboutThisArt() {
+        guard let photo = currentFeaturePhoto.value else { return }
+        let url = URL(string: photo.originalSource)!
+        NSWorkspace.shared.open(url)
     }
 }
