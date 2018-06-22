@@ -58,6 +58,7 @@ public final class StatusBarViewModel: StatusBarViewModelType, StatusBarViewMode
     // MARK: - Output
     public let menuItems = Variable<[NSMenuItem]>([])
     public let menus = Variable([Menu(kind: .getFeature, selector: #selector(StatusBarViewModel.getFeatureOnTap(_:)), keyEquivalent: "F"),
+                                 Menu(kind: .random, selector: #selector(StatusBarViewModel.getRandomOnTap), keyEquivalent: "R"),
                                         Menu(kind: .separator, selector: nil),
                                         Menu(kind: .aboutThisPhoto, selector: #selector(StatusBarViewModel.aboutThisArt)),
                                          Menu(kind: .separator, selector: nil),
@@ -142,6 +143,10 @@ public final class StatusBarViewModel: StatusBarViewModelType, StatusBarViewMode
 
     @objc private func getFeatureOnTap(_ menu: NSMenuItem) {
         getFeatureAction.execute(())
+    }
+
+    @objc private func getRandomOnTap() {
+
     }
 
     @objc private func launchOnStartUp(_ menu: NSMenuItem) {

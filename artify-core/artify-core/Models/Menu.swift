@@ -12,6 +12,7 @@ public struct Menu {
 
     public enum Kind {
         case getFeature
+        case random
         case separator
         case aboutThisPhoto
         case launchOnStartup
@@ -42,6 +43,8 @@ public struct Menu {
             return "About"
         case .aboutThisPhoto:
             return "About this Art"
+        case .random:
+            return "Randomize"
         }
     }
 
