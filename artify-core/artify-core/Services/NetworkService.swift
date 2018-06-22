@@ -14,6 +14,7 @@ protocol NetworkingServiceType {
 
     var provider: MoyaProvider<ArtifyCoreAPI> { get }
     func fetchFeaturePhoto() -> Observable<Photo>
+    func fetchRandomPhoto() -> Observable<Photo>
 }
 
 
@@ -41,6 +42,19 @@ final class NetworkingService: NetworkingServiceType {
                 TrackingService.default.tracking(.fetchFeaturePhoto(FetchFeaturePhotoParam(isSuccess: true, photo: photo)))
             }, onError: { (error) in
                 TrackingService.default.tracking(.fetchFeaturePhoto(FetchFeaturePhotoParam(isSuccess: false, error: error)))
+            })
+    }
+
+    func fetchRandomPhoto() -> Observable<Photo> {
+        return provider
+            .rx
+            .request(.randomPhoto)
+            .mapToModel(type: Photo.self)
+            .asObservable()
+            .do(onNext: { (photo) in
+                TrackingService.default.tracking(.fetchRandomPhoto(FetchFeaturePhotoParam(isSuccess: true, photo: photo)))
+            }, onError: { (error) in
+                TrackingService.default.tracking(.fetchRandomPhoto(FetchFeaturePhotoParam(isSuccess: false, error: error)))
             })
     }
 }

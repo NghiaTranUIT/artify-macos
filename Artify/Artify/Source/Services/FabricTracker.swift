@@ -21,6 +21,8 @@ final class FabricTracker: Trackable {
             Answers.logCustomEvent(withName: type.methodName, customAttributes: nil)
         case .fetchFeaturePhoto(let param):
             Answers.logCustomEvent(withName: type.methodName, customAttributes: param.toAttribute())
+        case .fetchRandomPhoto(let param):
+            Answers.logCustomEvent(withName: type.methodName, customAttributes: param.toAttribute())
         case .launchOnStartup(let param):
             Answers.logCustomEvent(withName: type.methodName, customAttributes: param.toAttribute())
         case .setWallapper(let param):

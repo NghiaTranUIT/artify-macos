@@ -44,6 +44,7 @@ public final class StatusBarViewModel: StatusBarViewModelType, StatusBarViewMode
     // MARK: - Variable
     private let bag = DisposeBag()
     private let getFeatureAction: Action<Void, Photo>
+    private let getRandomAction: Action<Void, Photo>
     private let updater: AppUpdatable
     private let openAboutPublisher = PublishSubject<Void>()
     private let currentFeaturePhoto = Variable<Photo?>(nil)
@@ -81,6 +82,9 @@ public final class StatusBarViewModel: StatusBarViewModelType, StatusBarViewMode
 
         // Feauture action
         getFeatureAction = Coordinator.default.wallpaperService.setFeaturePhotoAction
+
+        // Random
+        getRandomAction = Coordinator.default.wallpaperService.randomizePhotoAction
 
         // isLoading
         isLoading = getFeatureAction.enabled
@@ -146,7 +150,7 @@ public final class StatusBarViewModel: StatusBarViewModelType, StatusBarViewMode
     }
 
     @objc private func getRandomOnTap() {
-
+        getRandomAction.execute(())
     }
 
     @objc private func launchOnStartUp(_ menu: NSMenuItem) {

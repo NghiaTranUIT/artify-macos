@@ -24,6 +24,7 @@ public final class TrackingService: TrackingServiceType {
         case openApp
         case exitApp
         case fetchFeaturePhoto(FetchFeaturePhotoParam)
+        case fetchRandomPhoto(FetchFeaturePhotoParam)
         case launchOnStartup(LaunchOnStartupParam)
         case setWallapper(SetWallpaperParam)
         case appUpdated(AppUpdatedParam)
@@ -42,6 +43,8 @@ public final class TrackingService: TrackingServiceType {
                 return "Set wallpaper"
             case .appUpdated:
                 return "App updated"
+            case .fetchRandomPhoto:
+                return "Fetch random photo"
             }
         }
     }

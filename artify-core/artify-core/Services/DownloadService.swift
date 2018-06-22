@@ -15,6 +15,7 @@ import Nuke
 protocol DownloadServiceType {
 
     func downloadFeaturePhoto() -> Observable<DownloadPayload>
+    func downloadRandomPhoto() -> Observable<DownloadPayload>
 }
 
 final class DownloadService: DownloadServiceType {
@@ -41,6 +42,18 @@ final class DownloadService: DownloadServiceType {
         return self
             .network
             .fetchFeaturePhoto()
+            .flatMapLatest { self.downloadAndSavePhoto($0) }
+    }
+
+    func downloadRandomPhoto() -> Observable<DownloadPayload> {
+        return self
+            .network
+            .fetchRandomPhoto()
+            .flatMapLatest { self.downloadAndSavePhoto($0) }
+    }
+
+    private func downloadAndSavePhoto(_ photo: Photo) -> Observable<DownloadPayload> {
+        return Observable.just(photo)
             .flatMapLatest {[unowned self] (photo) -> Single<FilePayload> in
                 let imageRequest = ImageRequest(url: URL(string: photo.imageURL)!)
                 return self.imagePipline
@@ -51,7 +64,6 @@ final class DownloadService: DownloadServiceType {
                 return self.fileHandler
                     .rx_saveImageIfNeed(payload)
                     .map { DownloadPayload(photo: payload.photo, fileUrl: $0) }
-            }
+        }
     }
 }
-
