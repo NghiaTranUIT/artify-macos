@@ -87,7 +87,7 @@ public final class StatusBarViewModel: StatusBarViewModelType, StatusBarViewMode
         getRandomAction = Coordinator.default.wallpaperService.randomizePhotoAction
 
         // isLoading
-        isLoading = getFeatureAction.enabled
+        isLoading = Observable.merge([getFeatureAction.enabled, getRandomAction.enabled])
             .map { !$0 }
             .distinctUntilChanged()
             .share()
@@ -138,6 +138,7 @@ public final class StatusBarViewModel: StatusBarViewModelType, StatusBarViewMode
             .drive(onNext: {[weak self] (isLoading) in
                 guard let strongSelf = self else { return }
                 strongSelf.aboutThisArtBtn.isEnabled = !isLoading
+
             })
             .disposed(by: bag)
 
