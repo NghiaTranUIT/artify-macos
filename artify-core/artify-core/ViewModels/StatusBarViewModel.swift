@@ -47,7 +47,7 @@ public final class StatusBarViewModel: StatusBarViewModelType, StatusBarViewMode
     private let getRandomAction: Action<Void, Photo>
     private let updater: AppUpdatable
     private let openAboutPublisher = PublishSubject<Void>()
-    private let currentFeaturePhoto = Variable<Photo?>(nil)
+    private let currentPhoto = Variable<Photo?>(nil)
     private var aboutThisArtBtn: NSMenuItem {
         let index = menus.value.index(where: { $0.kind == Menu.Kind.aboutThisPhoto } )!
         return menuItems.value[index]
@@ -143,7 +143,8 @@ public final class StatusBarViewModel: StatusBarViewModelType, StatusBarViewMode
             .disposed(by: bag)
 
         // Hook the current feature photo
-        getFeatureAction.elements.bind(to: currentFeaturePhoto).disposed(by: bag)
+        getFeatureAction.elements.bind(to: currentPhoto).disposed(by: bag)
+        getRandomAction.elements.bind(to: currentPhoto).disposed(by: bag)
     }
 
     @objc private func getFeatureOnTap(_ menu: NSMenuItem) {
@@ -179,7 +180,7 @@ public final class StatusBarViewModel: StatusBarViewModelType, StatusBarViewMode
     }
 
     @objc private func aboutThisArt() {
-        guard let photo = currentFeaturePhoto.value else { return }
+        guard let photo = currentPhoto.value else { return }
         let url = URL(string: photo.originalSource)!
         NSWorkspace.shared.open(url)
     }
