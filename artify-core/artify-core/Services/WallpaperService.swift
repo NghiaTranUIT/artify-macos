@@ -13,6 +13,7 @@ import Action
 protocol WallpaperServiceType {
 
     var setFeaturePhotoAction: Action<Void, Photo> { get }
+    var randomizePhotoAction: Action<Void, Photo> { get }
 }
 
 final class WallpaperService: WallpaperServiceType {
@@ -36,42 +37,51 @@ final class WallpaperService: WallpaperServiceType {
     // MARK: - Public
     lazy var setFeaturePhotoAction: Action<Void, Photo> = {
         return Action<Void, Photo> { (_) -> Observable<Photo> in
-            return Observable.just(())
-                .observeOn(ConcurrentDispatchQueueScheduler(qos: DispatchQoS.background))
-                .flatMapLatest({[unowned self] _ -> Observable<DownloadPayload> in
-                    return self.downloadService.downloadFeaturePhoto()
-                })
-                .flatMapLatest({[unowned self] (payload) -> Observable<WallpaperResponse> in
-                    guard let image = NSImage(contentsOfFile: payload.fileUrl.path) else {
-                        return .error(ArtfiyError.invalidFileURL(payload.fileUrl))
-                    }
-                    let processPayload = WallpaperPayload(photo: payload.photo,
-                                                          originalImage: image,
-                                                          screenSize: self.screenSize,
-                                                          effect: .gaussianBeautify)
-                    return self.processor.rx_apply(payload: processPayload)
-                })
-                .flatMapLatest({[unowned self] (payload) -> Observable<(Photo, URL)> in
-                    let filePayload = FilePayload(image: payload.wallpaperImage,
-                                                  photo: payload.photo,
-                                                  prefix: self.screenSize.toString)
-                    TrackingService.default.tracking(.setWallapper(SetWallpaperParam(photo: payload.photo, screenSize: self.screenSize)))
-                    return self.fileHandler.rx_saveImageIfNeed(filePayload)
-                        .map { return (payload.photo, $0) }
-                })
-                .observeOn(MainScheduler.instance)
-                .do(onNext: { tub in
-                    print("✅[SUCCESS] Set Wallpaper at \(tub.1)")
-                }, onError: { error in
-                    print("❌[ERROR] \(error)")
-                })
-                .flatMapLatest({[unowned self] (tub) -> Observable<Photo> in
-                    return self.setWallpaper(at: tub)
-                })
-
+            return self.downloadService
+                .downloadFeaturePhoto()
+                .flatMapLatest {[unowned self] in self.processDownloadPayload($0) }
         }
     }()
-    
+
+    lazy var randomizePhotoAction: Action<Void, Photo> = {
+        return Action<Void, Photo> { (_) -> Observable<Photo> in
+            return self.downloadService
+                .downloadRandomPhoto()
+                .flatMapLatest {[unowned self] in self.processDownloadPayload($0) }
+        }
+    }()
+
+    private func processDownloadPayload(_ payload: DownloadPayload) -> Observable<Photo> {
+        return Observable.just(payload)
+            .flatMapLatest({[unowned self] (payload) -> Observable<WallpaperResponse> in
+                guard let image = NSImage(contentsOfFile: payload.fileUrl.path) else {
+                    return .error(ArtfiyError.invalidFileURL(payload.fileUrl))
+                }
+                let processPayload = WallpaperPayload(photo: payload.photo,
+                                                      originalImage: image,
+                                                      screenSize: self.screenSize,
+                                                      effect: .gaussianBeautify)
+                return self.processor.rx_apply(payload: processPayload)
+            })
+            .flatMapLatest({[unowned self] (payload) -> Observable<(Photo, URL)> in
+                let filePayload = FilePayload(image: payload.wallpaperImage,
+                                              photo: payload.photo,
+                                              prefix: self.screenSize.toString)
+                TrackingService.default.tracking(.setWallapper(SetWallpaperParam(photo: payload.photo, screenSize: self.screenSize)))
+                return self.fileHandler.rx_saveImageIfNeed(filePayload)
+                    .map { return (payload.photo, $0) }
+            })
+            .observeOn(MainScheduler.instance)
+            .do(onNext: { tub in
+                print("✅[SUCCESS] Set Wallpaper at \(tub.1)")
+            }, onError: { error in
+                print("❌[ERROR] \(error)")
+            })
+            .flatMapLatest({[unowned self] (tub) -> Observable<Photo> in
+                return self.setWallpaper(at: tub)
+            })
+    }
+
     private func setWallpaper(at payload: (Photo, URL)) -> Observable<Photo> {
         var isApplied = false
 
@@ -93,3 +103,4 @@ final class WallpaperService: WallpaperServiceType {
         return Observable.just(payload.0)
     }
 }
+

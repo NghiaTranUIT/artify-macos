@@ -12,6 +12,7 @@ import Alamofire
 
 enum ArtifyCoreAPI {
     case getFeature
+    case randomPhoto
     case checkUpdate(AppInfo)
 }
 
@@ -24,6 +25,8 @@ extension ArtifyCoreAPI: TargetType {
         switch self {
         case .getFeature:
             return "feature/today"
+        case .randomPhoto:
+            return "feature/random"
         case .checkUpdate:
             return "version/update"
         }
@@ -31,6 +34,8 @@ extension ArtifyCoreAPI: TargetType {
 
     var method: Moya.Method {
         switch self {
+        case .randomPhoto:
+            fallthrough
         case .checkUpdate:
             fallthrough
         case .getFeature:

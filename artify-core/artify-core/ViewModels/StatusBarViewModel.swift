@@ -44,6 +44,7 @@ public final class StatusBarViewModel: StatusBarViewModelType, StatusBarViewMode
     // MARK: - Variable
     private let bag = DisposeBag()
     private let getFeatureAction: Action<Void, Photo>
+    private let getRandomAction: Action<Void, Photo>
     private let updater: AppUpdatable
     private let openAboutPublisher = PublishSubject<Void>()
     private let currentFeaturePhoto = Variable<Photo?>(nil)
@@ -58,6 +59,7 @@ public final class StatusBarViewModel: StatusBarViewModelType, StatusBarViewMode
     // MARK: - Output
     public let menuItems = Variable<[NSMenuItem]>([])
     public let menus = Variable([Menu(kind: .getFeature, selector: #selector(StatusBarViewModel.getFeatureOnTap(_:)), keyEquivalent: "F"),
+                                 Menu(kind: .random, selector: #selector(StatusBarViewModel.getRandomOnTap), keyEquivalent: "R"),
                                         Menu(kind: .separator, selector: nil),
                                         Menu(kind: .aboutThisPhoto, selector: #selector(StatusBarViewModel.aboutThisArt)),
                                          Menu(kind: .separator, selector: nil),
@@ -81,8 +83,11 @@ public final class StatusBarViewModel: StatusBarViewModelType, StatusBarViewMode
         // Feauture action
         getFeatureAction = Coordinator.default.wallpaperService.setFeaturePhotoAction
 
+        // Random
+        getRandomAction = Coordinator.default.wallpaperService.randomizePhotoAction
+
         // isLoading
-        isLoading = getFeatureAction.enabled
+        isLoading = Observable.merge([getFeatureAction.enabled, getRandomAction.enabled])
             .map { !$0 }
             .distinctUntilChanged()
             .share()
@@ -133,6 +138,7 @@ public final class StatusBarViewModel: StatusBarViewModelType, StatusBarViewMode
             .drive(onNext: {[weak self] (isLoading) in
                 guard let strongSelf = self else { return }
                 strongSelf.aboutThisArtBtn.isEnabled = !isLoading
+
             })
             .disposed(by: bag)
 
@@ -142,6 +148,10 @@ public final class StatusBarViewModel: StatusBarViewModelType, StatusBarViewMode
 
     @objc private func getFeatureOnTap(_ menu: NSMenuItem) {
         getFeatureAction.execute(())
+    }
+
+    @objc private func getRandomOnTap() {
+        getRandomAction.execute(())
     }
 
     @objc private func launchOnStartUp(_ menu: NSMenuItem) {
