@@ -156,7 +156,7 @@ After starting the development server.
 
 * **Do you have personal blog?**
 
-> Yes, I often write blog at [My lab](www.nghiatran.me) 👨‍🍳
+> Yes, I often write blog at [My lab](https://nghiatran.me/) 👨‍🍳
 
 * **How do I contact you?**
 
