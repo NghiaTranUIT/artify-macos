@@ -22,7 +22,7 @@ public struct Environment {
         case .sandbox:
             return "http://0.0.0.0:7300"
         case .production:
-            return "https://www.megaton.xyz"
+            return "https://api.proxyman.app"
         }
     }
 }
