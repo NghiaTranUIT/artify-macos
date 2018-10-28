@@ -9,7 +9,7 @@
 import Cocoa
 import artify_core
 
-class AboutWindowController: NSViewController {
+final class AboutWindowController: NSViewController {
 
     @IBOutlet weak var verionLbl: NSTextField!
 
