@@ -389,7 +389,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/../Pods/Target Support Files/Pods-Artify/Pods-Artify-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Artify/Pods-Artify-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Action/Action.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
@@ -422,7 +422,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-Artify/Pods-Artify-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Artify/Pods-Artify-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BAC0B76320C1894E00FF4FDF /* Fabric */ = {
